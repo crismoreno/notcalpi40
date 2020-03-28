@@ -10,10 +10,17 @@ module.exports = {
     entry: [
         'babel-polyfill','./src/app.js'
 	],
+	output: {
+		filename: 'bundle.js',
+		path: __dirname + '../../server/public/'
+	},
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 9000
+		port: 9000,
+		proxy: {
+			'/api':'http://localhost:5000/'
+		}
     },
     module: {
         rules: [

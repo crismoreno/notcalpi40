@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/projects'
+const url = 'api/projects/'
 
 
 class ProjectsService {
@@ -8,8 +8,8 @@ class ProjectsService {
 		return new Promise(async (resolve, reject) =>{
 			try {
 				const res = await axios.get(url)
-				const data = res;
-				resolve(console.log(data));
+				const data = res.data;
+				resolve(data);
 			} catch(err){
 				reject(err);
 			};

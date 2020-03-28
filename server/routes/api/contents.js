@@ -7,18 +7,16 @@ const router = express.Router();
 router.get('/projects', (req, res) => {
 	res.json(
 
-		{
-			"data":[
-				{
-					"title": 'Project1',
-					"content": 'This are the contents in project 1'
-				},
-				{
-					"title": 'Project2',
-					"content": 'This are the contents in project 2'
-				}
-			]
-		}
+		[
+			{
+				"title": 'Project1',
+				"content": 'This are the contents in project 1'
+			},
+			{
+				"title": 'Project2',
+				"content": 'This are the contents in project 2'
+			}
+		]
 	)
 });
 
