@@ -1,0 +1,46 @@
+{
+  "name": "personal_portfolio",
+  "version": "1.0.0",
+  "description": "- Develop a REST API for delivering stock market data (DBMS of our won choice) - Develop a Vue.js SPA that consumes the data provided by the API (Using Charts.js) - Develop a NodeJS/Express app that consumes the data from the API(Using Charts.js and render engine from our own choice)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"gulp watch\" \"webpack-dev-server --config webpack.config.js\"",
+    "postinstall": "gulp cssfy; webpack -p"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.1.0",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.3",
+    "url-loader": "^4.0.0",
+    "vue-loader": "^15.9.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.4.1",
+    "dotenv-webpack": "^1.7.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6"
+  }
+}

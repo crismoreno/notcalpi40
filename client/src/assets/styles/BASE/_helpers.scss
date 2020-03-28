@@ -1,0 +1,19 @@
+// * {
+//     border: 1px solid red;
+// }
+
+@mixin debug {
+    outline: 1px double purple;
+    >* {
+        outline: 1px solid green;
+        >* {
+            outline: 1px dotted blue;
+            >* {
+                outline: 1px dashed pink;
+                >* {
+                    outline: 1px double dashed black;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//FONT FAMILIES
+//BOOTSTRAP
+//BASE FOLDER (Are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.)
+@import "BASE/vars";
+@import "BASE/helpers";
+@import "BASE/common";
+
+//LAYOUT FOLDER (Divide the page into sections. Layouts hold one or more modules together.)
+
+//MODULE FOLDER (Are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.)
+
+//STATE FOLDER (Ways to describe how our modules or layouts will look when in a particular state. Is it hidden or expanded? Is it active or inactive? They are about describing how a module or layout looks on screens that are smaller or bigger. They are also about describing how a module might look in different views like the home page or the inside page.)
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  @import "STATE/browsers-ie10+";
+}
+@supports (-ms-accelerator: true) {
+  /* IE Edge 12+ CSS styles go here */
+  @import "STATE/browsers-edge";
+}
+
+//THEME FOLDER (Describe how modules or layouts might look)
+// @import 'THEME/footer';
