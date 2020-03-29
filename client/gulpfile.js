@@ -1,7 +1,7 @@
 // https://www.youtube.com/watch?v=QgMQeLymAdU
 const gulp = require("gulp");
 const sass = require("gulp-sass");
-const browserSync = require("browser-sync").create();
+// const browserSync = require("browser-sync").create();
 const minify = require('gulp-minify');
 const notify = require( 'gulp-notify' );
 
