@@ -8,8 +8,8 @@
     "npm": "6.13.7"
   },
   "scripts": {
-	"start": "node server/index.js",
-	"dev": "nodemon server/index.js"
+	"start": "node app/server/index.js",
+	"dev": "nodemon app/server/index.js"
   },
   "keywords": [],
   "author": "Cristina Morenoo",
