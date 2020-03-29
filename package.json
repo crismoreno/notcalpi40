@@ -8,6 +8,7 @@
     "npm": "6.13.7"
   },
   "scripts": {
+	"postinstall": "cd client/ && npm install",
 	"start": "node server/index.js",
 	"dev": "nodemon server/index.js"
   },
