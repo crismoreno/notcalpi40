@@ -5,31 +5,39 @@ module.exports = (sequelize, Sequelize) => {
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		title: {
-			type: Sequelize.STRING,
-			allowNull: false
-		},
-		customer: {
-			type: Sequelize.STRING
-		},
-		completion_date: {
+		orderby: {
 			type: Sequelize.INTEGER,
-			allowNull: false
 		},
-		collaborators: {
-			type: Sequelize.STRING
-		},
-		description: {
+		title: {
 			type: Sequelize.STRING,
 			allowNull: false
 		},
 		developed_at: {
 			type: Sequelize.STRING
 		},
+		customer: {
+			type: Sequelize.STRING
+		},
+		collaborators: {
+			type: Sequelize.STRING
+		},
+		completion_date: {
+			type: Sequelize.STRING
+		},
+		description: {
+			type: Sequelize.TEXT,
+			allowNull: false
+		},
 		link_to_prod: {
 			type: Sequelize.STRING
 		},
 		link_to_repo: {
+			type: Sequelize.STRING
+		},
+		link_to_download: {
+			type: Sequelize.STRING
+		},
+		video: {
 			type: Sequelize.STRING
 		},
 		tags: {
@@ -42,15 +50,10 @@ module.exports = (sequelize, Sequelize) => {
 			type: Sequelize.BOOLEAN,
 			allowNull: false
 		},
-		img: {
-			type: Sequelize.STRING
+		show: {
+			type: Sequelize.BOOLEAN,
+			allowNull: false
 		},
-		video: {
-			type: Sequelize.STRING
-		},
-		cover: {
-			type: Sequelize.STRING
-		}
 	});
 	return Project;
 };
