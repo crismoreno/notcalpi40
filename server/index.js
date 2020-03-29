@@ -8,9 +8,17 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const contents = require('./routes/api/contents');
+const contents = require('./routes/contents');
 
 app.use('/api', contents)
+
+const db = require("./models");
+
+// db.sequelize.sync();
+
+db.sequelize.sync({ force: true }).then(() => {
+	console.log("Drop and re-sync db.");
+  });
 
 //Handdle Production
 if (process.env.NODE_ENV === 'production') {
