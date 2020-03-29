@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'api/projects/'
+const url = 'api/'
 
 
 class ProjectsService {

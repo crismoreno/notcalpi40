@@ -3,7 +3,7 @@
 		<h1>Hello from home component!</h1>
 		<div v-for="(project, index) in projects" :key="index">
 			<p>{{project.title}}</p>
-			<p>{{project.content}}</p>
+			<p>{{project.description}}</p>
 		</div>
 	</div>
 </template>

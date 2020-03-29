@@ -14,11 +14,11 @@ app.use('/api', contents)
 
 const db = require("./models");
 
-// db.sequelize.sync();
+db.sequelize.sync();
 
-db.sequelize.sync({ force: true }).then(() => {
-	console.log("Drop and re-sync db.");
-  });
+// db.sequelize.sync({ force: true }).then(() => {
+// 	console.log("Drop and re-sync db.");
+// });
 
 //Handdle Production
 if (process.env.NODE_ENV === 'production') {
