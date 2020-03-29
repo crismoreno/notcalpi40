@@ -1,0 +1,89 @@
+.not-found{
+    margin-top: 30px;
+    h1, p{
+        font-family: $robotomono;
+    }
+    .foto-grid{
+        margin-bottom: 30px;
+    }
+}
+
+@include respond-above(lg){
+    .not-found{
+        .foto-grid{
+            .cris-fact{
+                width: 30%;
+                .overlapped-info{
+                    max-width: 333px;
+                }
+            }
+        }
+    }
+}
+
+.not-found{
+    .foto-grid{
+        .cris-fact{
+            position: relative;
+            div.fact-container{
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .overlapped-info-container{
+                display: none;
+                padding: 10px;
+                position: absolute;
+                // top: 10px;
+                // left: 10px;
+                .overlapped-info{
+                    // position: absolute;
+                    font-family: $robotomono;
+                    color: white;
+                    background-color: $red;
+                    font-size: 14px;
+                    border-radius: 10px;
+                    padding: 10px;
+                    line-height: 22px;
+                }
+            }
+        }
+        .cris-fact:hover > .overlapped-info-container{
+            display: block;
+        }
+    }
+}
+
+@include respond-below(lg){
+    .not-found{
+        .foto-grid{
+            .cris-fact{
+                width: 80%;
+            }
+        }
+    }
+}
+@include respond-below(xs){
+    .not-found{
+        .foto-grid{
+            .cris-fact{
+                .overlapped-info-container{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@include respond-between(sm, lg){
+    .not-found{
+        .foto-grid{
+            .cris-fact{
+                width: 50%;
+            }
+        }
+    }
+}

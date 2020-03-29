@@ -1,10 +1,10 @@
 <template>
-	<div>
+	<div class="container">
 		<h1>Hello from home component!</h1>
-		<div v-for="(project, index) in projects" :key="index">
+		<!-- <div v-for="(project, index) in projects" :key="index">
 			<p>{{project.title}}</p>
 			<p>{{project.description}}</p>
-		</div>
+		</div> -->
 	</div>
 </template>
 <script>

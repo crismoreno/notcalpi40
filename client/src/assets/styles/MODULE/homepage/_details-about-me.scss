@@ -1,0 +1,103 @@
+.about-me-home{
+    @include margin ( 0, auto, 50px, auto);
+    .characteristics{
+        @include padding (0, 50px, 0, 15px);
+        width: 50%;
+        p{
+            @include padding (0, 30px, 0, 0);
+            color: $red;
+            font-weight: $bold;
+            font-size: 18px;
+            text-align: right;
+        }
+        .img-container{
+            box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
+            border-radius: 10px;
+            height: 90px;
+            width: 90px;
+            @include margin (0, 0, 20px, 0);
+            img{
+                height: 45px;
+                width: 45px;
+            }
+        }
+    }
+    .about-me-detail{
+        @include margin (-90px, 0, 0, 0);
+        z-index: 0;
+        @include padding (0, 15px, 0, 50px);
+        width: 50%;
+        .title{
+            h2{
+                text-transform: uppercase;
+                font-size: 26px;
+            }
+            h2, p{
+                @include margin (0, 0, 0, 0);
+            }
+        }
+        .description-about-me{
+            a{
+                color: black;
+                text-decoration: underline;
+                font-weight: 400;
+            }
+        }
+        .border-bottom{
+            border-bottom: 1px solid black;
+        }
+        a{
+            text-transform: uppercase;
+            @include font-style(16px, $red, 400, 35px, 0.5px, left);
+            font-family: $sourcesans;
+        }
+    }
+}
+@include respond-below (lg){
+    .about-me-home{
+        .characteristics{
+            @include padding (0, 15px, 0, 0);
+        }
+        .about-me-detail{
+            @include padding (0, 0, 0, 15px);
+        }
+    }
+}
+
+@include respond-below (md){
+    .about-me-home{
+        .about-me-detail{
+            @include margin (-10px, 0, 0, 0);
+        }
+    }
+}
+
+@include respond-below (sm){
+    .about-me-home{
+        @include padding (370px, 15px, 0, 0);
+        .characteristics{
+            @include padding (0, 0, 0, 0);
+            width: 100%;
+        }
+        .about-me-detail{
+            width: 100%;
+            @include padding (50px, 15px, 0, 0);
+        }
+    }
+}
+@include respond-below (xs){
+    .about-me-home{
+        @include padding (450px, 15px, 0, 15px);
+        .characteristics{
+            .charcateristic-container{
+                p{
+                    min-width: 230px;
+                    max-width: 230px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+/*# sourceURL=base/MODULE/homepage/_details-about-me.scss */

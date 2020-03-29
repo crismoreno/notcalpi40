@@ -1,0 +1,55 @@
+.filters{
+    @include margin (0, auto, 30px, auto);
+    a button{
+        background-color: $red;
+        @include padding (7px, 10px, 7px, 10px);
+        border-radius: 4px;
+        color: white;
+        border: none;
+        @include margin (10px, 5px, 10px, 5px);
+        min-width: 120px;
+    }
+    a button:hover{
+        background-color: $dark-red;
+    }
+}
+.my-dev-projects{
+    @include margin (0, auto, 50px, auto);
+    h2{
+        text-transform: uppercase;
+        @include font-style(16px, black, 400, 35px, 0.5px, left);
+        font-family: $sourcesans;
+    }
+    a{
+        text-transform: uppercase;
+        @include font-style(16px, $red, 400, 35px, 0.5px, left);
+        font-family: $sourcesans;
+    }
+}
+
+@include respond-below (sm){
+    .filters{
+        a{
+            width: 60%;
+            margin: 0 auto;
+            button{
+                width: 100%;
+                margin: 5px auto;
+                @include padding (10px, 10px, 10px, 10px);
+            }
+        }
+    }
+    .my-dev-projects{
+        h2{
+            text-align: center;
+        }
+        a.full-portfolio-button{
+            margin: 0 auto;
+            width: 92%;
+            position: absolute;
+            text-align: center;
+        }
+    }
+}
+
+/*# sourceURL=base/MODULE/homepage/_my-dev-projects.scss */

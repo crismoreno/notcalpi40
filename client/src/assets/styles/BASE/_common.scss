@@ -1,4 +1,72 @@
 * {
     -webkit-font-smoothing: antialiased;
 	box-sizing: border-box;
+	font-family:  $sourcesans;
 }
+
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+}
+
+h4{
+
+}
+
+h5{
+
+}
+
+h6{
+
+}
+
+p, li, i{
+    font-family:  $sourcesans;
+    @include font-style (16px, false, false,  35px, false, left);
+}
+
+a, a:hover{
+    text-decoration: none;
+    color: unset;
+}
+
+ul, ol, li{
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+label{
+}
+
+span.notcalpi-red{
+    background-color: $red;
+    color: white;
+}
+
+span.highlight{
+    background-color: yellow;
+}
+
+//BOOSTRAP OVERRIDES
+.progress{
+    background-color: white;
+}
+
+
+.disabled{
+    pointer-events: none;
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/*# sourceURL=base/BASE/_common.scss */

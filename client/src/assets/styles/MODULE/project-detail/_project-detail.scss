@@ -1,0 +1,102 @@
+.project-itself{
+    @include margin (41px, auto, 30px, auto);
+    .project{
+        .project-info-container{
+            // @include margin (0, 10px, 0, 0);
+            width: 100%;
+            .project-features{
+                li{
+                    padding: 5px 0;
+                    p{
+                        margin: 0;
+                    }
+                }
+                li.bordered{
+                    border-top: 1px solid black;
+                    border-bottom: 1px soldi black;
+                }
+                pre.output{
+                    font-family: $sourcesans;
+                    font-size: 15px;
+                    margin-bottom: 0;
+                }
+                .description{
+                    @include margin (30px, 0, 0, 0);
+                    pre{
+                        font-family: $sourcesans;
+                        width: 100%;
+                        font-size: .9em;
+                        line-height: 28px;
+                        white-space: pre-line;
+                    }
+                }
+                a.full-view-button{
+                    background-color: $red;
+                    border-radius: 4px;
+                    @include padding (5px, 10px, 5px, 10px);
+                    color: white;
+                }
+                a.full-view-button:hover{
+                    background-color: $dark-red;
+                }
+            }
+        }
+        .project-img-container{
+            // @include margin (0, 0, 10px, 0);
+            width: 100%;
+            iframe{
+                width: 100%;
+            }
+            div{
+                width: 100%;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .download-project, .confidentiality-button{
+            background-color: $red;
+            @include padding (0, 10px, 0, 10px);
+            border-radius: 4px;
+            color: white;
+            border: none;
+            @include margin (10px, 5px, 10px, 5px);
+            min-width: 120px;
+        }
+        .download-project:hover, .confidentiality-button:hover{
+            background-color: $dark-red;
+        }
+    }
+}
+@include respond-between (md, lg){
+    .project-itself{
+        .project{
+            .project-info-container{
+                width: 49%;
+                @include margin (0, 50px, 0, 0);
+            }
+            .project-img-container{
+                width: 59%;
+                @include margin (0, 0, 30px, 0);
+            }
+        }
+    }
+}
+
+@include respond-above (lg){
+    .project-itself{
+        .project{
+            .project-info-container{
+                width: 45%;
+                @include margin (0, 35px, 0, 0);
+            }
+            .project-img-container{
+                width: 50%;
+                @include margin (0, 0, 35px, 0);
+            }
+        }
+    }
+}
+
+
+/*# sourceURL=base/MODULE/homepage/_project-detail.scss */

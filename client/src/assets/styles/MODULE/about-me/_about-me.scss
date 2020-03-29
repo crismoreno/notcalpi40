@@ -1,0 +1,239 @@
+
+%buttons{
+    background-color: $red;
+    color: white;
+    text-transform: uppercase;
+    @include padding (5px, 5px, 5px, 5px);
+    border-radius: 4px;
+    font-size: 10px;
+    height: 25px;
+    width: fit-content;
+    text-decoration: none;
+  }
+  %buttons:hover{
+    background-color: $dark-red;
+  }
+
+.about-me-container{
+    // @include margin (30px, auto, 0, auto);
+    // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    .jumbotron{
+        a{
+            background-color: $red;
+            color: white;
+            text-transform: uppercase;
+            @include padding (10px, 10px, 10px, 10px);
+            @include margin (10px, 5px, 0, 5px);
+            border-radius: 4px;
+            text-align: center;
+        }
+        a:hover{
+            background-color: $dark-red;
+        }
+    }
+    .others{
+        p{
+            background-color: $gray;
+            @include padding (5px, 10px, 10px, 5px);
+            @include margin (0, 10px, 0, 10px);
+            border-radius: 4px;
+            color: black;
+            text-align: center;
+        }
+    }
+    .studies{
+        .card{
+            border-radius: 10px !important;
+            img.card-img-top{
+                border-top-left-radius: 10px !important;
+                border-top-right-radius: 10px !important;
+            }
+            .card-body{
+                @include padding (10px, 10px, 10px, 10px);
+                p.card-text{
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    line-height: 25px;
+                }
+            }
+        }
+        .projects-link{
+            @extend %buttons;
+            font-size: 12px;
+            width: 250px;
+            margin: 10px;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            padding: 12px;
+            text-align: center;
+            height: 40px;
+        }
+    }
+    .software-container{
+        .card-header{
+            text-transform: uppercase;
+            @include font-style(16px, black, 600, 35px, 0.5px, left);
+            font-family: $sourcesans;
+            @include padding (0px, 5px, 0px, 5px);
+        }
+        .list-group{
+            li{
+                @include font-style(12px, black, 400, 35px, 0.5px, left);
+                font-family: $sourcesans;
+                @include padding (0px, 5px, 0px, 5px);
+            }
+        }
+    }
+    .skills-container{
+        card:hover{
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+    }
+    .code-tools{
+        // width: 100%;
+        // margin: 0 auto;
+        // .html, .css, .sass, .bootstrap, .jquery, .JS, .node, .express, .angular, .git, .php, .magento, .wordpress{
+        .code-tool{
+            @include padding (10px, 10px, 10px, 10px);
+            background-color: $gray;
+            border-radius: 4px;
+            @include margin (10px, 0, 10px, 0);
+            a{
+                @extend %buttons;
+            }
+            h2{
+                text-transform: uppercase;
+                @include font-style(16px, black, 400, 35px, 0.5px, left);
+                font-family: $sourcesans;
+            }
+        }
+    }
+    .work-experience{
+        padding-bottom: 40px !important;
+        h2{
+            text-transform: uppercase;
+            @include font-style(16px, black, 700, 35px, 0.5px, left);
+            font-family: $sourcesans;
+        }
+        a{
+            text-decoration: underline;
+        }
+        .more-info-button{
+            background-color: transparent;
+            border: none;
+            margin-right: 5px;
+            padding: 0;
+            text-align: left;
+        }
+        #collapseDobcn .card, #collapseNordic .card{
+            width: unset !important;
+            font-family: $sourcesans;
+            a{
+                @extend %buttons;
+                margin-top: 15px;
+            }
+        }
+    }
+    .get-to-know-me{
+        margin: 0 auto 30px auto !important;
+    }
+}
+.get-to-know-me{
+    background-color: $red;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    @include padding (15px, 15px, 15px, 15px);
+    h2{
+        @extend %h2-title;
+        color: white;
+    }
+    a{
+        background-color: white;
+        color: $red;
+        @include padding (7px, 10px, 7px, 10px);
+        border-radius: 4px;
+        @include margin (5px, 5px, 5px, 5px);
+        box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        min-width: 170px;
+        text-align: center;
+    }
+}
+
+@include respond-below (lg){
+    // .about-me-container{
+        .get-to-know-me{
+            border-radius: 10px;
+        }
+    // }
+}
+
+@include respond-below (sm){
+    .about-me-container{
+        .others{
+            p{
+                @include margin (5px, 0, 5px, 0);
+                width: 100%;
+            }
+        }
+    }
+    .get-to-know-me{
+        a{
+            width: 100%;
+        }
+    }
+}
+
+@include respond-between (md, lg){
+    .about-me-container{
+        .code-tools, .work-experience, .others, .get-to-know-me{
+            width: 85%;
+            margin: 0 auto;
+        }
+        .others{
+            p{
+                width: 242px;
+            }
+        }
+    }
+    
+}
+@include respond-between (sm, md){
+    .about-me-container{
+        width: 100%;
+        .studies{
+            .card{
+                width: 200px;
+            }
+        }
+        .software-container{
+            .card-header{
+                font-size: 15px;
+            }
+            .card{
+                width: 200px;
+            }
+        }
+        .others{
+            p{
+                width: 200px;
+            }
+        }
+    }
+}
+
+
+@include respond-above (lg){
+    .about-me-container{
+        // @include margin (30px, auto, 0, auto);
+        box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+        .code-tools, .work-experience, .others, .get-to-know-me{
+            width: 72%;
+            margin: 0 auto;
+        }
+        .others{
+            p{
+                width: 245px;
+            }
+        }
+    }
+}
+/*# sourceURL=base/MODULE/about-me/_about-me.scss */

@@ -1,0 +1,87 @@
+.header-background {
+    @include padding (30px, 0, 0, 0);
+    position: relative;
+    height: 530px;
+    background-color: $red;
+    .picture{
+        width: 50%;
+        img{
+            height: 350px;
+        }
+    }
+    .description-desktop{
+        width: 50%;
+        @include padding (0, 50px, 0, 0);
+        color: white;
+        p:last-child{
+            color: $dark-red;
+            font-weight: $bold;
+            font-size: 18px;
+        }
+        a{
+            background-color: white;
+            color: $red;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 90px;
+            padding: 9px 25px;
+            width: fit-content;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+    .description-mobile{
+        @include margin (30px, 0, 0, 0);
+        width: 100%;
+        color: $red;
+        p:last-child{
+            color: $dark-red;
+            font-weight: $bold;
+            font-size: 18px;
+        }
+        a{
+            background-color: $red;
+            color: white;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 90px;
+            padding: 9px 25px;
+            width: unset;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+    svg {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 20vw;
+        /* set height to pixels if you want angle to change with screen width */
+    }
+}
+
+@include respond-below (lg){
+    .header-background {
+        height: 510px;
+    }
+}
+@include respond-below (md){
+    .header-background {
+        height: 474px;
+    }
+}
+@include respond-below (sm){
+    .header-background {
+        height: 275px;
+        @include padding (41px, 0, 0, 0);
+        svg{
+            bottom: -1px;
+        }
+        .picture{
+            width: 100%;
+            @include margin (0, auto, 0, auto);
+            img{
+                height: 230px;
+            }
+        }
+    }
+}
+/*# sourceURL=base/MODULE/homepage/_header.scss */

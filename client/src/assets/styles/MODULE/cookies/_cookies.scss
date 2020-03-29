@@ -1,0 +1,19 @@
+body.cookies{
+    .cookie-container{
+        // background-color: $red;
+        @include margin (30px, auto, 30px, auto);
+        border-radius: 4px;
+        background-color: $gray;
+        h2{
+            @extend %h2-title;
+        }
+        p{
+            text-align: left;
+        }
+    }
+    // footer{
+    //     position:fixed;
+    //     bottom: 0;
+    // }
+}
+/*# sourceURL=base/MODULE/cookies/_cookies.scss */

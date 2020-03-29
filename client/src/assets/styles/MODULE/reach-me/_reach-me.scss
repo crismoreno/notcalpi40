@@ -1,0 +1,74 @@
+body.reach-me{
+    .connections-container{
+        width: 400px;
+        background-color: $red;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        margin: 30px auto 0 auto !important;
+        @include padding (15px, 15px, 15px, 15px);
+        a{
+            background-color: white;
+            color: $red;
+            @include padding (7px, 10px, 7px, 10px);
+            border-radius: 4px;
+            @include margin (5px, 5px, 5px, 5px);
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            min-width: 170px;
+            text-align: center;
+        }
+    }
+    #invisible-recaptcha-form{
+        background-color: $gray;
+        @include padding (15px, 15px, 15px, 15px);
+        @include margin (0, auto, 50px, auto);
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 400px;
+        h2{
+            text-transform: uppercase;
+            @include font-style(16px, $red, 400, 35px, 0.5px, left);
+            font-family: $sourcesans;
+        }
+        .grecaptcha-badge{
+            margin: 0 auto 15px auto;
+        }
+        #submit-button{
+            width: 100%;
+            background-color: $red;
+            border-radius: 4px;
+            @include padding (0, 10px, 0, 10px);
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            height: 40px;
+        }
+        #submit-button.disabled{
+            pointer-events: none;
+            opacity: .5;
+        }
+        #submit-button:hover{
+            background-color: $dark-red;
+        }
+        .feedback-message{
+            @include margin (15px, auto, 0, auto);
+            @include padding (0, 0, 0, 0);
+            width: 100%;
+            p{
+                margin: 0;
+                font-family: $sourcesans;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px){
+    #invisible-recaptcha-form{
+        @include margin (30px, auto, 0, auto);
+    }
+    .feedback-message, #invisible-recaptcha-form, .connections-container{
+        width: 90% !important;
+    }
+}
+/*# sourceURL=base/MODULE/reach-me/_reach-me.scss */
