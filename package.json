@@ -4,7 +4,7 @@
   "description": "Personal full-stack portfolio platform made by Cristina Moreno",
   "main": "index.js",
   "scripts": {
-	"start": "node server/index.js",
+	"postinstall": "node server/index.js",
 	"dev": "nodemon server/index.js"
   },
   "keywords": [],
