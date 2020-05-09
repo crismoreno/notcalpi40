@@ -1,148 +1,154 @@
-  //COLOURS
-  $red: #FF1744;
-  $primary-colour: #FF1744;
-  $secondary-colour: #A50026;
-  $dark-red: #A50026;
-  $gray: #E8ECEF;
-  
-  // TYPOGRAPHY
-  //PRODUCT SANS
-  $sourcesans: 'Source Sans Pro', sans-serif;
-  $robotomono: 'Roboto Mono', monospace;
+//COLOURS
+$red: #ff1744;
+$primary-colour: #ff1744;
+$secondary-colour: #a50026;
+$dark-red: #a50026;
+$gray: #e8ecef;
 
-  $extralight: 200;
-  $extralightitalic: 200i;
+// TYPOGRAPHY
+//PRODUCT SANS
+$sourcesans: "Source Sans Pro", sans-serif;
+$robotomono: "Roboto Mono", monospace;
 
-  $light: 300;
-  $lightitalic: 300i;
+$extralight: 200;
+$extralightitalic: 200i;
 
-  $regular: 400;
-  $regularitalic: 400i;
+$light: 300;
+$lightitalic: 300i;
 
-  $semibold: 500;
-  $semibolditalic: 500i;
+$regular: 400;
+$regularitalic: 400i;
 
-  $bold: 600;
-  $bolditalic: 600i;
+$semibold: 500;
+$semibolditalic: 500i;
 
-  $black: 700;
-  $blackitalic: 700i;
+$bold: 600;
+$bolditalic: 600i;
 
-  
-  @mixin font-style($size: false, $colour: false, $weight: false,  $lh: false, $ls: false, $ta: false) {
-    @if $size { font-size: $size; }
-    @if $colour { color: $colour; }
-    @if $weight { font-weight: $weight; }
-    @if $lh { line-height: $lh; }
-    @if $ls { letter-spacing: $ls; }
-    @if $ta { text-align: $ta; }
+$black: 700;
+$blackitalic: 700i;
+
+@mixin font-style(
+  $size: false,
+  $colour: false,
+  $weight: false,
+  $lh: false,
+  $ls: false,
+  $ta: false
+) {
+  @if $size {
+    font-size: $size;
   }
-  
-  //BOOTSTRAP BREAKPOINTS
-  $breakpoints: (
-    xs: 576px,
-    sm: 768px,
-    md: 992px,
-    lg: 1200px
-  );
-  
-  // Respond above.
-  @mixin respond-above($breakpoint) {
-  
-    // If the breakpoint exists in the map.
-    @if map-has-key($breakpoints, $breakpoint) {
-  
-      // Get the breakpoint value.
-      $breakpoint-value: map-get($breakpoints, $breakpoint);
-  
-      // Write the media query.
-      @media (min-width: $breakpoint-value) {
-        @content;
-      }
-  
-    // If the breakpoint doesn't exist in the map.
-    } @else {
-  
-      // Log a warning.
-      @warn 'Invalid breakpoint: #{$breakpoint}.';
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $ls {
+    letter-spacing: $ls;
+  }
+  @if $ta {
+    text-align: $ta;
+  }
+}
+
+//BOOTSTRAP BREAKPOINTS
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+);
+
+// Respond above.
+@mixin respond-above($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
     }
-  }
-  
-  
-  @mixin respond-below($breakpoint) {
-  
-    // If the breakpoint exists in the map.
-    @if map-has-key($breakpoints, $breakpoint) {
-  
-      // Get the breakpoint value.
-      $breakpoint-value: map-get($breakpoints, $breakpoint);
-  
-      // Write the media query.
-      @media (max-width: ($breakpoint-value - 1)) {
-        @content;
-      }
-  
+
     // If the breakpoint doesn't exist in the map.
-    } @else {
-  
-      // Log a warning.
-      @warn 'Invalid breakpoint: #{$breakpoint}.';
-    }
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
-  
-  
-  @mixin respond-between($lower, $upper) {
-  
-    // If both the lower and upper breakpoints exist in the map.
-    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
-  
-      // Get the lower and upper breakpoints.
-      $lower-breakpoint: map-get($breakpoints, $lower);
-      $upper-breakpoint: map-get($breakpoints, $upper);
-  
-      // Write the media query.
-      @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
-        @content;
-      }
-  
+}
+
+@mixin respond-below($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin respond-between($lower, $upper) {
+  // If both the lower and upper breakpoints exist in the map.
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    // Get the lower and upper breakpoints.
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    // Write the media query.
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+
     // If one or both of the breakpoints don't exist.
-    } @else {
-  
-      // If lower breakpoint is invalid.
-      @if (map-has-key($breakpoints, $lower) == false) {
-  
-        // Log a warning.
-        @warn 'Your lower breakpoint was invalid: #{$lower}.';
-      }
-  
-      // If upper breakpoint is invalid.
-      @if (map-has-key($breakpoints, $upper) == false) {
-  
-        // Log a warning.
-        @warn 'Your upper breakpoint was invalid: #{$upper}.';
-      }
+  } @else {
+    // If lower breakpoint is invalid.
+    @if (map-has-key($breakpoints, $lower) == false) {
+      // Log a warning.
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+
+    // If upper breakpoint is invalid.
+    @if (map-has-key($breakpoints, $upper) == false) {
+      // Log a warning.
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
     }
   }
-  
-  // PADDING
-  @mixin padding($top, $right, $bottom, $left) {
-    padding-top: $top;
-    padding-right: $right;
-    padding-bottom: $bottom;
-    padding-left: $left;
-  }
-  // MARGIN
-  @mixin margin($top, $right, $bottom, $left) {
-    margin-top: $top;
-    margin-right: $right;
-    margin-bottom: $bottom;
-    margin-left: $left;
-  }
+}
 
+// PADDING
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+// MARGIN
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
 
-  //H2
-  %h2-title{
-    text-transform: uppercase;
-    @include font-style(16px, black, 400, 35px, 0.5px, center);
-    font-family: $sourcesans;
-  }
+//H2
+%h2-title {
+  text-transform: uppercase;
+  @include font-style(16px, black, 400, 35px, 0.5px, center);
+  font-family: $sourcesans;
+}
+
+/*# sourceURL=VARS */

@@ -14,7 +14,7 @@ function cssfy() {
       .src("./src/assets/styles/importer.scss")
       .pipe(sourcemaps.init())
       //       //2. pass that file through the sass compiler
-      .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+      .pipe(sass().on("error", sass.logError))
       .pipe(sourcemaps.write())
       //       //3. where do I save the compiled CSS?
       .pipe(gulp.dest("./src/assets/styles/"))
