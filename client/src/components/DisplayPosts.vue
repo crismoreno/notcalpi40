@@ -1,17 +1,19 @@
 <template>
   <div>
     <div class="card" v-for="(post, index) in posts" :key="index">
-      <!-- <a href="data.link" target="_blank">
+      <a :href="post.link" target="_blank">
         <div class="card-content d-flex flex-column">
           <div class="img-container">
-            <img class="project-image" src="data.thumbnail" />
+            <img class="project-image" :src="post.thumbnail" />
           </div>
-          <div class="project-details d-flex flex-column justify-content-center">
-            <p class="name">{{ data.title }}</p>
-            <p class="customer">{{post.pubDate}}</p>
+          <div
+            class="project-details d-flex flex-column justify-content-center"
+          >
+            <p class="name">{{ post.title }}</p>
+            <!-- <p class="customer">{{ post.pubDate }}</p> -->
           </div>
         </div>
-      </a>-->
+      </a>
     </div>
   </div>
 </template>
@@ -30,11 +32,11 @@ export default {
         .get(
           "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cristinamorenomedran"
         )
-        .then((res) => res.json())
+        // .then((res) => res.json())
         .then((data) => {
-          const res = data.items;
+          const res = data.data.items;
           const mediumData = res.filter((item) => item.categories.length > 0);
-          this.posts.push(mediumData);
+          this.posts = mediumData;
         });
     },
     shortenText(text, startingPoint, maxLength) {
