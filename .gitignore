@@ -4,3 +4,4 @@ node_modules
 .vscode
 /server/public
 *.sql
+.idea
