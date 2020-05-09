@@ -30,7 +30,7 @@ function watch() {
   //     server: { baseDir: "./" }
   // });
   gulp.watch("./src/assets/styles/**/*.scss", cssfy);
-  gulp.watch("./src/assets/styles/**/*.scss");
+  // gulp.watch("./src/assets/styles/**/*.scss");
 }
 
 exports.cssfy = cssfy;

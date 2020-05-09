@@ -9,20 +9,19 @@ nav.navbar {
     margin-left: 5px;
     text-transform: uppercase;
     color: white;
+    font-weight: $regular;
   }
   a {
-    color: white !important;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    // color: white !important;
+    // font-size: 16px;
+    // letter-spacing: 0.5px;
+    // text-transform: uppercase;
   }
   .highlight-menu-item {
     background-color: $secondary-colour;
     border-radius: 4px;
-    padding-top: 0;
-    padding-right: 10px;
-    padding-bottom: 0;
-    padding-left: 10px;
+    border-radius: 4px;
+    @include padding(0, 10px, 0, 10px);
   }
 }
 
