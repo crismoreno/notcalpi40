@@ -4,6 +4,8 @@ import Home from "../views/Home.vue";
 import AboutMe from "../views/AboutMe.vue";
 import PageNotFound from "../views/404.vue";
 import Blog from "../components/Blog.vue";
+import ContactForm from "../views/Contact.vue";
+import Portfolio from "../views/Portfolio.vue";
 
 Vue.use(VueRouter);
 
@@ -23,11 +25,21 @@ const routes = [
     name: "Blog",
     component: Blog,
   },
+  {
+    path: "/reach-me",
+    name: "ContactForm",
+    component: ContactForm,
+  },
+  {
+    path: "/portfolio",
+    name: "Portfolio",
+    component: Portfolio,
+  },
   { path: "*", component: PageNotFound },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   routes: routes,
 });
 

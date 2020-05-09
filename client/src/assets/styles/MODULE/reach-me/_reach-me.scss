@@ -1,4 +1,4 @@
-body.reach-me {
+.reach-me-container {
   .connections-container {
     width: 400px;
     background-color: $red;
@@ -18,7 +18,7 @@ body.reach-me {
       text-align: center;
     }
   }
-  #invisible-recaptcha-form {
+  #contact-form {
     background-color: $gray;
     @include padding(15px, 15px, 15px, 15px);
     @include margin(0, auto, 50px, auto);
