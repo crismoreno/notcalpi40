@@ -1,5 +1,5 @@
 <template>
-  <div class="about-me-container container">
+  <div class="about-me-container container main-container">
     <div class="jumbotron">
       <h1 class="display-4">Cristina Moreno Medran 🙋🏻</h1>
       <p class="lead">

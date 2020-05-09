@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-container">
     <nav class="navbar navbar-expand-lg">
       <router-link class="navbar-brand" to="/">
         <img height="30" src="../src/assets/img/white-logo.svg" />

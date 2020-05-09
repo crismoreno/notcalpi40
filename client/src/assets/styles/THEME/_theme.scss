@@ -67,7 +67,6 @@ footer {
   }
 }
 
-
 @include respond-below(md) {
   nav.navbar {
     .nav-item {
@@ -86,6 +85,14 @@ footer {
   }
 }
 
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
+.main-container {
+  flex-grow: 1;
+}
 
 /*# sourceURL=THEME */

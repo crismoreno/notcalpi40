@@ -1,5 +1,5 @@
 <template>
-  <div class="container not-found">
+  <div class="container not-found main-container">
     <h1 class="text-center">
       <span rol="img">⚠️</span> This is
       <span class="notcalpi-red" style="border-radius: 5px;">not</span> a 404
