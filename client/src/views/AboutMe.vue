@@ -510,11 +510,11 @@
             aria-controls="collapseDobcn"
           >
             <img
-              src="assets/img/icons/expand_more.svg"
+              src="../assets/img/icons/expand_more.svg"
               class="more-info-button-down"
             />
             <img
-              src="assets/img/icons/expand_less.svg"
+              src="../assets/img/icons/expand_less.svg"
               class="more-info-button-up d-none"
             />
             <strong>February 2018 · Octubre 2019</strong> Front-End developer at
@@ -542,11 +542,11 @@
             aria-controls="collapseNordic"
           >
             <img
-              src="assets/img/icons/expand_more.svg"
+              src="../assets/img/icons/expand_more.svg"
               class="more-info-button-down"
             />
             <img
-              src="assets/img/icons/expand_less.svg"
+              src="../assets/img/icons/expand_less.svg"
               class="more-info-button-up d-none"
             />
             <strong>Junio 2016 · Septiembre 2017</strong> SEM & SMM at

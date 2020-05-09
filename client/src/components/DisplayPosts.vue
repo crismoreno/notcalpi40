@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="card" v-for="(post, index) in posts" :key="index">
-      <p>{{post.title}}</p>
       <!-- <a href="data.link" target="_blank">
         <div class="card-content d-flex flex-column">
           <div class="img-container">
@@ -22,7 +21,7 @@ export default {
   name: "DisplayPosts",
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   methods: {
@@ -31,10 +30,10 @@ export default {
         .get(
           "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cristinamorenomedran"
         )
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           const res = data.items;
-          const mediumData = res.filter(item => item.categories.length > 0);
+          const mediumData = res.filter((item) => item.categories.length > 0);
           this.posts.push(mediumData);
         });
     },
@@ -42,10 +41,10 @@ export default {
       return text.length > maxLength
         ? text.slice(startingPoint, maxLength)
         : text;
-    }
+    },
   },
   beforeMount() {
     this.getBlogPosts();
-  }
+  },
 };
 </script>
