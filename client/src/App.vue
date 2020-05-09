@@ -2,13 +2,14 @@
 	<div>
 		<nav class="navbar navbar-expand-lg">
 			<a class="navbar-brand" href="/"><img height="30" src="../src/assets/img/white-logo.svg"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-0">
-					<li class="nav-item">
+					<li class="nav-item ">
 						<a class="nav-link" href="/portfolio">Portfolio</a>
 					</li>
 					<li class="nav-item">

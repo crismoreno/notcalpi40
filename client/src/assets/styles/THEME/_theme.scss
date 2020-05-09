@@ -11,15 +11,11 @@ nav.navbar {
     color: white;
     font-weight: $regular;
   }
-  a {
-    // color: white !important;
-    // font-size: 16px;
-    // letter-spacing: 0.5px;
-    // text-transform: uppercase;
+  .nav-link {
+    padding: 0 !important;
   }
   .highlight-menu-item {
     background-color: $secondary-colour;
-    border-radius: 4px;
     border-radius: 4px;
     @include padding(0, 10px, 0, 10px);
   }
@@ -32,8 +28,6 @@ footer {
   display: table !important;
   bottom: 0;
   width: 100%;
-  // z-index: 3;
-  // position: fixed;
   > div {
     @include padding(10px, 0, 10px, 0);
     @include font-style(16px, white, false, false, false, false);
@@ -72,5 +66,26 @@ footer {
     text-decoration: underline;
   }
 }
+
+
+@include respond-below(md) {
+  nav.navbar {
+    .nav-item {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .nav-item:not(:last-child) {
+      border-bottom: 1px solid white;
+    }
+
+    .highlight-menu-item {
+      background-color: transparent !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+
 
 /*# sourceURL=THEME */
