@@ -1,6 +1,6 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
@@ -8,9 +8,22 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const contents = require('./routes/contents');
+// app.use((req, res, next) => {
+//   res.set({
+//     "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Headers":
+//       "Origin, X-Requested-With, Content-Type, Accept",
+//     "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+//     "Content-Security-Policy": "default-src *",
+//     "X-Content-Security-Policy": "default-src *",
+//     "X-WebKit-CSP": "default-src *",
+//   });
+//   next();
+// });
 
-app.use('/api', contents)
+const contents = require("./routes/contents");
+
+app.use("/api", contents);
 
 const db = require("./models");
 
@@ -21,11 +34,11 @@ db.sequelize.sync();
 // });
 
 //Handdle Production
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(__dirname + '/public/'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(__dirname + "/public/"));
 
-	//Handle SPA
-	app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+  //Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"));
 }
 
 const port = process.env.PORT || 5000;

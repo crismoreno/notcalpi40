@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import AboutMe from "../views/AboutMe.vue";
+import PageNotFound from "../views/404.vue";
 
 Vue.use(VueRouter);
 
@@ -16,10 +17,11 @@ const routes = [
     name: "AboutMe",
     component: AboutMe,
   },
+  { path: "*", component: PageNotFound },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // mode: "history",
   routes: routes,
 });
 
