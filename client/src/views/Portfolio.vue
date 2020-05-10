@@ -1,5 +1,5 @@
 <template>
-  <DisplayProjects class="display-projects"></DisplayProjects>
+  <DisplayProjects class="display-projects main-container"></DisplayProjects>
 </template>
 <script>
 import Vue from "vue";

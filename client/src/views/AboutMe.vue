@@ -8,19 +8,15 @@
       </p>
       <hr class="my-4" />
       <p>Have a look at my CV and don't hesitate to get in touch!</p>
-      <div
-        class="d-flex flex-column flex-xl-row flex-lg-row flex-md-row flex-sm-row "
-      >
+      <div class="d-flex flex-column flex-xl-row flex-lg-row flex-md-row flex-sm-row">
         <a
           role="button"
           href="https://drive.google.com/file/d/1VY5ZXG29Y2iagTz-6_fqbdENp9ppPIYo/view?usp=sharing"
-          >DOWNLOAD MY CV</a
-        >
+        >DOWNLOAD MY CV</a>
         <a
           role="button"
           href="https://drive.google.com/drive/folders/145Jw5lp1VuNUGamjwxWtCyeujZOj1VPt?usp=sharing"
-          >DOWNLOAD MY CERTIFICATES</a
-        >
+        >DOWNLOAD MY CERTIFICATES</a>
       </div>
     </div>
 
@@ -32,9 +28,7 @@
 
     <div class="studies">
       <!-- <h1>Studies</h1> -->
-      <div
-        class="studies-container container d-flex justify-content-center flex-wrap"
-      >
+      <div class="studies-container container d-flex justify-content-center flex-wrap">
         <div class="assembler d-flex flex-column justify-content-center">
           <a href="https://www.assemblerschool.com/" target="_blank">
             <div class="card">
@@ -51,9 +45,11 @@
               </div>
             </div>
           </a>
-          <a href="/projects/assembler" class="projects-link" disabled
-            >Check my projects at Assembler</a
-          >
+          <a
+            href="/projects/assembler"
+            class="projects-link"
+            disabled
+          >Check my projects at Assembler</a>
         </div>
         <div class="ironhack d-flex flex-column justify-content-center">
           <a href="https://www.ironhack.com/es" target="_blank">
@@ -71,18 +67,12 @@
               </div>
             </div>
           </a>
-          <a href="/projects/ironhack" class="projects-link"
-            >Check my projects at Ironhack</a
-          >
+          <a href="/projects/ironhack" class="projects-link">Check my projects at Ironhack</a>
         </div>
         <div class="esdi d-flex flex-column justify-content-center">
           <a href="https://esdi.es/" target="_blank">
             <div class="card">
-              <img
-                class="card-img-top"
-                src="../assets/img/cv/esdi.png"
-                alt="Design at ESDI"
-              />
+              <img class="card-img-top" src="../assets/img/cv/esdi.png" alt="Design at ESDI" />
               <div class="card-body">
                 <p class="card-text">
                   <strong>2011 - 2015</strong> · Bachelor’s degree in Design
@@ -91,14 +81,10 @@
               </div>
             </div>
           </a>
-          <a href="/projects/esdi" class="projects-link"
-            >Check my projects at ESDI</a
-          >
+          <a href="/projects/esdi" class="projects-link">Check my projects at ESDI</a>
         </div>
       </div>
-      <div
-        class="studies-container container d-flex justify-content-center flex-wrap"
-      >
+      <div class="studies-container container d-flex justify-content-center flex-wrap">
         <a href="https://reactgraphql.academy/" target="_blank">
           <div class="card">
             <img
@@ -116,11 +102,7 @@
         </a>
         <a href="http://www.seeway.net/es" target="_blank">
           <div class="card">
-            <img
-              class="card-img-top"
-              src="../assets/img/cv/seeway.png"
-              alt="HTML & CSS at Seeway"
-            />
+            <img class="card-img-top" src="../assets/img/cv/seeway.png" alt="HTML & CSS at Seeway" />
             <div class="card-body">
               <p class="card-text">
                 <strong>2016</strong> · HTML & CSS Summer Workshop. Designed to
@@ -147,13 +129,9 @@
       </div>
     </div>
 
-    <div
-      class="software-container container d-flex justify-content-center flex-wrap"
-    >
+    <div class="software-container container d-flex justify-content-center flex-wrap">
       <div class="card">
-        <div class="card-header">
-          ADOBE SUITE
-        </div>
+        <div class="card-header">ADOBE SUITE</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Photoshop</li>
           <li class="list-group-item">Illustrator</li>
@@ -163,9 +141,7 @@
         </ul>
       </div>
       <div class="card">
-        <div class="card-header">
-          MANAGEMENT TOOLS
-        </div>
+        <div class="card-header">MANAGEMENT TOOLS</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Teamwork</li>
           <li class="list-group-item">Trello</li>
@@ -173,9 +149,7 @@
         </ul>
       </div>
       <div class="card">
-        <div class="card-header">
-          ONLINE MARKETING TOOLS
-        </div>
+        <div class="card-header">ONLINE MARKETING TOOLS</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Google Ads</li>
           <li class="list-group-item">Google Analytics</li>
@@ -213,7 +187,7 @@
           <li class="list-group-item">2016 · Driving license (B) and own car 🚘</li>
         </ul>
       </div>
-    </div> -->
+    </div>-->
 
     <div class="code-tools mt-5">
       <div class="html code-tool">
@@ -473,9 +447,7 @@
       <div class="git code-tool">
         <div class="d-flex justify-content-between">
           <h2>GIT</h2>
-          <a href="https://github.com/crismoreno" target="_blank"
-            >Go to GITHUB</a
-          >
+          <a href="https://github.com/crismoreno" target="_blank">Go to GITHUB</a>
         </div>
         <div class="progress">
           <div
@@ -494,11 +466,11 @@
       <h2>Work Experience</h2>
       <ul>
         <li>
-          <span class="highlight"
-            ><strong>Octubre 2019 · Currently</strong>
-            <a href="https://www.assemblerschool.com/"> Assembler School</a>
-            Full-Stack web development student.</span
-          >
+          <span class="highlight">
+            <strong>Octubre 2019 · Currently</strong>
+            <a href="https://www.assemblerschool.com/">Assembler School</a>
+            Full-Stack web development student.
+          </span>
         </li>
         <li>
           <button
@@ -509,14 +481,8 @@
             aria-expanded="false"
             aria-controls="collapseDobcn"
           >
-            <img
-              src="../assets/img/icons/expand_more.svg"
-              class="more-info-button-down"
-            />
-            <img
-              src="../assets/img/icons/expand_less.svg"
-              class="more-info-button-up d-none"
-            />
+            <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
+            <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
             <strong>February 2018 · Octubre 2019</strong> Front-End developer at
             <a href="https://www.dobcn.com/" target="_blank">dobcn</a>.
           </button>
@@ -528,8 +494,9 @@
             have developed. This pushed me to learn PHP, CMS (Wordpress and
             Magento) while involved me in real world projects. Go check my
             Projects developed as part of the team at dobcn.
-
-            <a href="projects/dobcn">Projects dobcn</a>
+            <a
+              href="projects/dobcn"
+            >Projects dobcn</a>
           </div>
         </div>
         <li>
@@ -541,18 +508,10 @@
             aria-expanded="false"
             aria-controls="collapseNordic"
           >
-            <img
-              src="../assets/img/icons/expand_more.svg"
-              class="more-info-button-down"
-            />
-            <img
-              src="../assets/img/icons/expand_less.svg"
-              class="more-info-button-up d-none"
-            />
+            <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
+            <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
             <strong>Junio 2016 · Septiembre 2017</strong> SEM & SMM at
-            <a target="_blank" href="https://nordicwebsites.com"
-              >Nordic Websites</a
-            >.
+            <a target="_blank" href="https://nordicwebsites.com">Nordic Websites</a>.
           </button>
         </li>
 
@@ -562,8 +521,9 @@
             projects as SEM and SMM while I had the chance to go through several
             marketing related trainings. (Google Analytics technical specialist
             in Google Analytics at Mide y Vencerás.)
-
-            <a href="projects/nordic">Projects Nordic</a>
+            <a
+              href="projects/nordic"
+            >Projects Nordic</a>
           </div>
         </div>
 
@@ -574,14 +534,14 @@
 
         <li>
           <strong>2013 · 2017</strong> Design and comunication at
-          <a target="_blank" href="https://www.naturalkids.cat/">naturalKIDS</a
-          >.
+          <a
+            target="_blank"
+            href="https://www.naturalkids.cat/"
+          >naturalKIDS</a>.
         </li>
         <li>
           <strong>September 2015 · March 2016</strong> Designer at
-          <a target="_blank" href="https://www.sieteysiete.com/"
-            >SieteySiete Media</a
-          >.
+          <a target="_blank" href="https://www.sieteysiete.com/">SieteySiete Media</a>.
         </li>
         <li>
           <strong>2013 · 2015</strong> Comunication, management and design at
@@ -589,30 +549,36 @@
         </li>
         <li>
           <strong>2016 · 2017</strong> Design & comunication at
-          <a target="_blank" href="https://comacsl.com/"
-            >COMAC Esports i Lleure S.L</a
-          >.
+          <a
+            target="_blank"
+            href="https://comacsl.com/"
+          >COMAC Esports i Lleure S.L</a>.
         </li>
         <li>
           <strong>2013 · 2014</strong> Head of the design department and
           comunication at
-          <a target="_blank" href="http://medran.cat/">Cansaladeries Medrán.</a>
+          <a
+            target="_blank"
+            href="http://medran.cat/"
+          >Cansaladeries Medrán.</a>
         </li>
         <li>
           <strong>2015</strong> Relationship Management at Open Espanya de Golf.
         </li>
         <li>
           <strong>2014</strong> Internship at
-          <a target="_blank" href="http://www.dogwood.es/"
-            >Dowgood brand partner agency</a
-          >'s Design dept.
+          <a
+            target="_blank"
+            href="http://www.dogwood.es/"
+          >Dowgood brand partner agency</a>'s Design dept.
         </li>
         <li>
           <strong>2014</strong> Recording, production and edition of a
           promotional teaser for
-          <a target="_blank" href="http://www.nataciosabadell.com/"
-            >Club de Natació de Sabadell</a
-          >
+          <a
+            target="_blank"
+            href="http://www.nataciosabadell.com/"
+          >Club de Natació de Sabadell</a>
           (Freelance project).
         </li>
         <li>
@@ -624,15 +590,12 @@
           <a
             target="_blank"
             href="http://www.lavanguardia.com/de-moda/20140526/54408360842/intercolor-acuerda-en-barcelona-los-colores-de-moda-para-el-verano-de-2016.html"
-            >ESDI Color_Lab</a
-          >
+          >ESDI Color_Lab</a>
           collaborator in the Intercolor Project.
         </li>
         <li>
           <strong>2013 · 2014</strong> Project
-          <a target="_blank" href="http://www.esdi.es/content/pdf/gala279.pdf"
-            >GALA 279</a
-          >: Intercity cargo bike. As a collaborator in charge of design
+          <a target="_blank" href="http://www.esdi.es/content/pdf/gala279.pdf">GALA 279</a>: Intercity cargo bike. As a collaborator in charge of design
           management, comunication, partner search and translation.
         </li>
       </ul>
@@ -649,14 +612,11 @@
         </li>
         <li>
           <strong>2010 · 2013</strong> Clerk and TA at
-          <a target="_blank" href="https://www.ihes.comInternational"
-            >House Sabadell</a
-          >.
+          <a target="_blank" href="https://www.ihes.comInternational">House Sabadell</a>.
         </li>
         <li>
           <strong>2013 · 2017</strong> English teacher at
-          <a target="_blank" href="https://www.naturalkids.cat/">NaturalKids</a
-          >.
+          <a target="_blank" href="https://www.naturalkids.cat/">NaturalKids</a>.
         </li>
         <li>
           <strong>2013</strong> Volunteer at
@@ -671,45 +631,39 @@
           <a
             target="_blank"
             href="https://www.elpuntavui.cat/economia/article/18-economia/1690337-el-talent-digital-mes-buscat.html"
-            ><strong>2019 | El Punt Avui</strong></a
           >
+            <strong>2019 | El Punt Avui</strong>
+          </a>
         </li>
       </ul>
       <!-- <iframe src="https://giphy.com/embed/xIJLgO6rizUJi" width="480" height="367" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/alice-in-wonderland-thank-you-xIJLgO6rizUJi"></a></p> -->
     </div>
     <div class="get-to-know-me">
       <h2>Get to know me!</h2>
-      <div
-        class="connections-container container d-flex flex-wrap justify-content-center"
-      >
-        <a href="https://calendly.com/cristinamoreno" target="_blank"
-          >Schedule a meeting</a
-        >
+      <div class="connections-container container d-flex flex-wrap justify-content-center">
+        <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
         <!-- <a [routerLink]="['/reach-me']">Drop me a line</a> -->
         <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
-        <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank"
-          >Instagram</a
-        >
-        <a href="https://www.linkedin.com/in/morenomedran/" target="_blank"
-          >Linkedin</a
-        >
-        <a href="https://medium.com/@cristinamorenomedran" target="_blank"
-          >Medium</a
-        >
+        <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/morenomedran/" target="_blank">Linkedin</a>
+        <a href="https://medium.com/@cristinamorenomedran" target="_blank">Medium</a>
         <a href="https://github.com/crismoreno" target="_blank">Github</a>
       </div>
     </div>
     <div class="medium-fetched">
-      <h2 class="medium-fetched-title text-center">Check out my Blog!</h2>
+      <BlogComponent class="display-projects d-flex flex-row flex-wrap justify-content-center"></BlogComponent>
       <!-- <app-display-posts
         class="display-posts d-flex flex-row flex-wrap justify-content-center mb-5"
-      ></app-display-posts> -->
+      ></app-display-posts>-->
     </div>
   </div>
 </template>
 <script>
+import BlogComponent from "../components/Blog.vue";
 export default {
   name: "AboutMe",
-  components: {},
+  components: {
+    BlogComponent
+  }
 };
 </script>

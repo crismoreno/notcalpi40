@@ -20,11 +20,11 @@
     @include font-style(16px, black, 400, 35px, 0.5px, left);
     font-family: $sourcesans;
   }
-  a {
-    text-transform: uppercase;
-    @include font-style(16px, $red, 400, 35px, 0.5px, left);
-    font-family: $sourcesans;
-  }
+  // a {
+  //   text-transform: uppercase;
+  //   @include font-style(16px, $red, 400, 35px, 0.5px, left);
+  //   font-family: $sourcesans;
+  // }
 }
 
 @include respond-below(sm) {
@@ -43,13 +43,17 @@
     h2 {
       text-align: center;
     }
-    a.full-portfolio-button {
-      margin: 0 auto;
-      width: 92%;
-      position: absolute;
-      text-align: center;
-    }
   }
+}
+
+a.checkout-link-button {
+  margin: 0 auto;
+  width: 92%;
+  text-transform: uppercase;
+  @include font-style(16px, $red, 400, 35px, 0.5px, left);
+  font-family: $sourcesans;
+  // position: absolute;
+  // text-align: center;
 }
 
 /*# sourceURL=MODULE/homepage/_my-dev-projects.scss */

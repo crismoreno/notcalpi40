@@ -1,5 +1,5 @@
 <template>
-  <div class="reach-me-container container d-flex flex-wrap flex-column main-conotainer">
+  <div class="reach-me-container container d-flex flex-wrap flex-column main-container">
     <div class="connections-container container d-flex flex-wrap justify-content-center">
       <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
       <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
