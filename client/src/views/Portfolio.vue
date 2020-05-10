@@ -1,5 +1,7 @@
 <template>
-  <DisplayProjects class="display-projects main-container"></DisplayProjects>
+  <DisplayProjects
+    class="main-container display-projects d-flex flex-row flex-wrap justify-content-center"
+  ></DisplayProjects>
 </template>
 <script>
 import Vue from "vue";
