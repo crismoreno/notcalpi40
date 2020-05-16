@@ -40,12 +40,12 @@ module.exports = (sequelize, Sequelize) => {
     video: {
       type: Sequelize.STRING,
     },
-    tags: {
-      type: Sequelize.STRING,
-    },
-    coding_lang: {
-      type: Sequelize.STRING,
-    },
+    // tags: {
+    //   type: Sequelize.STRING,
+    // },
+    // coding_lang: {
+    //   type: Sequelize.STRING,
+    // },
     is_featured: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
