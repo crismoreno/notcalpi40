@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <ul>
     <li class="card" v-for="(project, index) in projects" :key="index">
       <router-link :to="'/project/' + project.id">
         <div class="card-content d-flex flex-column">
@@ -17,7 +17,7 @@
         </div>
       </router-link>
     </li>
-  </div>
+  </ul>
 </template>
 <script>
 import Vue from "vue";

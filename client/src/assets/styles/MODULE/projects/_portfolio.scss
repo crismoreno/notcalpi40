@@ -1,0 +1,44 @@
+.filtering-projects {
+  button,
+  button:hover {
+    text-decoration: none;
+    font-family: $sourcesans;
+    @include font-style(16px, false, $semibold, 35px, false, left);
+    text-transform: uppercase;
+    color: $dark-red;
+  }
+  .card {
+    width: 100%;
+  }
+  .card input {
+    margin-right: 10px;
+  }
+  .card label {
+    text-transform: capitalize;
+    margin: 0;
+  }
+  .card-header {
+    padding: 2px;
+  }
+}
+@include respond-above(md) {
+  .filtering-projects {
+    width: 300px;
+    padding: 15px;
+  }
+  .display-projects {
+    padding: 15px;
+    width: calc(100% - 300px);
+  }
+}
+
+@include respond-below(md) {
+  .filtering-projects {
+    // width: 100%;
+    padding: 15px;
+  }
+  .display-projects {
+    width: 100%;
+  }
+}
+/*# sourceURL=MODULE/projects/_portfolio.scss */
