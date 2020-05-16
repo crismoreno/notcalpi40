@@ -1,6 +1,10 @@
 const express = require("express");
 const projectsController = require("../controllers/projects.controller.js");
 
+const filteringTags = require("../controllers/filteringTags.controller.js");
+const filteringMadeAts = require("../controllers/filteringMadeAts.controller.js");
+const filteringCodingLang = require("../controllers/filteringCodingLang.controller.js");
+
 const router = express.Router();
 
 //Retreiving all showable projects
@@ -14,20 +18,20 @@ router.get("/project/:id", projectsController.getById);
 
 // Find projects by tags
 //http://localhost:5000/api/tags?tags=1,2
-router.get("/tags", projectsController.getByTag);
+router.get("/tags", filteringTags.getByTag);
 //Get a list with all possible tags
-router.get("/tagslist", projectsController.getTagsList);
+router.get("/tagslist", filteringTags.getTagsList);
 
 // Find projects by codingLangs
 //http://localhost:5000/api/codinglangs?codinglangs=1,2
-router.get("/codinglangs", projectsController.getByCodingLang);
+router.get("/codinglangs", filteringCodingLang.getByCodingLang);
 //Get a list with all possible codingLangs
-router.get("/codinglangslist", projectsController.getCodingLangsList);
+router.get("/codinglangslist", filteringCodingLang.getCodingLangsList);
 
 //Get a list with all possible madeats
 //http://localhost:5000/api/madeat?madeat=1,2
-router.get("/madeat", projectsController.getByMadeAts);
+router.get("/madeat", filteringMadeAts.getByMadeAts);
 //Get a list with all possible madeAts
-router.get("/madeatslist", projectsController.getmadeAtsList);
+router.get("/madeatslist", filteringMadeAts.getmadeAtsList);
 
 module.exports = router;
