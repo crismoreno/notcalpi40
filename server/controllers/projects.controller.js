@@ -1,13 +1,15 @@
 const db = require("../models");
 const Projects = db.projects;
-const Op = db.Sequelize.Op;
+// const ProjectTags = db.projectTags;
+const Tags = db.tags;
+// const Op = db.Sequelize.Op;
 const Sequelize = db.sequelize;
 const { QueryTypes } = require("sequelize");
 
-// Retrieve all Projects from the database.
+// Retrieve all showable projects
 exports.getAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+  // const title = req.query.title;
+  // var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
   Projects.findAll({ where: { show: true } })
     .then((data) => {
@@ -21,7 +23,7 @@ exports.getAll = (req, res) => {
     });
 };
 
-// Find a single Project with an id
+// Find a single projectby ID
 exports.getById = (req, res) => {
   const idToFetch = req.params.id;
   Projects.findAll({ where: { id: idToFetch } })
@@ -35,7 +37,7 @@ exports.getById = (req, res) => {
     });
 };
 
-// Find all featured Projects
+// Find all featured projects
 exports.getAllFeatured = (req, res) => {
   Projects.findAll({ where: { is_featured: true } })
     .then((data) => {
@@ -50,122 +52,104 @@ exports.getAllFeatured = (req, res) => {
     });
 };
 
-// Find all projects by tags
+// Find projects by tags
 exports.getByTag = (req, res) => {
-  let tagsToFetch = req.query.tags;
-  tagsToFetch = tagsToFetch.split(",");
-
-  // Sequelize.query(`SELECT * FROM projects WHERE tags IN('%${tagsToFetch}%')`, {
-  //   type: QueryTypes.SELECT,
-  // })
-  //   .then((data) => {
-  //     res.send(data);
-  //   })
-  //   .catch((err) => {
-  //     res.status(500).send({
-  //       message:
-  //         err.message ||
-  //         "Some error occurred while retrieving featured projects.",
-  //     });
-  //   });
-
-  Projects.findAll({})
-    .then((data) => {
-      const elementsToReturn = [];
-      let checker = (arr, target) => target.every((v) => arr.includes(v));
-
-      data.forEach((project) => {
-        const check = checker(project.tags, tagsToFetch);
-        if (check) {
-          elementsToReturn.push(project);
-        }
+  let tagsToFetch;
+  if (req.query.tags) {
+    tagsToFetch = req.query.tags;
+    tagsToFetch = tagsToFetch.split(",");
+    const results = Sequelize.query(
+      `SELECT p.id, p.title, p.customer, GROUP_CONCAT(pt.tagId) as tags
+			FROM projects p
+			LEFT JOIN project_tags as pt ON p.id = pt.projectId LEFT JOIN tags t ON t.id=pt.tagId AND t.id IN (${tagsToFetch})
+			GROUP BY p.id,p.title
+			HAVING COUNT(pt.tagId) >= COUNT(t.id) AND COUNT(t.id) = ${tagsToFetch.length}`,
+      {
+        type: QueryTypes.SELECT,
+        raw: true,
+        plain: false,
+        logging: console.log,
+        nest: true,
+      }
+    )
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message ||
+            "Some error occurred while retrieving featured projects.",
+        });
       });
-
-      res.send(elementsToReturn);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message ||
-          "Some error occurred while retrieving featured projects.",
+  } else {
+    Projects.findAll({ where: { show: true } })
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving projects.",
+        });
       });
-    });
+  }
 };
 
-// Find all projects by filterplace
-exports.getByFilterPlace = (req, res) => {
-  let placeToFetch = req.query.places;
-
-  Projects.findAll({ where: { placefilter: placeToFetch } })
+//Get a list with all possible tags
+exports.getTagsList = (req, res) => {
+  Tags.findAll()
     .then((data) => {
       res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
         message:
-          err.message ||
-          "Some error occurred while retrieving featured projects.",
+          err.message || "Some error occurred while retrieving projects.",
       });
     });
 };
 
-// exports.getAllPlaces = async (req, res) => {
-//   const places = await Sequelize.query(
-//     "SELECT DISTINCT `placefilter` FROM `projects`",
-//     { type: QueryTypes.SELECT }
-//   );
-//   const array = places.map((place) => {
-//     return place.placefilter;
-//   });
-//   res.send(array);
-// };
-
-// exports.getAllTags = async (req, res) => {
-//   Sequelize.query("SELECT DISTINCT `tags` FROM `projects`", {
-//     type: QueryTypes.SELECT,
-//   })
-//     .then((data) => {
-//       let array = data.map((tag) => {
-//         return tag.tags;
-//       });
-//       array.filter((item, index) => {
-//         return array.indexOf(item) === index;
-//       });
-//       res.send(array);
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message:
-//           err.message ||
-//           "Some error occurred while retrieving featured projects.",
-//       });
-//     });
-// };
-
-// Find all projects by tags
+// Find projects by codingLangs
 exports.getByCodingLang = (req, res) => {
-  let tagsToFetch = req.query.code;
-  tagsToFetch = tagsToFetch.split(",");
-
-  Projects.findAll({})
-    .then((data) => {
-      const elementsToReturn = [];
-      let checker = (arr, target) => target.every((v) => arr.includes(v));
-
-      data.forEach((project) => {
-        const check = checker(project.coding_lang, tagsToFetch);
-        if (check) {
-          elementsToReturn.push(project);
-        }
+  let codingLangsToFetch;
+  if (req.query.codinglangs) {
+    codingLangsToFetch = req.query.codinglangs;
+    codingLangsToFetch = codingLangsToFetch.split(",");
+    const results = Sequelize.query(
+      `SELECT p.id, p.title, p.customer, GROUP_CONCAT(pcl.codinglangId) as codinglangs
+			FROM projects p
+			LEFT JOIN project_codingLangs as pcl ON p.id = pcl.projectId LEFT JOIN codinglangs cl ON cl.id=pcl.codinglangId AND cl.id IN (${codingLangsToFetch})
+			GROUP BY p.id,p.title
+			HAVING COUNT(pcl.codinglangId) >= COUNT(cl.id) AND COUNT(cl.id) = ${codingLangsToFetch.length}`,
+      {
+        type: QueryTypes.SELECT,
+        raw: true,
+        plain: false,
+        logging: console.log,
+        nest: true,
+      }
+    )
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message ||
+            "Some error occurred while retrieving featured projects.",
+        });
       });
-
-      res.send(elementsToReturn);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message ||
-          "Some error occurred while retrieving featured projects.",
+  } else {
+    Projects.findAll({ where: { show: true } })
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving projects.",
+        });
       });
-    });
+  }
 };
