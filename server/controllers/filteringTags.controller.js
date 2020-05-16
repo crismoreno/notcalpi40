@@ -2,6 +2,7 @@ const db = require("../models");
 const Projects = db.projects;
 const Tags = db.tags;
 const { QueryTypes } = require("sequelize");
+const Sequelize = db.sequelize;
 
 // Find projects by tags
 exports.getByTag = (req, res) => {

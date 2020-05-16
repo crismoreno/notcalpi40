@@ -2,6 +2,7 @@ const db = require("../models");
 const Projects = db.projects;
 const madeAt = db.madeAt;
 const { QueryTypes } = require("sequelize");
+const Sequelize = db.sequelize;
 
 // Find projects by madeats
 exports.getByMadeAts = (req, res) => {

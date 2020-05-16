@@ -2,6 +2,7 @@ const db = require("../models");
 const Projects = db.projects;
 const CodingLangs = db.codingLangs;
 const { QueryTypes } = require("sequelize");
+const Sequelize = db.sequelize;
 
 // Find projects by codingLangs
 exports.getByCodingLang = (req, res) => {

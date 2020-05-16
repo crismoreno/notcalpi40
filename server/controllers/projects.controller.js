@@ -88,7 +88,7 @@ exports.getTagsById = (req, res) => {
 // Get all codingLangs related to single Project
 exports.getCodingLangsById = (req, res) => {
   const idToFetch = req.params.id;
-  CodingLangs.findAll({
+  ProjectCodingLangs.findAll({
     where: { projectId: idToFetch },
     include: [{ model: CodingLangs }],
   })
