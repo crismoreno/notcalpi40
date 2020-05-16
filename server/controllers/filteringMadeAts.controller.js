@@ -34,7 +34,13 @@ exports.getByMadeAts = (req, res) => {
         });
       });
   } else {
-    Projects.findAll({ where: { show: true } })
+    Projects.findAll({
+      where: { show: true },
+      order: [
+        // Will escape title and validate DESC against a list of valid direction parameters
+        ["orderby", "ASC"],
+      ],
+    })
       .then((data) => {
         res.send(data);
       })

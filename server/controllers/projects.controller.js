@@ -1,9 +1,11 @@
 const db = require("../models");
 const Projects = db.projects;
-// const ProjectTags = db.projectTags;
-// const Tags = db.tags;
-// const CodingLangs = db.codingLangs;
-// const madeAt = db.madeAt;
+const ProjectTags = db.projectTags;
+const ProjectCodingLangs = db.projectCodingLangs;
+const ProjectMadeAt = db.projectMadeAt;
+const Tags = db.tags;
+const CodingLangs = db.codingLangs;
+const madeAt = db.madeAt;
 // const Op = db.Sequelize.Op;
 // const Sequelize = db.sequelize;
 const { QueryTypes } = require("sequelize");
@@ -13,7 +15,13 @@ exports.getAll = (req, res) => {
   // const title = req.query.title;
   // var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
-  Projects.findAll({ where: { show: true } })
+  Projects.findAll({
+    where: { show: true },
+    order: [
+      // Will escape title and validate DESC against a list of valid direction parameters
+      ["orderby", "ASC"],
+    ],
+  })
     .then((data) => {
       res.send(data);
     })
@@ -41,7 +49,13 @@ exports.getById = (req, res) => {
 
 // Find all featured projects
 exports.getAllFeatured = (req, res) => {
-  Projects.findAll({ where: { is_featured: true } })
+  Projects.findAll({
+    where: { is_featured: true },
+    order: [
+      // Will escape title and validate DESC against a list of valid direction parameters
+      ["orderby", "ASC"],
+    ],
+  })
     .then((data) => {
       res.send(data);
     })
@@ -50,6 +64,57 @@ exports.getAllFeatured = (req, res) => {
         message:
           err.message ||
           "Some error occurred while retrieving featured projects.",
+      });
+    });
+};
+
+// Get all tags related to single Project
+exports.getTagsById = (req, res) => {
+  const idToFetch = req.params.id;
+  ProjectTags.findAll({
+    where: { projectId: idToFetch },
+    include: [{ model: Tags }],
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error retrieving Project with id=" + idToFetch,
+      });
+    });
+};
+
+// Get all codingLangs related to single Project
+exports.getCodingLangsById = (req, res) => {
+  const idToFetch = req.params.id;
+  CodingLangs.findAll({
+    where: { projectId: idToFetch },
+    include: [{ model: CodingLangs }],
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error retrieving Project with id=" + idToFetch,
+      });
+    });
+};
+
+// Get madeAt related to single Project
+exports.getMadeAtById = (req, res) => {
+  const idToFetch = req.params.id;
+  ProjectMadeAt.findAll({
+    where: { projectId: idToFetch },
+    include: [{ model: madeAt }],
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error retrieving Project with id=" + idToFetch,
       });
     });
 };

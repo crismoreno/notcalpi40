@@ -15,6 +15,10 @@ router.get("/featured", projectsController.getAllFeatured);
 
 // Find a single projectby ID
 router.get("/project/:id", projectsController.getById);
+// Get all tags related to single Project
+router.get("/projecttags/:id", projectsController.getTagsById);
+router.get("/projectcodinglangs/:id", projectsController.getCodingLangsById);
+router.get("/projectmadeat/:id", projectsController.getMadeAtById);
 
 // Find projects by tags
 //http://localhost:5000/api/tags?tags=1,2
