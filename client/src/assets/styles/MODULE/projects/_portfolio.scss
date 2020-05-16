@@ -5,7 +5,7 @@
     font-family: $sourcesans;
     @include font-style(16px, false, $semibold, 35px, false, left);
     text-transform: uppercase;
-    color: $dark-red;
+    color: $primary-colour;
   }
   .card {
     width: 100%;
