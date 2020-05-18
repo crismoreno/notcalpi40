@@ -5,21 +5,9 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
 app.use(cors());
-
-// app.use((req, res, next) => {
-//   res.set({
-//     "Access-Control-Allow-Origin": "*",
-//     "Access-Control-Allow-Headers":
-//       "Origin, X-Requested-With, Content-Type, Accept",
-//     "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
-//     "Content-Security-Policy": "default-src *",
-//     "X-Content-Security-Policy": "default-src *",
-//     "X-WebKit-CSP": "default-src *",
-//   });
-//   next();
-// });
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const contents = require("./routes/contents");
 
@@ -32,6 +20,11 @@ db.sequelize.sync();
 // db.sequelize.sync({ force: true }).then(() => {
 // 	console.log("Drop and re-sync db.");
 // });
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
 //Handdle Production
 if (process.env.NODE_ENV === "production") {

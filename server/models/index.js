@@ -19,6 +19,8 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+db.contactForms = require("./contactForm.model")(sequelize, Sequelize);
+
 db.projects = require("./projects.model")(sequelize, Sequelize);
 
 db.tags = require("./tags.model")(sequelize, Sequelize);

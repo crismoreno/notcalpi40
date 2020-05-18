@@ -5,6 +5,8 @@ const filteringTags = require("../controllers/filteringTags.controller.js");
 const filteringMadeAts = require("../controllers/filteringMadeAts.controller.js");
 const filteringCodingLang = require("../controllers/filteringCodingLang.controller.js");
 
+const contactFormController = require("../controllers/contactForm.controller.js");
+
 const router = express.Router();
 
 //Retreiving all showable projects
@@ -37,5 +39,7 @@ router.get("/codinglangslist", filteringCodingLang.getCodingLangsList);
 router.get("/madeat", filteringMadeAts.getByMadeAts);
 //Get a list with all possible madeAts
 router.get("/madeatslist", filteringMadeAts.getmadeAtsList);
+
+router.post("/postForm", contactFormController.postContactForm);
 
 module.exports = router;
