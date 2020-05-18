@@ -14,8 +14,15 @@
     <form
       id="contact-form"
       class="needs-validation"
-      v-on:submit.prevent="sendContactForm"
+      v-on:submit="sendContactForm"
     >
+      <div
+        class="alert alert-success"
+        role="alert"
+        v-if="this.$route.query.success"
+      >
+        Message sent successfully!
+      </div>
       <h2>Drop me a line✏️</h2>
       <div class="form-group">
         <label for="email">Email address*</label>
@@ -83,6 +90,11 @@
           Hey! Don't forget to write your message!
         </div>
       </div>
+      <vue-recaptcha
+        sitekey="6Ld9LfkUAAAAABiPnLfsp7sE5_3RMT19SM1c5tCO"
+        :loadRecaptchaScript="true"
+        theme="dark"
+      ></vue-recaptcha>
       <button type="submit" value="Submit" id="submit-button">Submit</button>
       <small class="form-text text-muted text-center"
         >I'll never share your data with anyone else.</small
@@ -94,9 +106,11 @@
   </div>
 </template>
 <script>
+import VueRecaptcha from "vue-recaptcha";
 import ContactService from "../ContactService";
 export default {
   name: "ContactForm",
+  components: { VueRecaptcha },
   data() {
     return {
       telephone: "",
@@ -106,7 +120,6 @@ export default {
       message: "",
     };
   },
-
   onMount() {
     (function() {
       "use strict";
@@ -134,8 +147,14 @@ export default {
       );
     })();
   },
+  watch: {
+    $route(to, from) {
+      this.show = false;
+    },
+  },
   methods: {
     sendContactForm() {
+      let self = this;
       const contactFormBody = {
         name: entered_name.value,
         telephone: telephone.value,
@@ -143,7 +162,13 @@ export default {
         company: company.value,
         message: message.value,
       };
-      ContactService.postForm(contactFormBody);
+      try {
+        ContactService.postForm(contactFormBody);
+        // self.$router.push('/?success="true"');
+        self.$router.push({ path: "/reach-me", query: { success: "true" } });
+      } catch (err) {
+        console.log(error);
+      }
     },
   },
 };

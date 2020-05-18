@@ -54,14 +54,15 @@ exports.postContactForm = (req, res) => {
           message: ${message},`,
       };
 
-      transporter.sendMail(mail_template, (err, data) => {
-        if (err) {
-          res.send(err);
-        } else {
-          // res.status(status).send(body);
-          res.send(data);
-        }
-      });
+      // transporter.sendMail(mail_template, (err, data) => {
+      //   if (err) {
+      //     res.send(err);
+      //   } else {
+      //     // res.status(status).send(body);
+      //     res.send(data);
+      //   }
+      // });
+      res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
