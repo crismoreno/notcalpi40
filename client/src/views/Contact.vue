@@ -81,11 +81,13 @@
         ></textarea>
         <div class="invalid-feedback">Hey! Don't forget to write your message!</div>
       </div>
-      <vue-recaptcha
-        sitekey="6LdoQfkUAAAAAPbWi4bSJSXbhgNsoHfhAHN6W9KT"
-        :loadRecaptchaScript="true"
-        theme="dark"
-      ></vue-recaptcha>
+      <div class="d-flex justify-content-center mb-3">
+        <vue-recaptcha
+          sitekey="6LdoQfkUAAAAAPbWi4bSJSXbhgNsoHfhAHN6W9KT"
+          :loadRecaptchaScript="true"
+          theme="light"
+        ></vue-recaptcha>
+      </div>
       <button type="submit" value="Submit" id="submit-button">Submit</button>
       <small class="form-text text-muted text-center">I'll never share your data with anyone else.</small>
       <!-- <div class="feedback-message d-none alert alert-success" role="alert" >
