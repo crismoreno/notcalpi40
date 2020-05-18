@@ -23,6 +23,13 @@
       >
         Message sent successfully!
       </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        v-if="this.$route.query.error"
+      >
+        Message couldn't be sent. Try again later...
+      </div>
       <h2>Drop me a line✏️</h2>
       <div class="form-group">
         <label for="email">Email address*</label>
@@ -168,6 +175,7 @@ export default {
         self.$router.push({ path: "/reach-me", query: { success: "true" } });
       } catch (err) {
         console.log(error);
+        self.$router.push({ path: "/reach-me", query: { error: "true" } });
       }
     },
   },
