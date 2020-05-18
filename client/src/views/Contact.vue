@@ -1,35 +1,21 @@
 <template>
-  <div
-    class="reach-me-container container d-flex flex-wrap flex-column main-container"
-  >
-    <div
-      class="connections-container container d-flex flex-wrap justify-content-center"
-    >
-      <a href="https://calendly.com/cristinamoreno" target="_blank"
-        >Schedule a meeting</a
-      >
+  <div class="reach-me-container container d-flex flex-wrap flex-column main-container">
+    <div class="connections-container container d-flex flex-wrap justify-content-center">
+      <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
       <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
     </div>
 
-    <form
-      id="contact-form"
-      class="needs-validation"
-      v-on:submit="sendContactForm"
-    >
+    <form id="contact-form" class="needs-validation" v-on:submit="sendContactForm">
       <div
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.success"
-      >
-        Message sent successfully!
-      </div>
+      >Message sent successfully!</div>
       <div
         class="alert alert-danger"
         role="alert"
         v-if="this.$route.query.error"
-      >
-        Message couldn't be sent. Try again later...
-      </div>
+      >Message couldn't be sent. Try again later...</div>
       <h2>Drop me a line✏️</h2>
       <div class="form-group">
         <label for="email">Email address*</label>
@@ -93,19 +79,15 @@
           placeholder="He was not a true dragon. Fire cannot kill a dragon..."
           required
         ></textarea>
-        <div class="invalid-feedback">
-          Hey! Don't forget to write your message!
-        </div>
+        <div class="invalid-feedback">Hey! Don't forget to write your message!</div>
       </div>
       <vue-recaptcha
-        sitekey="6Ld9LfkUAAAAABiPnLfsp7sE5_3RMT19SM1c5tCO"
+        sitekey="6LdoQfkUAAAAAPbWi4bSJSXbhgNsoHfhAHN6W9KT"
         :loadRecaptchaScript="true"
         theme="dark"
       ></vue-recaptcha>
       <button type="submit" value="Submit" id="submit-button">Submit</button>
-      <small class="form-text text-muted text-center"
-        >I'll never share your data with anyone else.</small
-      >
+      <small class="form-text text-muted text-center">I'll never share your data with anyone else.</small>
       <!-- <div class="feedback-message d-none alert alert-success" role="alert" >
           <p>👌I'm gonna get back to you very soon👌</p>
       </div>-->
@@ -124,7 +106,7 @@ export default {
       email: "",
       entered_name: "",
       company: "",
-      message: "",
+      message: ""
     };
   },
   onMount() {
@@ -157,7 +139,7 @@ export default {
   watch: {
     $route(to, from) {
       this.show = false;
-    },
+    }
   },
   methods: {
     sendContactForm() {
@@ -167,7 +149,7 @@ export default {
         telephone: telephone.value,
         email: email.value,
         company: company.value,
-        message: message.value,
+        message: message.value
       };
       try {
         ContactService.postForm(contactFormBody);
@@ -177,7 +159,7 @@ export default {
         console.log(error);
         self.$router.push({ path: "/reach-me", query: { error: "true" } });
       }
-    },
-  },
+    }
+  }
 };
 </script>
