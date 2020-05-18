@@ -5,7 +5,9 @@
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
             <button
-              class="btn btn-link btn-block text-left"
+              v-on:click="uncheckCheckboxes"
+              id="filter-by-tag-button"
+              class="btn btn-link btn-block text-left collapsable-button"
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
@@ -24,7 +26,11 @@
           <div class="card-body">
             <ul>
               <li class="tag-filter" v-for="(tag, index) in availableTags" :key="index">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  :value="tag.id"
+                  class="filter-by-tag-checkbox filter-checkbox"
+                />
                 <label>{{tag.name}}</label>
               </li>
             </ul>
@@ -35,7 +41,9 @@
         <div class="card-header" id="headingTwo">
           <h2 class="mb-0">
             <button
-              class="btn btn-link btn-block text-left collapsed"
+              v-on:click="uncheckCheckboxes()"
+              id="filter-by-codinglang-button"
+              class="btn btn-link btn-block text-left collapsed collapsable-button"
               type="button"
               data-toggle="collapse"
               data-target="#collapseTwo"
@@ -57,7 +65,11 @@
                 v-for="(codingLang, index) in availableCodingLangs"
                 :key="index"
               >
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  class="filter-by-codinglang-checkbox filter-checkbox"
+                  :value="codingLang.id"
+                />
                 <label>{{codingLang.name}}</label>
               </li>
             </ul>
@@ -68,7 +80,9 @@
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
             <button
-              class="btn btn-link btn-block text-left collapsed"
+              v-on:click="uncheckCheckboxes"
+              id="filter-by-place-button"
+              class="btn btn-link btn-block text-left collapsed collapsable-button"
               type="button"
               data-toggle="collapse"
               data-target="#collapseThree"
@@ -86,7 +100,12 @@
           <div class="card-body">
             <ul>
               <li class="tag-filter" v-for="(madeAt, index) in availableMadeAts" :key="index">
-                <input type="radio" :name="madeAt" />
+                <input
+                  type="radio"
+                  :name="madeAt"
+                  :value="madeAt.id"
+                  class="filter-by-madeat-checkbox filter-checkbox"
+                />
                 <label>{{madeAt.name}}</label>
               </li>
             </ul>
@@ -115,7 +134,8 @@ export default {
       availableTags: [],
       availableCodingLangs: [],
       availableMadeAts: [],
-      error: ""
+      error: "",
+      filter_checkbox: ""
     };
   },
   //AVAILABLE TAGS
@@ -127,6 +147,9 @@ export default {
     } catch (err) {
       this.error = err.message;
     }
+  },
+  methods: {
+    uncheckCheckboxes: function() {}
   }
 };
 </script>

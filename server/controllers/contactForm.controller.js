@@ -25,8 +25,8 @@ exports.postContactForm = (req, res) => {
       const sent_from = process.env.SENTFROM;
 
       var transport = {
-        // service: 'gmail',
-        host: "smtp.gmail.com",
+        service: "gmail",
+        // host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {

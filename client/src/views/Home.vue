@@ -140,9 +140,9 @@
         <button class="filter cursor-pointer-neg">Management</button>
       </a>
     </div>
-    <div class="my-dev-projects container">
+    <div class="my-dev-projects">
       <!-- <h2>SOME OF MY PROJECTS</h2> -->
-      <BlogComponent class="display-projects d-flex flex-row flex-wrap justify-content-center"></BlogComponent>
+      <BlogComponent></BlogComponent>
       <!-- <a class="full-portfolio-button" href="/portfolio/">FULL PORTFOLIO >></a> -->
     </div>
   </div>
