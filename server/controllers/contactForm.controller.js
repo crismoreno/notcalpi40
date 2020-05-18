@@ -22,6 +22,7 @@ exports.postContactForm = (req, res) => {
     .then((data) => {
       const to_mail = process.env.MAIL;
       const to_pwd = process.env.MAILPWD;
+      const sent_from = process.env.SENTFROM;
 
       var transport = {
         // service: 'gmail',
@@ -45,7 +46,7 @@ exports.postContactForm = (req, res) => {
       var mail_template = {
         from: name,
         to: to_mail,
-        subject: "You Received a new message at notcalpi.me!",
+        subject: `You Received a new message at notcalpi.me! from ${sent_from}`,
         text: `
 					name: ${name},
           company: ${company},
