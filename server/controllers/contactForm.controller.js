@@ -26,7 +26,7 @@ exports.postContactForm = (req, res) => {
 
       var transport = {
         service: "gmail",
-        // host: "smtp.gmail.com",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {

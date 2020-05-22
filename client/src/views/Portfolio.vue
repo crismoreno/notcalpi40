@@ -149,7 +149,7 @@ export default {
     }
   },
   methods: {
-    uncheckCheckboxes: function() {}
+    // uncheckCheckboxes: function() {},
   }
 };
 </script>

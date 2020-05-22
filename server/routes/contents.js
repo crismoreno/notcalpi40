@@ -15,7 +15,7 @@ router.get("/", projectsController.getAll);
 // Find all featured projects
 router.get("/featured", projectsController.getAllFeatured);
 
-// Find a single projectby ID
+// Find a single project by ID
 router.get("/project/:id", projectsController.getById);
 // Get all tags related to single Project
 router.get("/projecttags/:id", projectsController.getTagsById);
