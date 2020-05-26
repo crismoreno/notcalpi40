@@ -1,5 +1,7 @@
 <template>
-  <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row">
+  <div
+    class="main-container d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row"
+  >
     <div class="accordion filtering-projects" id="filtersAccordion">
       <div class="card filter-by-tag">
         <div class="card-header" id="headingOne">
@@ -120,7 +122,7 @@
       </div>
     </div>
     <DisplayProjects
-      class="main-container display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
+      class="display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
     ></DisplayProjects>
   </div>
 </template>

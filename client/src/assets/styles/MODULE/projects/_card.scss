@@ -9,6 +9,7 @@
   font-family: $sourcesans;
 }
 .card {
+  height: fit-content;
   width: 250px;
   border-radius: 10px;
   @include margin(10px, 10px, 10px, 10px);
