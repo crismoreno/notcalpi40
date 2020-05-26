@@ -27,6 +27,7 @@
             <ul>
               <li class="tag-filter" v-for="(tag, index) in availableTags" :key="index">
                 <input
+                  v-model="checked"
                   type="checkbox"
                   :value="tag.id"
                   class="filter-by-tag-checkbox filter-checkbox"
@@ -66,6 +67,7 @@
                 :key="index"
               >
                 <input
+                  v-model="checked"
                   type="checkbox"
                   class="filter-by-codinglang-checkbox filter-checkbox"
                   :value="codingLang.id"
@@ -101,6 +103,7 @@
             <ul>
               <li class="tag-filter" v-for="(madeAt, index) in availableMadeAts" :key="index">
                 <input
+                  v-model="picked"
                   type="radio"
                   :name="madeAt"
                   :value="madeAt.id"
@@ -135,7 +138,9 @@ export default {
       availableCodingLangs: [],
       availableMadeAts: [],
       error: "",
-      filter_checkbox: ""
+      filter_checkbox: "",
+      checked: [],
+      picked: []
     };
   },
   //AVAILABLE TAGS
@@ -149,7 +154,10 @@ export default {
     }
   },
   methods: {
-    // uncheckCheckboxes: function() {},
+    uncheckCheckboxes: function() {
+      this.checked = [];
+      this.picked = [];
+    }
   }
 };
 </script>
