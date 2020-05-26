@@ -32,15 +32,11 @@ export default {
       error: "",
       tags_checked: [],
       codingLangs_checked: [],
-      places_picked: []
+      place_picked: []
     };
   },
-  async created() {
-    try {
-      this.projects = await ProjectsService.getProjects();
-    } catch (err) {
-      this.error = err.message;
-    }
+  created() {
+    this.getProjects("default");
   },
   mounted() {
     EventBus.$on("SEARCH_BY_TAG", tag => {
@@ -50,6 +46,7 @@ export default {
       } else {
         this.tags_checked.push(tag);
       }
+      this.getProjects("tags");
     });
     EventBus.$on("SEARCH_BY_CODINGLANG", codingLang => {
       const index = this.codingLangs_checked.indexOf(codingLang);
@@ -58,15 +55,58 @@ export default {
       } else {
         this.codingLangs_checked.push(codingLang);
       }
+      this.getProjects("codingLangs");
     });
     EventBus.$on("SEARCH_BY_PLACE", place => {
-      this.places_picked = place;
+      this.place_picked = place;
+      this.getProjects("place");
     });
     EventBus.$on("EMPTY_ALL_FILTERS", () => {
       this.tags_checked = [];
       this.codingLangs_checked = [];
-      this.places_picked = [];
+      this.place_picked = [];
+      this.getProjects("default");
     });
+  },
+  methods: {
+    getProjects: async function(getKind) {
+      switch (getKind) {
+        case "tags":
+          try {
+            this.projects = await ProjectsService.filterByTags(
+              this.tags_checked
+            );
+          } catch (err) {
+            this.error = err.message;
+          }
+          break;
+        case "codingLangs":
+          try {
+            this.projects = await ProjectsService.filterByCodingLang(
+              this.codingLangs_checked
+            );
+          } catch (err) {
+            this.error = err.message;
+          }
+          break;
+        case "place":
+          try {
+            this.projects = await ProjectsService.filterByPlace(
+              this.place_picked
+            );
+          } catch (err) {
+            this.error = err.message;
+          }
+          break;
+        case "default":
+          try {
+            this.projects = await ProjectsService.getProjects();
+          } catch (err) {
+            this.error = err.message;
+          }
+          break;
+      }
+    }
   }
 };
 </script>

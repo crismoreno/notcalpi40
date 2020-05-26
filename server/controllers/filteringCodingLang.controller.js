@@ -11,7 +11,7 @@ exports.getByCodingLang = (req, res) => {
     codingLangsToFetch = req.query.codinglangs;
     codingLangsToFetch = codingLangsToFetch.split(",");
     const results = Sequelize.query(
-      `SELECT p.id, p.title, p.customer, GROUP_CONCAT(pcl.codinglangId) as codinglangs
+      `SELECT p.id, p.title, p.customer, p.imgs, GROUP_CONCAT(pcl.codinglangId) as codinglangs
 			FROM projects p
 			LEFT JOIN project_codingLangs as pcl ON p.id = pcl.projectId LEFT JOIN codinglangs cl ON cl.id=pcl.codinglangId AND cl.id IN (${codingLangsToFetch})
 			GROUP BY p.id,p.title

@@ -11,7 +11,7 @@ exports.getByTag = (req, res) => {
     tagsToFetch = req.query.tags;
     tagsToFetch = tagsToFetch.split(",");
     const results = Sequelize.query(
-      `SELECT p.id, p.title, p.customer, GROUP_CONCAT(pt.tagId) as tags
+      `SELECT p.id, p.title, p.customer, p.imgs, GROUP_CONCAT(pt.tagId) as tags
 			FROM projects p
 			LEFT JOIN project_tags as pt ON p.id = pt.projectId LEFT JOIN tags t ON t.id=pt.tagId AND t.id IN (${tagsToFetch})
 			GROUP BY p.id,p.title
