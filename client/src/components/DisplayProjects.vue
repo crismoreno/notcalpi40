@@ -29,7 +29,10 @@ export default {
   data() {
     return {
       projects: [],
-      error: ""
+      error: "",
+      tags_checked: [],
+      codingLangs_checked: [],
+      places_picked: []
     };
   },
   async created() {
@@ -38,6 +41,32 @@ export default {
     } catch (err) {
       this.error = err.message;
     }
+  },
+  mounted() {
+    EventBus.$on("SEARCH_BY_TAG", tag => {
+      const index = this.tags_checked.indexOf(tag);
+      if (index > -1) {
+        this.tags_checked.splice(index, 1);
+      } else {
+        this.tags_checked.push(tag);
+      }
+    });
+    EventBus.$on("SEARCH_BY_CODINGLANG", codingLang => {
+      const index = this.codingLangs_checked.indexOf(codingLang);
+      if (index > -1) {
+        this.codingLangs_checked.splice(index, 1);
+      } else {
+        this.codingLangs_checked.push(codingLang);
+      }
+    });
+    EventBus.$on("SEARCH_BY_PLACE", place => {
+      this.places_picked = place;
+    });
+    EventBus.$on("EMPTY_ALL_FILTERS", () => {
+      this.tags_checked = [];
+      this.codingLangs_checked = [];
+      this.places_picked = [];
+    });
   }
 };
 </script>

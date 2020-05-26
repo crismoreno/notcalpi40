@@ -5,7 +5,7 @@
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
             <button
-              v-on:click="uncheckCheckboxes"
+              v-on:click="uncheckCheckboxes()"
               id="filter-by-tag-button"
               class="btn btn-link btn-block text-left collapsable-button"
               type="button"
@@ -27,7 +27,8 @@
             <ul>
               <li class="tag-filter" v-for="(tag, index) in availableTags" :key="index">
                 <input
-                  v-model="checked"
+                  v-on:change="searchByTag"
+                  v-model="tags_checked"
                   type="checkbox"
                   :value="tag.id"
                   class="filter-by-tag-checkbox filter-checkbox"
@@ -67,7 +68,8 @@
                 :key="index"
               >
                 <input
-                  v-model="checked"
+                  v-on:change="searchByCodingLang"
+                  v-model="codingLangs_checked"
                   type="checkbox"
                   class="filter-by-codinglang-checkbox filter-checkbox"
                   :value="codingLang.id"
@@ -82,7 +84,7 @@
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
             <button
-              v-on:click="uncheckCheckboxes"
+              v-on:click="uncheckCheckboxes()"
               id="filter-by-place-button"
               class="btn btn-link btn-block text-left collapsed collapsable-button"
               type="button"
@@ -103,7 +105,8 @@
             <ul>
               <li class="tag-filter" v-for="(madeAt, index) in availableMadeAts" :key="index">
                 <input
-                  v-model="picked"
+                  v-on:change="searchByPlace"
+                  v-model="places_picked"
                   type="radio"
                   :name="madeAt"
                   :value="madeAt.id"
@@ -139,8 +142,9 @@ export default {
       availableMadeAts: [],
       error: "",
       filter_checkbox: "",
-      checked: [],
-      picked: []
+      tags_checked: [],
+      codingLangs_checked: [],
+      places_picked: []
     };
   },
   //AVAILABLE TAGS
@@ -155,8 +159,19 @@ export default {
   },
   methods: {
     uncheckCheckboxes: function() {
-      this.checked = [];
-      this.picked = [];
+      this.tags_checked = [];
+      this.codingLangs_checked = [];
+      this.places_picked = [];
+      EventBus.$emit("EMPTY_ALL_FILTERS");
+    },
+    searchByTag: event => {
+      EventBus.$emit("SEARCH_BY_TAG", event.target.value);
+    },
+    searchByCodingLang: () => {
+      EventBus.$emit("SEARCH_BY_CODINGLANG", event.target.value);
+    },
+    searchByPlace: () => {
+      EventBus.$emit("SEARCH_BY_PLACE", event.target.value);
     }
   }
 };
