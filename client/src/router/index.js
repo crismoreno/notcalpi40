@@ -6,6 +6,7 @@ import PageNotFound from "../views/404.vue";
 import Blog from "../components/Blog.vue";
 import ContactForm from "../views/Contact.vue";
 import Portfolio from "../views/Portfolio.vue";
+import ProjectDetail from "../views/ProjectDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ const routes = [
     path: "/portfolio",
     name: "Portfolio",
     component: Portfolio,
+  },
+  {
+    path: "/project/:id",
+    name: "ProjectDetail",
+    component: ProjectDetail,
   },
   { path: "*", component: PageNotFound },
 ];

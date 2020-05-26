@@ -15,10 +15,22 @@ class ProjectsService {
     });
   }
 
+  static getProjectById(projId) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + "project/" + projId);
+        const data = res.data;
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+
   static getAvailableTags() {
     return new Promise(async (resolve, reject) => {
       try {
-        const res = await axios.get(url + "/tagslist");
+        const res = await axios.get(url + "tagslist");
         const data = res.data;
         resolve(data);
       } catch (err) {
@@ -30,7 +42,7 @@ class ProjectsService {
   static getAvailableCodingLangs() {
     return new Promise(async (resolve, reject) => {
       try {
-        const res = await axios.get(url + "/codinglangslist");
+        const res = await axios.get(url + "codinglangslist");
         const data = res.data;
         resolve(data);
       } catch (err) {
@@ -42,7 +54,7 @@ class ProjectsService {
   static getAvailableMadeAts() {
     return new Promise(async (resolve, reject) => {
       try {
-        const res = await axios.get(url + "/madeatslist");
+        const res = await axios.get(url + "madeatslist");
         const data = res.data;
         resolve(data);
       } catch (err) {
@@ -54,7 +66,7 @@ class ProjectsService {
   static filterByTags(checked_tags) {
     return new Promise(async (resolve, reject) => {
       try {
-        const res = await axios.get(url + "/tags?tags=" + checked_tags);
+        const res = await axios.get(url + "tags?tags=" + checked_tags);
         const data = res.data;
         resolve(data);
       } catch (err) {
@@ -67,7 +79,7 @@ class ProjectsService {
     return new Promise(async (resolve, reject) => {
       try {
         const res = await axios.get(
-          url + "/codinglangs?codinglangs=" + checked_codingLangs
+          url + "codinglangs?codinglangs=" + checked_codingLangs
         );
         const data = res.data;
         resolve(data);
