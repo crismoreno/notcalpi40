@@ -17,10 +17,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/portfolio">Portfolio</router-link>
+            <router-link class="nav-link" to="/portfolio"
+              >Portfolio</router-link
+            >
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/blog">Blog</router-link>
@@ -29,7 +34,9 @@
             <router-link class="nav-link" to="/about-me">About Me</router-link>
           </li>
           <li class="nav-item highlight-menu-item">
-            <router-link class="nav-link" to="/reach-me">Reach Me @</router-link>
+            <router-link class="nav-link" to="/reach-me"
+              >Reach Me @</router-link
+            >
           </li>
         </ul>
       </div>
@@ -39,9 +46,9 @@
       <div
         class="d-flex justify-content-between px-3 flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row"
       >
-        <p
-          class="d-none d-sm-block d-md-block d-lg-block d-xl-block"
-        >Made with 💛 by Cristina Moreno</p>
+        <p class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
+          Made with 💛 by Cristina Moreno
+        </p>
         <div>
           <ul class="d-flex justify-content-center">
             <li>
@@ -49,11 +56,17 @@
             </li>
             <li>·</li>
             <li>
-              <a href="https://www.linkedin.com/in/morenomedran/" target="_blank">LinkedIn</a>
+              <a
+                href="https://www.linkedin.com/in/morenomedran/"
+                target="_blank"
+                >LinkedIn</a
+              >
             </li>
             <li>·</li>
             <li>
-              <a href="https://medium.com/@cristinamorenomedran" target="_blank">Medium</a>
+              <a href="https://medium.com/@cristinamorenomedran" target="_blank"
+                >Medium</a
+              >
             </li>
             <li>·</li>
             <li>
@@ -67,23 +80,7 @@
         </div>
       </div>
     </footer>
-    <div
-      class="container flex-xl-row flex-lg-column flex-md-column flex-sm-column flex-column justify-content-between"
-      id="cookie_consent"
-    >
-      <div>
-        <p>
-          🍪 By using this site, you acknowledge that you have read and
-          understood the
-          <a
-            href="/cookies"
-          >cookie policy</a>.🍪
-        </p>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button id="close-cookie-button">Close this</button>
-      </div>
-    </div>
+    <CookieWarning v-if="this.cookieThere == false"></CookieWarning>
   </div>
 </template>
 
@@ -92,7 +89,36 @@
 </style>
 
 <script>
+import EventBus from "./event-bus";
+import CookieWarning from "./components/CookieWarning.vue";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    CookieWarning,
+  },
+  data() {
+    return {
+      cookieThere: false,
+    };
+  },
+  created() {
+    this.checkCookie();
+  },
+  mounted() {
+    EventBus.$on("SETCOOKIE", () => {
+      this.cookieThere = true;
+    });
+  },
+  methods: {
+    checkCookie: function() {
+      const cookiesAvailable = document.cookie;
+      if (
+        cookiesAvailable.indexOf("cookieconsent=true") != -1 ||
+        cookiesAvailable === "cookieconsent=true"
+      ) {
+        this.cookieThere = true;
+      }
+    },
+  },
 };
 </script>

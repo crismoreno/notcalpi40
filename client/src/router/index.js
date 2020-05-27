@@ -7,6 +7,7 @@ import Blog from "../components/Blog.vue";
 import ContactForm from "../views/Contact.vue";
 import Portfolio from "../views/Portfolio.vue";
 import ProjectDetail from "../views/ProjectDetail.vue";
+import Cookies from "../views/Cookies.vue";
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes = [
     path: "/project/:id",
     name: "ProjectDetail",
     component: ProjectDetail,
+  },
+  {
+    path: "/cookies",
+    name: "Cookies",
+    component: Cookies,
   },
   { path: "*", component: PageNotFound },
 ];
