@@ -36,30 +36,11 @@ export default {
     };
   },
   created() {
-    this.getProjects("default");
+    this.getQueryParams();
   },
   mounted() {
-    EventBus.$on("SEARCH_BY_TAG", tag => {
-      const index = this.tags_checked.indexOf(tag);
-      if (index > -1) {
-        this.tags_checked.splice(index, 1);
-      } else {
-        this.tags_checked.push(tag);
-      }
-      this.getProjects("tags");
-    });
-    EventBus.$on("SEARCH_BY_CODINGLANG", codingLang => {
-      const index = this.codingLangs_checked.indexOf(codingLang);
-      if (index > -1) {
-        this.codingLangs_checked.splice(index, 1);
-      } else {
-        this.codingLangs_checked.push(codingLang);
-      }
-      this.getProjects("codingLangs");
-    });
-    EventBus.$on("SEARCH_BY_PLACE", place => {
-      this.place_picked = place;
-      this.getProjects("place");
+    EventBus.$on("SEARCH", () => {
+      this.getQueryParams();
     });
     EventBus.$on("EMPTY_ALL_FILTERS", () => {
       this.tags_checked = [];
@@ -69,9 +50,36 @@ export default {
     });
   },
   methods: {
+    getQueryParams: function() {
+      let queryParams = this.$route.query;
+      if (Object.entries(queryParams).length) {
+        queryParams = Object.entries(queryParams);
+        const filterType = queryParams[0][0];
+        let filterValues = queryParams[0][1];
+        filterValues = Object.values(filterValues);
+
+        filterValues.forEach(element => {
+          switch (filterType) {
+            case "tag":
+              this.tags_checked.push(element);
+              break;
+            case "codingLang":
+              this.codingLangs_checked.push(element);
+              break;
+            case "place":
+              this.place_picked.push(element);
+              break;
+          }
+        });
+
+        this.getProjects(filterType);
+      } else {
+        this.getProjects("default");
+      }
+    },
     getProjects: async function(getKind) {
       switch (getKind) {
-        case "tags":
+        case "tag":
           try {
             this.projects = await ProjectsService.filterByTags(
               this.tags_checked
@@ -80,7 +88,7 @@ export default {
             this.error = err.message;
           }
           break;
-        case "codingLangs":
+        case "codingLang":
           try {
             this.projects = await ProjectsService.filterByCodingLang(
               this.codingLangs_checked

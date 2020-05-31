@@ -13,7 +13,7 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
-              aria-expanded="true"
+              :aria-expanded="this.$route.query.tag ? true : false"
               aria-controls="collapseOne"
             >Filter by Tags</button>
           </h2>
@@ -21,7 +21,8 @@
 
         <div
           id="collapseOne"
-          class="collapse show"
+          class="collapse"
+          v-bind:class="{show : this.$route.query.tag}"
           aria-labelledby="headingOne"
           data-parent="#filtersAccordion"
         >
@@ -29,7 +30,6 @@
             <ul>
               <li class="tag-filter" v-for="(tag, index) in availableTags" :key="index">
                 <input
-                  v-on:change="searchByTag"
                   v-model="tags_checked"
                   type="checkbox"
                   :value="tag.id"
@@ -51,7 +51,7 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseTwo"
-              aria-expanded="false"
+              :aria-expanded="this.$route.query.codingLang ? true : false"
               aria-controls="collapseTwo"
             >Filter by coding Languages</button>
           </h2>
@@ -61,6 +61,7 @@
           class="collapse"
           aria-labelledby="headingTwo"
           data-parent="#filtersAccordion"
+          v-bind:class="{show : this.$route.query.codingLang}"
         >
           <div class="card-body">
             <ul class="d-flex flex-wrap flex-column">
@@ -70,7 +71,6 @@
                 :key="index"
               >
                 <input
-                  v-on:change="searchByCodingLang"
                   v-model="codingLangs_checked"
                   type="checkbox"
                   class="filter-by-codinglang-checkbox filter-checkbox"
@@ -92,7 +92,7 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseThree"
-              aria-expanded="false"
+              :aria-expanded="this.$route.query.place ? true : false"
               aria-controls="collapseThree"
             >Filter by place</button>
           </h2>
@@ -102,17 +102,18 @@
           class="collapse"
           aria-labelledby="headingThree"
           data-parent="#filtersAccordion"
+          v-bind:class="{show : this.$route.query.place}"
         >
           <div class="card-body">
             <ul>
               <li class="tag-filter" v-for="(madeAt, index) in availableMadeAts" :key="index">
                 <input
-                  v-on:change="searchByPlace"
                   v-model="places_picked"
                   type="radio"
                   :name="madeAt"
                   :value="madeAt.id"
                   class="filter-by-madeat-checkbox filter-checkbox"
+                  :checked="Object.values(places_picked).includes(madeAt.id)"
                 />
                 <label>{{madeAt.name}}</label>
               </li>
@@ -143,37 +144,87 @@ export default {
       availableCodingLangs: [],
       availableMadeAts: [],
       error: "",
-      filter_checkbox: "",
       tags_checked: [],
       codingLangs_checked: [],
       places_picked: []
     };
   },
   //AVAILABLE TAGS
-  async created() {
-    try {
-      this.availableTags = await ProjectsService.getAvailableTags();
-      this.availableCodingLangs = await ProjectsService.getAvailableCodingLangs();
-      this.availableMadeAts = await ProjectsService.getAvailableMadeAts();
-    } catch (err) {
-      this.error = err.message;
+  created() {
+    this.checkFiltersByQueryParams();
+  },
+  watch: {
+    tags_checked(tagId) {
+      this.$router.push({
+        query: { tag: tagId }
+      });
+      EventBus.$emit("SEARCH");
+    },
+    codingLangs_checked(codingLangId) {
+      this.$router.push({
+        query: { codingLang: codingLangId }
+      });
+      EventBus.$emit("SEARCH");
+    },
+    places_picked(placeId) {
+      this.$router.push({
+        query: { place: placeId }
+      });
+      EventBus.$emit("SEARCH");
     }
   },
   methods: {
+    checkFiltersByQueryParams: function() {
+      let queryParams = this.$route.query;
+      if (Object.entries(queryParams).length) {
+        queryParams = Object.entries(queryParams);
+        const filterType = queryParams[0][0];
+        let filterValues = queryParams[0][1];
+
+        if (Array.isArray(filterValues)) {
+          filterValues.forEach(element => {
+            switch (filterType) {
+              case "tag":
+                this.tags_checked.push(element);
+                break;
+              case "codingLang":
+                this.codingLangs_checked.push(element);
+                break;
+              case "place":
+                this.place_picked.push(element);
+                break;
+            }
+          });
+        } else {
+          switch (filterType) {
+            case "tag":
+              this.tags_checked.push(filterValues);
+              break;
+            case "codingLang":
+              this.codingLangs_checked.push(filterValues);
+              break;
+            case "place":
+              this.place_picked.push(filterValues);
+              break;
+          }
+        }
+      }
+      this.firstLoadGetProjects();
+    },
+    firstLoadGetProjects: async function() {
+      try {
+        this.availableTags = await ProjectsService.getAvailableTags();
+        this.availableCodingLangs = await ProjectsService.getAvailableCodingLangs();
+        this.availableMadeAts = await ProjectsService.getAvailableMadeAts();
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
     uncheckCheckboxes: function() {
       this.tags_checked = [];
       this.codingLangs_checked = [];
       this.places_picked = [];
       EventBus.$emit("EMPTY_ALL_FILTERS");
-    },
-    searchByTag: event => {
-      EventBus.$emit("SEARCH_BY_TAG", event.target.value);
-    },
-    searchByCodingLang: () => {
-      EventBus.$emit("SEARCH_BY_CODINGLANG", event.target.value);
-    },
-    searchByPlace: () => {
-      EventBus.$emit("SEARCH_BY_PLACE", event.target.value);
     }
   }
 };
