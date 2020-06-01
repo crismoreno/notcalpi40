@@ -10,6 +10,7 @@
               v-on:click="uncheckCheckboxes()"
               id="filter-by-tag-button"
               class="btn btn-link btn-block text-left collapsable-button"
+              v-bind:class="{collapsed : !this.$route.query.tag}"
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
@@ -48,6 +49,7 @@
               v-on:click="uncheckCheckboxes()"
               id="filter-by-codinglang-button"
               class="btn btn-link btn-block text-left collapsed collapsable-button"
+              v-bind:class="{collapsed : !this.$route.query.place}"
               type="button"
               data-toggle="collapse"
               data-target="#collapseTwo"
@@ -89,6 +91,7 @@
               v-on:click="uncheckCheckboxes()"
               id="filter-by-place-button"
               class="btn btn-link btn-block text-left collapsed collapsable-button"
+              v-bind:class="{collapsed : !this.$route.query.place}"
               type="button"
               data-toggle="collapse"
               data-target="#collapseThree"
@@ -100,9 +103,9 @@
         <div
           id="collapseThree"
           class="collapse"
+          v-bind:class="{show : this.$route.query.place}"
           aria-labelledby="headingThree"
           data-parent="#filtersAccordion"
-          v-bind:class="{show : this.$route.query.place}"
         >
           <div class="card-body">
             <ul>
@@ -110,7 +113,6 @@
                 <input
                   v-model="place_picked"
                   type="radio"
-                  :name="madeAt"
                   :value="madeAt.id"
                   class="filter-by-madeat-checkbox filter-checkbox"
                 />
@@ -228,7 +230,7 @@ export default {
       }
     },
     uncheckCheckboxes: function() {
-      this.tags_checked = [];
+      this.tags_checked != [] ? (this.tags_checked = []) : this.tags_checked;
       this.codingLangs_checked = [];
       this.place_picked = [];
       EventBus.$emit("EMPTY_FILTERS");

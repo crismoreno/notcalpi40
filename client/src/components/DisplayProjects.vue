@@ -62,12 +62,14 @@ export default {
         } catch (err) {
           this.error = err.message;
         }
-      } else {
+      } else if (place) {
         try {
           this.projects = await ProjectsService.filterByPlace(place);
         } catch (err) {
           this.error = err.message;
         }
+      } else {
+        this.getAllProjects();
       }
     }
   }
