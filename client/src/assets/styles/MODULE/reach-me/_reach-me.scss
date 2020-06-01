@@ -64,14 +64,23 @@
   }
 }
 
-@media (max-width: 500px) {
-  #invisible-recaptcha-form {
-    @include margin(30px, auto, 0, auto);
-  }
-  .feedback-message,
-  #invisible-recaptcha-form,
-  .connections-container {
-    width: 90% !important;
+@include respond-below(xs) {
+  .reach-me-container {
+    #contact-form,
+    .connections-container {
+      width: 100%;
+    }
   }
 }
+
+// @media (max-width: 500px) {
+//   #invisible-recaptcha-form {
+//     @include margin(30px, auto, 0, auto);
+//   }
+//   .feedback-message,
+//   #invisible-recaptcha-form,
+//   .connections-container {
+//     width: 90% !important;
+//   }
+// }
 /*# sourceURL=MODULE/reach-me/_reach-me.scss */
