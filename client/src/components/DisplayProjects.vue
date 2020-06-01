@@ -11,7 +11,6 @@
           </div>
           <div class="project-details d-flex flex-column justify-content-center">
             <p class="name">{{project.title}}</p>
-            <!-- <p class="type">{{project.metatags}}</p> -->
             <p class="customer">{{project.customer}}</p>
           </div>
         </div>
@@ -29,90 +28,43 @@ export default {
   data() {
     return {
       projects: [],
-      error: "",
-      tags_checked: [],
-      codingLangs_checked: [],
-      place_picked: []
+      error: ""
     };
   },
-  created() {
-    this.getQueryParams();
-  },
   mounted() {
-    EventBus.$on("SEARCH", () => {
-      this.getQueryParams();
-    });
-    EventBus.$on("EMPTY_ALL_FILTERS", () => {
-      this.tags_checked = [];
-      this.codingLangs_checked = [];
-      this.place_picked = [];
-      this.getProjects("default");
+    this.getAllProjects();
+    EventBus.$on("SEARCH", filters => {
+      this.getProjectsFiltered(filters);
     });
   },
   methods: {
-    getQueryParams: function() {
-      let queryParams = this.$route.query;
-      if (Object.entries(queryParams).length) {
-        queryParams = Object.entries(queryParams);
-        const filterType = queryParams[0][0];
-        let filterValues = queryParams[0][1];
-        filterValues = Object.values(filterValues);
-
-        filterValues.forEach(element => {
-          switch (filterType) {
-            case "tag":
-              this.tags_checked.push(element);
-              break;
-            case "codingLang":
-              this.codingLangs_checked.push(element);
-              break;
-            case "place":
-              this.place_picked.push(element);
-              break;
-          }
-        });
-
-        this.getProjects(filterType);
-      } else {
-        this.getProjects("default");
+    getAllProjects: async function() {
+      try {
+        this.projects = await ProjectsService.getProjects();
+      } catch (err) {
+        this.error = err.message;
       }
     },
-    getProjects: async function(getKind) {
-      switch (getKind) {
-        case "tag":
-          try {
-            this.projects = await ProjectsService.filterByTags(
-              this.tags_checked
-            );
-          } catch (err) {
-            this.error = err.message;
-          }
-          break;
-        case "codingLang":
-          try {
-            this.projects = await ProjectsService.filterByCodingLang(
-              this.codingLangs_checked
-            );
-          } catch (err) {
-            this.error = err.message;
-          }
-          break;
-        case "place":
-          try {
-            this.projects = await ProjectsService.filterByPlace(
-              this.place_picked
-            );
-          } catch (err) {
-            this.error = err.message;
-          }
-          break;
-        case "default":
-          try {
-            this.projects = await ProjectsService.getProjects();
-          } catch (err) {
-            this.error = err.message;
-          }
-          break;
+    getProjectsFiltered: async function(getFilters) {
+      const { tags, codingLangs, place } = getFilters;
+      if (tags) {
+        try {
+          this.projects = await ProjectsService.filterByTags(tags);
+        } catch (err) {
+          this.error = err.message;
+        }
+      } else if (codingLangs) {
+        try {
+          this.projects = await ProjectsService.filterByCodingLang(codingLangs);
+        } catch (err) {
+          this.error = err.message;
+        }
+      } else {
+        try {
+          this.projects = await ProjectsService.filterByPlace(place);
+        } catch (err) {
+          this.error = err.message;
+        }
       }
     }
   }

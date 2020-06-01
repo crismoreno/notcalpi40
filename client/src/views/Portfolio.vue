@@ -108,12 +108,11 @@
             <ul>
               <li class="tag-filter" v-for="(madeAt, index) in availableMadeAts" :key="index">
                 <input
-                  v-model="places_picked"
+                  v-model="place_picked"
                   type="radio"
                   :name="madeAt"
                   :value="madeAt.id"
                   class="filter-by-madeat-checkbox filter-checkbox"
-                  :checked="Object.values(places_picked).includes(madeAt.id)"
                 />
                 <label>{{madeAt.name}}</label>
               </li>
@@ -146,35 +145,45 @@ export default {
       error: "",
       tags_checked: [],
       codingLangs_checked: [],
-      places_picked: []
+      place_picked: ""
     };
   },
-  //AVAILABLE TAGS
   created() {
-    this.checkFiltersByQueryParams();
+    this.getFilters();
+    this.updateStateWithQueryParams();
   },
   watch: {
     tags_checked(tagId) {
       this.$router.push({
         query: { tag: tagId }
       });
-      EventBus.$emit("SEARCH");
+      this.emitSearch();
     },
     codingLangs_checked(codingLangId) {
       this.$router.push({
         query: { codingLang: codingLangId }
       });
-      EventBus.$emit("SEARCH");
+      this.emitSearch();
     },
-    places_picked(placeId) {
+    place_picked(placeId) {
       this.$router.push({
         query: { place: placeId }
       });
-      EventBus.$emit("SEARCH");
+      this.emitSearch();
     }
   },
   methods: {
-    checkFiltersByQueryParams: function() {
+    emitSearch: function() {
+      let filterParams = {
+        ...(this.tags_checked.length && { tags: this.tags_checked }),
+        ...(this.codingLangs_checked.length && {
+          codingLangs: this.codingLangs_checked
+        }),
+        ...(this.place_picked != "" && { place: this.place_picked })
+      };
+      EventBus.$emit("SEARCH", filterParams);
+    },
+    updateStateWithQueryParams: function() {
       let queryParams = this.$route.query;
       if (Object.entries(queryParams).length) {
         queryParams = Object.entries(queryParams);
@@ -190,9 +199,6 @@ export default {
               case "codingLang":
                 this.codingLangs_checked.push(element);
                 break;
-              case "place":
-                this.place_picked.push(element);
-                break;
             }
           });
         } else {
@@ -204,14 +210,14 @@ export default {
               this.codingLangs_checked.push(filterValues);
               break;
             case "place":
-              this.place_picked.push(filterValues);
+              this.place_picked = filterValues;
               break;
           }
         }
       }
-      this.firstLoadGetProjects();
+      this.emitSearch();
     },
-    firstLoadGetProjects: async function() {
+    getFilters: async function() {
       try {
         this.availableTags = await ProjectsService.getAvailableTags();
         this.availableCodingLangs = await ProjectsService.getAvailableCodingLangs();
@@ -223,8 +229,8 @@ export default {
     uncheckCheckboxes: function() {
       this.tags_checked = [];
       this.codingLangs_checked = [];
-      this.places_picked = [];
-      EventBus.$emit("EMPTY_ALL_FILTERS");
+      this.place_picked = [];
+      this.emitSearch();
     }
   }
 };
