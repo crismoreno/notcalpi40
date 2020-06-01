@@ -1,6 +1,6 @@
 .filtering-projects {
-  button,
-  button:hover {
+  button:not(.remove-filters-button),
+  button:hover:not(.remove-filters-button) {
     text-decoration: none;
     font-family: $sourcesans;
     @include font-style(16px, false, $semibold, 35px, false, left);
@@ -19,6 +19,13 @@
   }
   .card-header {
     padding: 2px;
+  }
+  .remove-filters-button {
+    margin: 10px;
+    width: 100%;
+    @extend %buttons;
+    font-size: 13px;
+    height: 35px;
   }
 }
 @include respond-above(md) {

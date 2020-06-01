@@ -67,4 +67,19 @@ span.highlight {
   cursor: not-allowed;
 }
 
+%buttons {
+  background-color: $red;
+  color: white;
+  text-transform: uppercase;
+  @include padding(5px, 5px, 5px, 5px);
+  border-radius: 4px;
+  font-size: 10px;
+  height: 25px;
+  width: fit-content;
+  text-decoration: none;
+}
+%buttons:hover {
+  background-color: $dark-red;
+}
+
 /*# sourceURL=COMMON */

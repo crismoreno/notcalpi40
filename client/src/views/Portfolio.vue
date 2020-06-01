@@ -92,8 +92,8 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseThree"
-              :aria-expanded="this.$route.query.place ? true : false"
               aria-controls="collapseThree"
+              :aria-expanded="this.$route.query.place ? true : false"
             >Filter by place</button>
           </h2>
         </div>
@@ -120,6 +120,7 @@
           </div>
         </div>
       </div>
+      <button class="remove-filters-button" v-on:click="uncheckCheckboxes()">Remove all Filters</button>
     </div>
     <DisplayProjects
       class="display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
@@ -230,7 +231,7 @@ export default {
       this.tags_checked = [];
       this.codingLangs_checked = [];
       this.place_picked = [];
-      this.emitSearch();
+      EventBus.$emit("EMPTY_FILTERS");
     }
   }
 };

@@ -36,6 +36,9 @@ export default {
     EventBus.$on("SEARCH", filters => {
       this.getProjectsFiltered(filters);
     });
+    EventBus.$on("EMPTY_FILTERS", () => {
+      this.getAllProjects();
+    });
   },
   methods: {
     getAllProjects: async function() {
