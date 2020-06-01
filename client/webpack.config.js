@@ -54,6 +54,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
+      favicon: "./src/assets/img/favicon/favicon-32x32.png",
       filename: "index.html",
       template: "index.html",
       inject: true,
