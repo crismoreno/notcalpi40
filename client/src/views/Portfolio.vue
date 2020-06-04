@@ -14,7 +14,7 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
-              :aria-expanded="this.$route.query.tag ? true : false"
+              :aria-expanded="this.$route.query.tag ? 'true' : 'false'"
               aria-controls="collapseOne"
             >Filter by Tags</button>
           </h2>
@@ -53,7 +53,7 @@
               type="button"
               data-toggle="collapse"
               data-target="#collapseTwo"
-              :aria-expanded="this.$route.query.codingLang ? true : false"
+              :aria-expanded="this.$route.query.codingLang ? 'true' : 'false'"
               aria-controls="collapseTwo"
             >Filter by coding Languages</button>
           </h2>
@@ -96,7 +96,7 @@
               data-toggle="collapse"
               data-target="#collapseThree"
               aria-controls="collapseThree"
-              :aria-expanded="this.$route.query.place ? true : false"
+              :aria-expanded="this.$route.query.place ? 'true' : 'false'"
             >Filter by place</button>
           </h2>
         </div>

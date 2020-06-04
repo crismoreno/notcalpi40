@@ -1,103 +1,49 @@
-.project-itself {
-  @include margin(41px, auto, 30px, auto);
-  .project {
-    .project-info-container {
-      // @include margin (0, 10px, 0, 0);
-      width: 100%;
-      .project-features {
-        li {
-          padding: 5px 0;
-          p {
-            margin: 0;
-          }
-        }
-        li.bordered {
-          border-top: 1px solid black;
-          border-bottom: 1px soldi black;
-        }
-        pre.output {
-          font-family: $sourcesans;
-          font-size: 15px;
-          margin-bottom: 0;
-        }
-        .description {
-          @include margin(30px, 0, 0, 0);
-          pre {
-            font-family: $sourcesans;
-            width: 100%;
-            font-size: 0.9em;
-            line-height: 28px;
-            white-space: pre-line;
-          }
-        }
-        a.full-view-button {
-          background-color: $red;
-          border-radius: 4px;
-          @include padding(5px, 10px, 5px, 10px);
-          color: white;
-        }
-        a.full-view-button:hover {
-          background-color: $dark-red;
-        }
-      }
-    }
-    .project-img-container {
-      // @include margin (0, 0, 10px, 0);
-      width: 100%;
-      iframe {
-        width: 100%;
-      }
-      div {
-        width: 100%;
-      }
-      img {
-        width: 100%;
-      }
-    }
-    .download-project,
-    .confidentiality-button {
-      background-color: $red;
-      @include padding(0, 10px, 0, 10px);
-      border-radius: 4px;
-      color: white;
-      border: none;
-      @include margin(10px, 5px, 10px, 5px);
-      min-width: 120px;
-    }
-    .download-project:hover,
-    .confidentiality-button:hover {
-      background-color: $dark-red;
+.project-detail-container {
+  .project-cover {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
+      0 5px 15px rgba(0, 0, 0, 0.07);
+  }
+  .project-customer,
+  .project-completion-date,
+  .project-collaborators,
+  .project-completion-date,
+  .project-developed_at {
+    text-transform: uppercase;
+    color: $primary-colour;
+    font-size: 12px;
+  }
+  .extra-info {
+    border-top: 1px solid black;
+  }
+  .specs {
+    padding-bottom: 15px;
+    li:not(:last-child) {
+      border-bottom: 1px solid black;
     }
   }
-}
-@include respond-between(md, lg) {
-  .project-itself {
-    .project {
-      .project-info-container {
-        width: 49%;
-        @include margin(0, 50px, 0, 0);
-      }
-      .project-img-container {
-        width: 59%;
-        @include margin(0, 0, 30px, 0);
-      }
-    }
+  .description {
+    line-height: 30px;
+  }
+  .link-to-button {
+    @extend %buttons;
+    font-size: 15px;
+    width: 100%;
+    border: none;
   }
 }
 
-@include respond-above(lg) {
-  .project-itself {
-    .project {
-      .project-info-container {
-        width: 45%;
-        @include margin(0, 35px, 0, 0);
-      }
-      .project-img-container {
-        width: 50%;
-        @include margin(0, 0, 35px, 0);
-      }
-    }
+@include respond-above(md) {
+  .specs {
+    min-width: 30%;
+    max-width: 30%;
   }
 }
-
-/*# sourceURL=MODULE/homepage/_project-detail.scss */
+@include respond-below(md) {
+  .specs {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+}

@@ -115,30 +115,13 @@
       </div>
     </div>
     <div class="filters container d-flex justify-content-center flex-wrap">
-      <a href="/projects/design">
-        <button class="filter cursor-pointer-neg">Design</button>
-      </a>
-      <a href="/projects/photography">
-        <button class="filter cursor-pointer-neg">Photography</button>
-      </a>
-      <a href="/projects/code">
-        <button class="filter cursor-pointer-neg">Code</button>
-      </a>
-      <a href="/projects/social-media">
-        <button class="filter cursor-pointer-neg">Social Media</button>
-      </a>
-      <a href="/projects/comunication">
-        <button class="filter cursor-pointer-neg">Comunication</button>
-      </a>
-      <a href="/projects/online-marketing">
-        <button class="filter cursor-pointer-neg">Online Marketing</button>
-      </a>
-      <a href="/projects/video">
-        <button class="filter cursor-pointer-neg">Video</button>
-      </a>
-      <a href="/projects/management">
-        <button class="filter cursor-pointer-neg">Management</button>
-      </a>
+      <router-link
+        :to="`portfolio?tag=${tag.id}`"
+        v-for="(tag, index) in availableTags"
+        :key="index"
+      >
+        <button class="filter cursor-pointer-neg">{{tag.name}}</button>
+      </router-link>
     </div>
     <div class="my-dev-projects">
       <!-- <h2>SOME OF MY PROJECTS</h2> -->
@@ -149,10 +132,28 @@
 </template>
 <script>
 import BlogComponent from "../components/Blog.vue";
+import ProjectsService from "../ProjectsService";
 export default {
   name: "Home",
   components: {
     BlogComponent
+  },
+  data() {
+    return {
+      availableTags: []
+    };
+  },
+  created() {
+    this.getFilters();
+  },
+  methods: {
+    getFilters: async function() {
+      try {
+        this.availableTags = await ProjectsService.getAvailableTags();
+      } catch (err) {
+        this.error = err.message;
+      }
+    }
   }
 };
 </script>

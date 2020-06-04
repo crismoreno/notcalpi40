@@ -1,6 +1,6 @@
 .filters {
   @include margin(0, auto, 30px, auto);
-  a button {
+  button {
     background-color: $red;
     @include padding(7px, 10px, 7px, 10px);
     border-radius: 4px;
@@ -9,8 +9,11 @@
     @include margin(10px, 5px, 10px, 5px);
     min-width: 120px;
   }
-  a button:hover {
+  button:hover {
     background-color: $dark-red;
+  }
+  .filter {
+    text-transform: capitalize;
   }
 }
 .my-dev-projects {

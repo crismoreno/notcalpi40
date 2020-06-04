@@ -95,4 +95,10 @@ footer {
   flex-grow: 1;
 }
 
+@include respond-below(sm) {
+  footer a {
+    font-size: 15px;
+  }
+}
+
 /*# sourceURL=THEME */
