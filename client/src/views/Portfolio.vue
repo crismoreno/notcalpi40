@@ -122,7 +122,11 @@
           </div>
         </div>
       </div>
-      <button class="remove-filters-button" v-on:click="uncheckCheckboxes()">Remove all Filters</button>
+      <button
+        class="remove-filters-button"
+        v-on:click="uncheckCheckboxes()"
+        :disabled="!tags_checked.length && !codingLangs_checked.length && place_picked == ''"
+      >Remove all Filters</button>
     </div>
     <DisplayProjects
       class="display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"

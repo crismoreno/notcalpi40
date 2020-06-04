@@ -81,5 +81,11 @@ span.highlight {
 %buttons:hover {
   background-color: $dark-red;
 }
+%buttons:disabled {
+  opacity: 50%;
+}
+%buttons:disabled:hover {
+  background-color: $red;
+}
 
 /*# sourceURL=COMMON */
