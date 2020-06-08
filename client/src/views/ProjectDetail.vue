@@ -3,12 +3,12 @@
     <!-- <pre>{{this.project[0]}}</pre> -->
     <img
       class="project-cover"
-      v-if="this.imgExist"
+      v-if="this.headerImgExist"
       :src="require(`../assets/img/projects/${this.project[0].imgs}/${this.project[0].imgs}.png`)"
     />
     <iframe
       style="width: 100%;"
-      v-if="!this.imgExist"
+      v-if="!this.headerImgExist"
       class="videoandimg"
       allowfullscreen
       frameborder="0"
@@ -63,9 +63,14 @@
       </div>
       <div class="description ml-lg-3 ml-xl-3">
         <p>{{this.project[0].description}}</p>
+        <img
+          class="project-cover"
+          v-if="this.descriptionPhotoExist"
+          :src="require(`../assets/img/projects/${this.project[0].imgs}/photo.png`)"
+        />
         <iframe
           style="width: 100%;"
-          v-if="this.imgExist && this.project[0].video"
+          v-if="this.headerImgExist && this.project[0].video"
           class="videoandimg"
           allowfullscreen
           frameborder="0"
@@ -88,7 +93,8 @@ export default {
   data() {
     return {
       project: [],
-      imgExist: false
+      headerImgExist: false,
+      descriptionPhotoExist: false
     };
   },
   created() {
@@ -101,8 +107,11 @@ export default {
           this.$route.params.id
         );
         require(`../assets/img/projects/${this.project[0].imgs}/${this.project[0].imgs}.png`)
-          ? (this.imgExist = true)
-          : (this.imgExist = false);
+          ? (this.headerImgExist = true)
+          : (this.headerImgExist = false);
+        require(`../assets/img/projects/${this.project[0].imgs}/photo.png`)
+          ? (this.descriptionPhotoExist = true)
+          : (this.descriptionPhotoExist = false);
       } catch (err) {
         this.error = err.message;
       }
