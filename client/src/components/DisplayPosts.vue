@@ -7,7 +7,7 @@
             <img class="project-image" :src="post.thumbnail" />
           </div>
           <div class="project-details d-flex flex-column justify-content-center">
-            <p class="name">{{ post.title }}</p>
+            <p class="name">{{ post.title.substr(0, 30) + "\u2026" }}</p>
             <!-- <p class="customer">{{ post.pubDate }}</p> -->
           </div>
         </div>
