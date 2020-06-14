@@ -4,7 +4,7 @@
     <img
       class="project-cover"
       v-if="this.headerImgExist"
-      :src="require(`../assets/img/projects/${this.project[0].imgs}/${this.project[0].imgs}.png`)"
+      :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
     />
     <iframe
       style="width: 100%;"
@@ -62,7 +62,7 @@
         <img
           class="project-cover"
           v-if="this.descriptionPhotoExist"
-          :src="require(`../assets/img/projects/${this.project[0].imgs}/photo.png`)"
+          :src="require(`../assets/img/projects/${this.project[0].id}/photo.png`)"
         />
         <iframe
           style="width: 100%;"
@@ -108,10 +108,10 @@ export default {
         this.project = await ProjectsService.getProjectById(
           this.$route.params.id
         );
-        require(`../assets/img/projects/${this.project[0].imgs}/${this.project[0].imgs}.png`)
+        require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)
           ? (this.headerImgExist = true)
           : (this.headerImgExist = false);
-        require(`../assets/img/projects/${this.project[0].imgs}/photo.png`)
+        require(`../assets/img/projects/${this.project[0].id}/photo.png`)
           ? (this.descriptionPhotoExist = true)
           : (this.descriptionPhotoExist = false);
       } catch (err) {

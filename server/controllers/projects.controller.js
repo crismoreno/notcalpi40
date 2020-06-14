@@ -17,10 +17,7 @@ exports.getAll = (req, res) => {
 
   Projects.findAll({
     where: { show: true },
-    order: [
-      // Will escape title and validate DESC against a list of valid direction parameters
-      ["orderby", "ASC"],
-    ],
+		order: [['orderby', 'ASC']]
   })
     .then((data) => {
       res.send(data);
@@ -51,10 +48,7 @@ exports.getById = (req, res) => {
 exports.getAllFeatured = (req, res) => {
   Projects.findAll({
     where: { is_featured: true },
-    order: [
-      // Will escape title and validate DESC against a list of valid direction parameters
-      ["orderby", "ASC"],
-    ],
+    order: [['orderby', 'ASC']]
   })
     .then((data) => {
       res.send(data);

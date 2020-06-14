@@ -54,10 +54,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.BOOLEAN,
       allowNull: false,
     },
-    imgs: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
+    // imgs: {
+    //   type: Sequelize.STRING,
+    //   allowNull: false,
+    // },
   });
   return Project;
 };

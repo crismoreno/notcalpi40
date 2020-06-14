@@ -6,7 +6,7 @@
           <div class="img-container">
             <img
               class="project-image"
-              :src="require(`../assets/img/projects/${project.imgs}/cover.png`)"
+              :src="require(`../assets/img/projects/${project.id}/cover.png`)"
             />
           </div>
           <div class="project-details d-flex flex-column justify-content-center">
