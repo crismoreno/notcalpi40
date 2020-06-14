@@ -203,7 +203,7 @@
         <div class="html code-tool">
           <div class="d-flex justify-content-between">
             <h2>HTML</h2>
-            <a href="projects/html">Go to projects</a>
+            <router-link to="/portfolio?codingLang=5">Go to HTML projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -219,8 +219,8 @@
 
         <div class="css code-tool">
           <div class="d-flex justify-content-between">
-            <h2>CSS3</h2>
-            <a href="projects/css">Go to projects</a>
+            <h2>CSS</h2>
+            <router-link to="/portfolio?codingLang=6">Go to CSS projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -236,7 +236,7 @@
         <div class="sass code-tool">
           <div class="d-flex justify-content-between">
             <h2>SASS</h2>
-            <a href="projects/sass">Go to projects</a>
+            <router-link to="/portfolio?codingLang=16">Go to SASS projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -253,7 +253,7 @@
         <div class="bootstrap code-tool">
           <div class="d-flex justify-content-between">
             <h2>BOOTSTRAP</h2>
-            <a href="projects/bootstrap">Go to projects</a>
+            <router-link to="/portfolio?codingLang=4">Go to Bootstrap projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -270,7 +270,7 @@
         <div class="jquery code-tool">
           <div class="d-flex justify-content-between">
             <h2>JQUERY</h2>
-            <a href="projects/jquery">Go to projects</a>
+            <router-link to="/portfolio?codingLang=3">Go to jQuery projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -287,7 +287,7 @@
         <div class="JS code-tool">
           <div class="d-flex justify-content-between">
             <h2>JS</h2>
-            <a href="projects/js">Go to projects</a>
+            <router-link to="/portfolio?codingLang=7">Go to jS projects</router-link>
           </div>
           <div class="progress">
             <div
