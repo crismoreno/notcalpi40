@@ -25,10 +25,6 @@
         <h1>{{this.project[0].title}}</h1>
         <p class="project-customer m-0">{{this.project[0].customer}}</p>
       </div>
-      <!-- <div class="d-flex flex-column">
-        <p class="mt-2 project-completion-date text-right">{{this.project[0].completion_date}}</p>
-        <p class="m-0 text-right">{{this.project[0].developed_at}}</p>
-      </div>-->
     </div>
 
     <div
@@ -94,11 +90,17 @@ export default {
     return {
       project: [],
       headerImgExist: false,
-      descriptionPhotoExist: false
+      descriptionPhotoExist: false,
+      projectTags: [],
+      projectCodingLangs: [],
+      projectMadeAts: []
     };
   },
   created() {
     this.getProject();
+    this.getTags();
+    this.getCodingLangs();
+    this.getMadeAts();
   },
   methods: {
     getProject: async function() {
@@ -112,6 +114,33 @@ export default {
         require(`../assets/img/projects/${this.project[0].imgs}/photo.png`)
           ? (this.descriptionPhotoExist = true)
           : (this.descriptionPhotoExist = false);
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    getTags: async function() {
+      try {
+        this.projectTags = await ProjectsService.getTagsById(
+          this.$route.params.id
+        );
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    getCodingLangs: async function() {
+      try {
+        this.projectCodingLangs = await ProjectsService.getCodingLangsById(
+          this.$route.params.id
+        );
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    getMadeAts: async function() {
+      try {
+        this.projectMadeAts = await ProjectsService.getMadeAtsById(
+          this.$route.params.id
+        );
       } catch (err) {
         this.error = err.message;
       }

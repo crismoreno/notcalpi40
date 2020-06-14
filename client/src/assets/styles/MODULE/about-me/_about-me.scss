@@ -126,7 +126,8 @@
       text-align: left;
     }
     #collapseDobcn .card,
-    #collapseNordic .card {
+		#collapseNordic .card,
+		#collapseAssembler .card{
       width: unset !important;
       font-family: $sourcesans;
       a {

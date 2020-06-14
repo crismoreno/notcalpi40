@@ -100,6 +100,39 @@ class ProjectsService {
       }
     });
   }
+  static getTagsById(project_id) {
+    return new Promise(async (resolve, reject) => {
+      try {
+				const res = await axios.get(url + "projecttags/" + project_id);
+        const data = res.data;
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+  static getCodingLangsById(project_id) {
+    return new Promise(async (resolve, reject) => {
+      try {
+				const res = await axios.get(url + "projectcodinglangs/" + project_id);
+        const data = res.data;
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+  static getMadeAtsById(project_id) {
+    return new Promise(async (resolve, reject) => {
+      try {
+				const res = await axios.get(url + "projectmadeat/" + project_id);
+        const data = res.data;
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
 }
 
 export default ProjectsService;

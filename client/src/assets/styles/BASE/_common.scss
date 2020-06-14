@@ -24,6 +24,7 @@ h6 {
 
 p,
 li,
+pre,
 i {
   font-family: $sourcesans;
   @include font-style(16px, false, false, 35px, false, left);

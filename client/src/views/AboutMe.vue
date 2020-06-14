@@ -467,11 +467,32 @@
       <ul>
         <li>
           <span class="highlight">
-            <strong>Octubre 2019 · Currently</strong>
-            <a href="https://www.assemblerschool.com/">Assembler School</a>
-            Full-Stack web development student.
+            <strong>April 2020 · Ongoing</strong>
+            Front-End intern developer at
+            <a href="https://www.redpoints.com">Red Points</a>.
           </span>
         </li>
+        <li>
+          <button
+            class="more-info-button"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseAssembler"
+            aria-expanded="false"
+            aria-controls="collapseAssembler"
+          >
+            <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
+            <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
+            <strong>Octubre 2019 · June 2020</strong>
+            <a href="https://www.assemblerschool.com/" target="_blank">Assembler School</a> Full-Stack web development master degree.
+          </button>
+        </li>
+        <div class="collapse-dobcn collapse" id="collapseAssembler">
+          <div class="card card-body">
+            //TODO! DESCRIPTION
+            <a href="projects/assembler">Projects Assembler</a>
+          </div>
+        </div>
         <li>
           <button
             class="more-info-button"
@@ -484,7 +505,7 @@
             <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
             <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
             <strong>February 2018 · Octubre 2019</strong> Front-End developer at
-            <a href="https://www.dobcn.com/" target="_blank">dobcn</a>.
+            <a href="https://www.dobcn.com/" target="_blank">DoBcn</a>.
           </button>
         </li>
 

@@ -12,9 +12,9 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    developed_at: {
-      type: Sequelize.STRING,
-    },
+    // developed_at: {
+    //   type: Sequelize.STRING,
+    // },
     customer: {
       type: Sequelize.STRING,
     },

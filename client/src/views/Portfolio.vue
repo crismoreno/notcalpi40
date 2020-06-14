@@ -116,7 +116,7 @@
                   :value="madeAt.id"
                   class="filter-by-madeat-checkbox filter-checkbox"
                 />
-                <label>{{madeAt.name}}</label>
+                <label>{{madeAt.short_name}}</label>
               </li>
             </ul>
           </div>
