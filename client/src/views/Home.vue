@@ -21,7 +21,7 @@
           <div>
             <a
               role="button"
-              href="https://drive.google.com/file/d/1VY5ZXG29Y2iagTz-6_fqbdENp9ppPIYo/view?usp=sharing"
+              href="https://drive.google.com/file/d/1J1yWyi_fzuU4_WoKa5Cw6UKMQ-CxUpRN/view?usp=sharing"
             >DOWNLOAD MY CV</a>
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div>
             <a
               role="button"
-              href="https://drive.google.com/file/d/1VY5ZXG29Y2iagTz-6_fqbdENp9ppPIYo/view?usp=sharing"
+              href="https://drive.google.com/file/d/1J1yWyi_fzuU4_WoKa5Cw6UKMQ-CxUpRN/view?usp=sharing"
             >DOWNLOAD MY CV</a>
           </div>
         </div>

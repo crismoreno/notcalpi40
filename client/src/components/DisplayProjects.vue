@@ -1,6 +1,6 @@
 <template>
 <div>
-  <ul>
+  <ul class="d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start">
     <li class="card" v-for="(project, index) in projects" :key="index">
       <router-link :to="'/project/' + project.id">
         <div class="card-content d-flex flex-column">
@@ -18,7 +18,7 @@
       </router-link>
     </li>
   </ul>
-	<p v-if="this.projects.length < 1"> No projects to show</p>
+	<p v-if="this.projects.length < 1">This search didin't match any project 😭</p>
 	</div>
 </template>
 <script>
