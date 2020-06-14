@@ -1,4 +1,5 @@
 <template>
+<div>
   <ul>
     <li class="card" v-for="(project, index) in projects" :key="index">
       <router-link :to="'/project/' + project.id">
@@ -17,6 +18,8 @@
       </router-link>
     </li>
   </ul>
+	<p v-if="this.projects.length < 1"> No projects to show</p>
+	</div>
 </template>
 <script>
 import Vue from "vue";

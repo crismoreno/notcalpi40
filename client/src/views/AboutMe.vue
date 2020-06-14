@@ -304,7 +304,7 @@
         <div class="php code-tool">
           <div class="d-flex justify-content-between">
             <h2>PHP</h2>
-            <a href="projects/php">Go to projects</a>
+            <router-link to="/portfolio?codingLang=11">Go to PHP projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -321,7 +321,7 @@
         <div class="node code-tool">
           <div class="d-flex justify-content-between">
             <h2>NODE</h2>
-            <a href="projects/node">Go to projects</a>
+            <router-link to="/portfolio?codingLang=2">Go to NodejS projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -338,7 +338,7 @@
         <div class="express code-tool">
           <div class="d-flex justify-content-between">
             <h2>EXPRESS</h2>
-            <a href="projects/express">Go to projects</a>
+            <router-link to="/portfolio?codingLang=1">Go to Express projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -355,7 +355,7 @@
         <div class="angular code-tool">
           <div class="d-flex justify-content-between">
             <h2>ANGULAR</h2>
-            <a href="projects/angular">Go to projects</a>
+            <router-link to="/portfolio?codingLang=9">Go to Angular projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -372,7 +372,7 @@
         <div class="magento code-tool">
           <div class="d-flex justify-content-between">
             <h2>MAGENTO</h2>
-            <a href="projects/magento">Go to projects</a>
+            <router-link to="/portfolio?codingLang=15">Go to Magento projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -389,7 +389,7 @@
         <div class="wordpress code-tool">
           <div class="d-flex justify-content-between">
             <h2>WORDPRESS</h2>
-            <a href="projects/wordpress">Go to projects</a>
+            <router-link to="/portfolio?codingLang=10">Go to Wordpress projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -406,7 +406,7 @@
         <div class="mysql code-tool">
           <div class="d-flex justify-content-between">
             <h2>MYSQL</h2>
-            <a href="projects/mysql">Go to projects</a>
+            <router-link to="/portfolio?codingLang=14">Go to Mysql projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -423,7 +423,7 @@
         <div class="gulp code-tool">
           <div class="d-flex justify-content-between">
             <h2>GULP</h2>
-            <a href="projects/gulp">Go to projects</a>
+            <router-link to="/portfolio?codingLang=18">Go to Gulp projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -440,7 +440,7 @@
         <div class="webpack code-tool">
           <div class="d-flex justify-content-between">
             <h2>WEBPACK</h2>
-            <a href="projects/webpack">Go to projects</a>
+            <router-link to="/portfolio?codingLang=21">Go to Webpack projects</router-link>
           </div>
           <div class="progress">
             <div
