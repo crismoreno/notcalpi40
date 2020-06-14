@@ -129,6 +129,7 @@
       >Remove all Filters</button>
     </div>
     <DisplayProjects
+      isFeatured="false"
       class="display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
     ></DisplayProjects>
   </div>

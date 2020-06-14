@@ -125,18 +125,20 @@
     </div>
     <div class="my-dev-projects">
       <!-- <h2>SOME OF MY PROJECTS</h2> -->
-      <BlogComponent></BlogComponent>
+      <FeaturedProjectsComponent></FeaturedProjectsComponent>
       <!-- <a class="full-portfolio-button" href="/portfolio/">FULL PORTFOLIO >></a> -->
     </div>
   </div>
 </template>
 <script>
+import FeaturedProjectsComponent from "../components/DisplayFeaturedPosts.vue";
 import BlogComponent from "../components/Blog.vue";
 import ProjectsService from "../ProjectsService";
 export default {
   name: "Home",
   components: {
-    BlogComponent
+    // BlogComponent,
+    FeaturedProjectsComponent
   },
   data() {
     return {

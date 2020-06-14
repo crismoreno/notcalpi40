@@ -13,6 +13,18 @@ class ProjectsService {
         reject(err);
       }
     });
+	}
+	
+  static getFeaturedProjects() {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const res = await axios.get(url + 'featured');
+        const data = res.data;
+        resolve(data);
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 
   static getProjectById(projId) {

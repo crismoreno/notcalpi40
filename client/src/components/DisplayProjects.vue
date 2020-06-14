@@ -25,6 +25,7 @@ import EventBus from "../event-bus";
 import ProjectsService from "../ProjectsService";
 export default {
   name: "DisplayProjects",
+  props: ["isFeatured"],
   data() {
     return {
       projects: [],
@@ -32,7 +33,11 @@ export default {
     };
   },
   mounted() {
-    this.getAllProjects();
+    if (this.isFeatured == "false") {
+      this.getAllProjects();
+    } else {
+      this.getFeaturedProjects();
+    }
     EventBus.$on("SEARCH", filters => {
       this.getProjectsFiltered(filters);
     });
@@ -44,6 +49,13 @@ export default {
     getAllProjects: async function() {
       try {
         this.projects = await ProjectsService.getProjects();
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+    getFeaturedProjects: async function() {
+      try {
+        this.projects = await ProjectsService.getFeaturedProjects();
       } catch (err) {
         this.error = err.message;
       }

@@ -6,9 +6,7 @@
           <div class="img-container">
             <img class="project-image" :src="post.thumbnail" />
           </div>
-          <div
-            class="project-details d-flex flex-column justify-content-center"
-          >
+          <div class="project-details d-flex flex-column justify-content-center">
             <p class="name">{{ post.title }}</p>
             <!-- <p class="customer">{{ post.pubDate }}</p> -->
           </div>
@@ -20,10 +18,10 @@
 <script>
 import axios from "axios";
 export default {
-  name: "DisplayPosts",
+  name: "DisplayProjects",
   data() {
     return {
-      posts: [],
+      posts: []
     };
   },
   methods: {
@@ -33,9 +31,9 @@ export default {
           "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cristinamorenomedran"
         )
         // .then((res) => res.json())
-        .then((data) => {
+        .then(data => {
           const res = data.data.items;
-          const mediumData = res.filter((item) => item.categories.length > 0);
+          const mediumData = res.filter(item => item.categories.length > 0);
           this.posts = mediumData;
         });
     },
@@ -43,10 +41,10 @@ export default {
       return text.length > maxLength
         ? text.slice(startingPoint, maxLength)
         : text;
-    },
+    }
   },
   beforeMount() {
     this.getBlogPosts();
-  },
+  }
 };
 </script>
