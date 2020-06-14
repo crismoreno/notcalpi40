@@ -5,11 +5,8 @@
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
       0 5px 15px rgba(0, 0, 0, 0.07);
   }
-  .project-customer,
-  .project-completion-date,
-  .project-collaborators,
-  .project-completion-date,
-  .project-developed_at {
+
+  .small-red-font {
     text-transform: uppercase;
     color: $primary-colour;
     font-size: 12px;
@@ -32,8 +29,15 @@
     width: 100%;
     border: none;
 	}
-	pre{
-		
+	.links-to-buttons{
+		margin-top: 10px;
+		a{
+			margin-top: 10px;
+			margin-right: 10px;
+		}
+	}
+	.project-tags, .project-madeats, .project-coding-langs{
+		text-transform: capitalize;;
 	}
 }
 

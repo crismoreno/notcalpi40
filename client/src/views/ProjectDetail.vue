@@ -1,14 +1,15 @@
 <template>
-  <div class="project-detail-container container py-5">
-    <!-- <pre>{{this.project[0]}}</pre> -->
+  <div class="project-detail-container container py-5 main-container">
+    <!-- <pre>{{this.project[0].id}}</pre> -->
     <img
       class="project-cover"
       v-if="this.headerImgExist"
       :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
     />
+
     <iframe
+      v-if="!this.headerImgExist && this.project[0].video"
       style="width: 100%;"
-      v-if="!this.headerImgExist"
       class="videoandimg"
       allowfullscreen
       frameborder="0"
@@ -20,10 +21,18 @@
       :src="this.project[0].video"
       webkitAllowFullScreen
     ></iframe>
-    <div class="d-flex justify-content-between mt-5 pb-3">
+    <div
+      class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row justify-content-between mt-5 pb-3 align-items-start align-items-sm-start align-items-md-end align-items-lg-end align-items-xl-end"
+    >
       <div class="d-flex flex-column">
         <h1>{{this.project[0].title}}</h1>
-        <p class="project-customer m-0">{{this.project[0].customer}}</p>
+        <p class="small-red-font m-0">{{this.project[0].customer}}</p>
+      </div>
+      <div>
+        <p
+          v-if="this.project[0].completion_date"
+          class="small-red-font m-0"
+        >Completion date: {{this.project[0].completion_date}}</p>
       </div>
     </div>
 
@@ -31,33 +40,67 @@
       class="d-flex extra-info pt-3 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row"
     >
       <div class="specs mr-lg-3 mg-xl-3">
-        <ul class="mb-3">
-          <li
+        <!-- <ul class="mb-3"> -->
+        <ul>
+          <!-- <li
             v-if="this.project[0].collaborators"
-            class="project-collaborators"
-          >Collaborators: {{this.project[0].collaborators}}</li>
+            class="small-red-font m-0"
+          >Collaborators: {{this.project[0].collaborators}}</li>-->
           <li
             v-if="this.project[0].developed_at"
-            class="project-developed_at"
+            class="small-red-font m-0"
           >Developed at: {{this.project[0].developed_at}}</li>
-          <li
+          <!-- <li
             v-if="this.project[0].completion_date"
-            class="project-completion-date"
-          >Completion date: {{this.project[0].completion_date}}</li>
+            class="small-red-font m-0"
+          >Completion date: {{this.project[0].completion_date}}</li>-->
         </ul>
-        <div class="d-flex flex-wrap">
-          <div v-if="this.project[0].link_to_prod" class="m-1">
-            <a class="link-to-button" :href="this.project[0].link_to_prod">Let's see 👀</a>
+        <p class="small-red-font m-0" v-if="this.projectTags.length">This project is related to:</p>
+        <ul v-if="this.projectTags">
+          <li v-for="(tag, index) in projectTags" :key="index" class="project-tags">{{tag.tag.name}}</li>
+        </ul>
+        <p
+          class="small-red-font m-0"
+          v-if="this.projectCodingLangs.length"
+        >This project developed in:</p>
+        <ul v-if="this.projectCodingLangs">
+          <li
+            v-for="(codingLang, index) in projectCodingLangs"
+            class="project-coding-langs"
+            :key="index"
+          >{{codingLang.codinglang.name}}</li>
+        </ul>
+
+        <!-- <ul v-if="this.projectMadeAts">
+          <li
+            v-for="(madeAt, index) in projectMadeAts"
+            :key="index"
+            class="project-madeats"
+          >{{madeAt.madeat.full_name}}</li>
+        </ul>-->
+
+        <div class="d-flex flex-wrap links-to-buttons">
+          <div v-if="this.project[0].link_to_prod">
+            <a
+              v-for="(link, index) in linksToProd"
+              :key="index"
+              class="link-to-button"
+              :href="link"
+            >Let's see 👀</a>
           </div>
-          <div v-if="this.project[0].link_to_repo" class="m-1">
+          <div v-if="this.project[0].link_to_repo">
             <a class="link-to-button" :href="this.project[0].link_to_repo">Link to repo 📁</a>
           </div>
-          <div v-if="this.project[0].link_to_download" class="m-1">
+          <div v-if="this.project[0].link_to_download">
             <a class="link-to-button" :href="this.project[0].link_to_download">Download 📦</a>
           </div>
         </div>
       </div>
       <div class="description ml-lg-3 ml-xl-3">
+        <p
+          v-if="this.project[0].collaborators"
+          class="small-red-font m-0 text-right"
+        >Collaborators: {{this.project[0].collaborators}}</p>
         <p>{{this.project[0].description}}</p>
         <img
           class="project-cover"
@@ -93,7 +136,8 @@ export default {
       descriptionPhotoExist: false,
       projectTags: [],
       projectCodingLangs: [],
-      projectMadeAts: []
+      projectMadeAts: [],
+      linksToProd: []
     };
   },
   created() {
@@ -117,6 +161,9 @@ export default {
       } catch (err) {
         this.error = err.message;
       }
+      const str = this.project[0].link_to_prod;
+      const res = str.split(" ");
+      this.linksToProd = res;
     },
     getTags: async function() {
       try {
