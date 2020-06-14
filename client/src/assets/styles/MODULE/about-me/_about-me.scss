@@ -14,6 +14,8 @@
 // }
 
 .about-me-container {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
   // @include margin (30px, auto, 0, auto);
   // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   .jumbotron {
@@ -65,10 +67,14 @@
         0 5px 15px rgba(0, 0, 0, 0.07);
       padding: 12px;
       text-align: center;
-      height: 40px;
+			// height: 40px;
+			height: 60px;
     }
   }
   .software-container {
+		.card{
+			border-radius: 3px !important;
+		}
     .card-header {
       text-transform: uppercase;
       @include font-style(16px, black, 600, 35px, 0.5px, left);
@@ -133,7 +139,10 @@
       a {
         @extend %buttons;
         margin-top: 15px;
-      }
+			}
+			p{
+				line-height: 1.5 !important;
+			}
     }
   }
   .get-to-know-me {
