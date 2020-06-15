@@ -30,11 +30,18 @@ module.exports = {
         exclude: /(node_modules)/, //excluded node_modules
         test: /\.js$/,
         use: "babel-loader",
+			},
+			{
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { sourceMap: true } },
+        ],
       },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: ["style-loader", "css-loader"],
+			// },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         use: [
@@ -65,5 +72,8 @@ module.exports = {
     // 		'APIURL': JSON.stringify(process.env.APIURL)
     // 	}
     // })
-  ],
+	],
+	// stats: {
+  //   warningsFilter: [/Failed to parse source map/],
+  // },
 };

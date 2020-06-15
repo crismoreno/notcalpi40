@@ -26,7 +26,14 @@
     >
       <div class="d-flex flex-column">
         <h1>{{this.project[0].title}}</h1>
-        <p class="small-red-font m-0">{{this.project[0].customer}}</p>
+        <p
+          class="small-red-font m-0"
+          v-if="this.project[0].customer !== 'Full Stack Bootcamp' && this.project[0].customer !== 'Degree Project' && this.project[0].customer !=='Full Stack Master\'s Degree' && this.project[0].customer !=='Personal Project' && this.project[0].customer !=='WeDrink'"
+        >Customer: {{this.project[0].customer}}</p>
+        <p
+          class="small-red-font m-0"
+          v-if="this.projectMadeAts.length > 0 && this.projectMadeAts[0].madeat.full_name !== 'Freelance'"
+        >{{this.projectMadeAts[0].madeat.full_name}}</p>
       </div>
       <div>
         <p
@@ -46,10 +53,10 @@
             v-if="this.project[0].collaborators"
             class="small-red-font m-0"
           >Collaborators: {{this.project[0].collaborators}}</li>-->
-          <li
-            v-if="this.project[0].developed_at"
+          <!-- <li
+            v-if="this.projectMadeAts.length > 0"
             class="small-red-font m-0"
-          >Developed at: {{this.project[0].developed_at}}</li>
+          >Developed at: {{this.projectMadeAts[0].madeat.full_name}}</li>-->
           <!-- <li
             v-if="this.project[0].completion_date"
             class="small-red-font m-0"
