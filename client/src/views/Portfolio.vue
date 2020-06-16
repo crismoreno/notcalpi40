@@ -7,13 +7,11 @@
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
             <button
-              v-on:click="uncheckCheckboxes()"
+              v-on:click="uncheckCheckboxes('#collapseOne')"
               id="filter-by-tag-button"
               class="btn btn-link btn-block text-left collapsable-button"
               v-bind:class="{collapsed : !this.$route.query.tag}"
               type="button"
-              data-toggle="collapse"
-              data-target="#collapseOne"
               :aria-expanded="this.$route.query.tag ? 'true' : 'false'"
               aria-controls="collapseOne"
             >Filter by Tags</button>
@@ -46,13 +44,11 @@
         <div class="card-header" id="headingTwo">
           <h2 class="mb-0">
             <button
-              v-on:click="uncheckCheckboxes()"
+              v-on:click="uncheckCheckboxes('#collapseTwo')"
               id="filter-by-codinglang-button"
               class="btn btn-link btn-block text-left collapsed collapsable-button"
               v-bind:class="{collapsed : !this.$route.query.place}"
               type="button"
-              data-toggle="collapse"
-              data-target="#collapseTwo"
               :aria-expanded="this.$route.query.codingLang ? 'true' : 'false'"
               aria-controls="collapseTwo"
             >Filter by coding Languages</button>
@@ -88,13 +84,11 @@
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
             <button
-              v-on:click="uncheckCheckboxes()"
+              v-on:click="uncheckCheckboxes('#collapseThree')"
               id="filter-by-place-button"
               class="btn btn-link btn-block text-left collapsed collapsable-button"
               v-bind:class="{collapsed : !this.$route.query.place}"
               type="button"
-              data-toggle="collapse"
-              data-target="#collapseThree"
               aria-controls="collapseThree"
               :aria-expanded="this.$route.query.place ? 'true' : 'false'"
             >Filter by place</button>
@@ -140,6 +134,7 @@ import axios from "axios";
 import EventBus from "../event-bus";
 import ProjectsService from "../ProjectsService";
 import DisplayProjects from "../components/DisplayProjects.vue";
+import * as $ from "jquery";
 export default {
   name: "Portfolio",
   components: {
@@ -234,11 +229,12 @@ export default {
         this.error = err.message;
       }
     },
-    uncheckCheckboxes: function() {
-      this.tags_checked != [] ? (this.tags_checked = []) : this.tags_checked;
+    uncheckCheckboxes: function(selector) {
+      this.tags_checked = [];
       this.codingLangs_checked = [];
       this.place_picked = [];
       EventBus.$emit("EMPTY_FILTERS");
+      $(selector).collapse("toggle");
     }
   }
 };
