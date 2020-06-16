@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Personal full-stack portfolio platform made by Cristina Moreno",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crismoreno/notcalpi40.git"
+  },
   "engines": {
     "node": "12.16.3",
     "npm": "6.13.7"

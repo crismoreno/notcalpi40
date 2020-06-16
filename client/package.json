@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "- Develop a REST API for delivering stock market data (DBMS of our won choice) - Develop a Vue.js SPA that consumes the data provided by the API (Using Charts.js) - Develop a NodeJS/Express app that consumes the data from the API(Using Charts.js and render engine from our own choice)",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/crismoreno/notcalpi40.git"
+  },
   "scripts": {
     "dev": "concurrently --kill-others \"gulp watch\" \"webpack-dev-server --config webpack.config.js\"",
     "postinstall": "gulp cssfy; webpack -p"
