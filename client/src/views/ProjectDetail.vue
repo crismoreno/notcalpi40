@@ -93,6 +93,7 @@
               :key="index"
               class="link-to-button"
               :href="link"
+							target="_blank"
             >Let's see 👀</a>
           </div>
           <div v-if="this.project[0].link_to_repo">
