@@ -1,10 +1,16 @@
-const db = require("../models");
+const db = require("../sequelize-models");
 const { QueryTypes } = require("sequelize");
 const Sequelize = db.sequelize;
 const ContactForms = db.contactForms;
 var nodemailer = require("nodemailer");
 
-// Retrieve all showable projects
+// const contactFormModel = require("../models/contactForm.model");
+
+// const controller = {
+// 	postContactForm: (req, res) => {
+// 		contactFormModel.postContactForm()
+// 	}
+// }
 exports.postContactForm = (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -71,3 +77,4 @@ exports.postContactForm = (req, res) => {
       });
     });
 };
+// module.exports = controller;

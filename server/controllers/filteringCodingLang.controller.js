@@ -1,69 +1,40 @@
-const db = require("../models");
-const Projects = db.projects;
-const CodingLangs = db.codingLangs;
-const { QueryTypes } = require("sequelize");
-const Sequelize = db.sequelize;
+const projectsModel = require("../models/projects.model")
+const filteringCodingLangModel = require("../models/filteringCodingLang.model");
 
-// Find projects by codingLangs
-exports.getByCodingLang = (req, res) => {
-  let codingLangsToFetch;
-  if (req.query.codinglangs) {
-    codingLangsToFetch = req.query.codinglangs;
-    codingLangsToFetch = codingLangsToFetch.split(",");
-    const results = Sequelize.query(
-      `SELECT p.id, p.title, p.customer, GROUP_CONCAT(pcl.codinglangId) as codinglangs
-			FROM projects p
-			LEFT JOIN project_codingLangs as pcl ON p.id = pcl.projectId LEFT JOIN codinglangs cl ON cl.id=pcl.codinglangId AND cl.id IN (${codingLangsToFetch})
-			GROUP BY p.id,p.title
-			HAVING COUNT(pcl.codinglangId) >= COUNT(cl.id) AND COUNT(cl.id) = ${codingLangsToFetch.length}`,
-      {
-        type: QueryTypes.SELECT,
-        raw: true,
-        plain: false,
-        logging: console.log,
-        nest: true,
-      }
-    )
-      .then((data) => {
-        res.send(data);
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message:
-            err.message ||
-            "Some error occurred while retrieving featured projects.",
-        });
-      });
-  } else {
-    Projects.findAll({
-      where: { show: true },
-      order: [
-        // Will escape title and validate DESC against a list of valid direction parameters
-        ["orderby", "ASC"],
-      ],
-    })
-      .then((data) => {
-        res.send(data);
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while retrieving projects.",
-        });
-      });
-  }
-};
 
-//Get a list with all possible codinglangs
-exports.getCodingLangsList = (req, res) => {
-  CodingLangs.findAll()
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving projects.",
-      });
-    });
-};
+const controller = {
+	// Find projects by tags
+	getProjectsByCodingLangsId : (req, res) => {
+		let codingLangsIds;
+		if (req.query.codinglangs) {
+			codingLangsIds = req.query.codinglangs;
+    	codingLangsIds = codingLangsIds.split(",");
+			filteringCodingLangModel.getProjectsByCodingLangsId(codingLangsIds, (err, projects) =>{
+				if(err){
+					res.send(err)
+				}else{
+					res.send(projects)
+				}
+			})
+		}else{
+			projectsModel.getAllShowableProjects((err, projects) =>{
+				if(err){
+					res.send(err)
+				}else{
+					res.send(projects)
+				}
+			})
+		}
+	},
+	//Get a list with all available tags
+	getAllAvailableCodingLangs: (req, res) => {
+		filteringCodingLangModel.getAllAvailableCodingLangs((err, tags) =>{
+			if(err){
+				res.send(err)
+			}else{
+				res.send(tags)
+			}
+		})
+	}
+}
+module.exports = controller;

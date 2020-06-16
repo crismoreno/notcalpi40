@@ -153,9 +153,11 @@
         <div class="card">
           <div class="card-header">MANAGEMENT TOOLS</div>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">Atlassian Suite</li>
             <li class="list-group-item">Teamwork</li>
             <li class="list-group-item">Trello</li>
             <li class="list-group-item">Asana</li>
+            <li class="list-group-item">Meistertask</li>
           </ul>
         </div>
         <div class="card">
@@ -643,11 +645,6 @@
         <h2 class="mt-5">Other work experience non related to code nor design</h2>
         <ul>
           <li>
-            <strong>2013 · 2014 · 2015</strong> Volunteer at festival
-            <a target="_blank" href="http://offf.barcelona/">OFFF</a> festival, as
-            head of the volunteers’ team.
-          </li>
-          <li>
             <strong>2007 · 2013</strong> Dealer at
             <a target="_blank" href="http://medran.cat/">Cansaladeries Medrán</a>.
           </li>
@@ -662,13 +659,21 @@
             <strong>2013 · 2017</strong> English teacher at
             <a target="_blank" href="https://www.naturalkids.cat/">NaturalKids</a>.
           </li>
+        </ul>
+
+        <h2 class="mt-5">Volunteering experiencies</h2>
+        <ul>
+          <li>
+            <strong>2013 · 2014 · 2015</strong> Volunteer at festival
+            <a target="_blank" href="http://offf.barcelona/">OFFF</a> festival, as
+            head of the volunteers’ team.
+          </li>
           <li>
             <strong>2013</strong> Volunteer at
             <a target="_blank" href="https://fiberfib.com/">FIB</a>, Festival
             Independent de Benicàssim.
           </li>
         </ul>
-
         <h2 class="mt-5">Look! I've been on the papers</h2>
         <ul>
           <li>
@@ -697,9 +702,6 @@
     </div>
     <div class="medium-fetched">
       <BlogComponent class="display-projects d-flex flex-row flex-wrap justify-content-center"></BlogComponent>
-      <!-- <app-display-posts
-        class="display-posts d-flex flex-row flex-wrap justify-content-center mb-5"
-      ></app-display-posts>-->
     </div>
   </div>
 </template>

@@ -13,7 +13,7 @@ const contents = require("./routes/contents");
 
 app.use("/api", contents);
 
-const db = require("./models");
+const db = require("./sequelize-models");
 
 // db.sequelize.sync({ alter: true });
 db.sequelize.sync();
