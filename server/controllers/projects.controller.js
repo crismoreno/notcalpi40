@@ -1,15 +1,3 @@
-// const db = require("../sequelize-models");
-// const Projects = db.projects;
-// const ProjectTags = db.projectTags;
-// const ProjectCodingLangs = db.projectCodingLangs;
-// const ProjectMadeAt = db.projectMadeAt;
-// const Tags = db.tags;
-// const CodingLangs = db.codingLangs;
-// const madeAt = db.madeAt;
-// const Op = db.Sequelize.Op;
-// const Sequelize = db.sequelize;
-// const { QueryTypes } = require("sequelize");
-
 const projectsModel = require("../models/projects.model")
 
 const controller = {

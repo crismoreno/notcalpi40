@@ -171,36 +171,6 @@
         </div>
       </div>
 
-      <!-- <div class="skills-container container d-flex justify-content-center flex-wrap">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          LANGUAGES
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">CATALÀ : Nivell nadiu</li>
-          <li class="list-group-item">CASTELLANO : Nivel Nativo</li>
-          <li class="list-group-item">ENGLISH: C1</li>
-        </ul>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          SKILLS & COMPETENCE
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Windows</li>
-          <li class="list-group-item">MacOs</li>
-        </ul>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          OTHERS
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">2016 · Driving license (B) and own car 🚘</li>
-        </ul>
-      </div>
-      </div>-->
-
       <div class="code-tools mt-5">
         <div class="html code-tool">
           <div class="d-flex justify-content-between">

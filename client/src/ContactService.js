@@ -20,11 +20,9 @@ class ContactsService {
       },
     })
       .then(function(response) {
-        //handle success
         console.log(formBody, response);
       })
       .catch(function(response) {
-        //handle error
         console.log(response);
       });
   }

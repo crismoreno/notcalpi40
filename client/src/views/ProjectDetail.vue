@@ -1,12 +1,10 @@
 <template>
   <div class="project-detail-container container py-5 main-container">
-    <!-- <pre>{{this.project[0].id}}</pre> -->
     <img
       class="project-cover"
       v-if="this.headerImgExist"
       :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
     />
-
     <iframe
       v-if="!this.headerImgExist && this.project[0].video"
       style="width: 100%;"
@@ -93,7 +91,7 @@
               :key="index"
               class="link-to-button"
               :href="link"
-							target="_blank"
+              target="_blank"
             >Let's see 👀</a>
           </div>
           <div v-if="this.project[0].link_to_repo">

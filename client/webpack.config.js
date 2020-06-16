@@ -27,7 +27,7 @@ module.exports = {
         use: "vue-loader",
       },
       {
-        exclude: /(node_modules)/, //excluded node_modules
+        exclude: /(node_modules)/,
         test: /\.js$/,
         use: "babel-loader",
 			},
@@ -73,7 +73,4 @@ module.exports = {
     // 	}
     // })
 	],
-	// stats: {
-  //   warningsFilter: [/Failed to parse source map/],
-  // },
 };

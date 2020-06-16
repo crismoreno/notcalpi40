@@ -6,7 +6,7 @@ var nodemailer = require("nodemailer");
 
 
 const model = {
-	// POst COntact Form to DB and Send Email
+	// Post COntact Form to DB and Send Email
 	postContactForm: async (name, email, tel, message, company, response) => {
 		console.log(name, email, tel, message, company, 'hardcoded string')
 		try{

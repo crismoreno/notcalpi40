@@ -124,9 +124,7 @@
       </router-link>
     </div>
     <div class="my-dev-projects">
-      <!-- <h2>SOME OF MY PROJECTS</h2> -->
       <FeaturedProjectsComponent></FeaturedProjectsComponent>
-      <!-- <a class="full-portfolio-button" href="/portfolio/">FULL PORTFOLIO >></a> -->
     </div>
   </div>
 </template>
