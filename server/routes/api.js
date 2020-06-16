@@ -39,6 +39,6 @@ router.get("/madeat", filteringMadeAts.getProjectsByMadeAtId);
 //Get a list with all available madeAts
 router.get("/madeatslist", filteringMadeAts.getAllAvailableMadeAts);
 
-// router.post("/postForm", contactFormController.postContactForm);
+router.post("/postForm", contactFormController.postContactForm);
 
 module.exports = router;
