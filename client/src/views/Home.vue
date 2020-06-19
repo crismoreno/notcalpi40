@@ -1,5 +1,5 @@
 <template>
-  <div class="home main-container">
+  <div class="home main-container mt-5">
     <div class="header-background">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
         <polygon fill="white" points="0,100 100,0 100,100" />

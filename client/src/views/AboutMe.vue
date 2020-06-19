@@ -524,7 +524,7 @@
       </div>
 
       <div class="work-experience mt-5">
-        <h2>Work Experience</h2>
+        <h2>Code Related Work Experience</h2>
         <ul>
           <li>
             <button
@@ -571,7 +571,7 @@
           <div class="collapse-assembler collapse" id="collapseAssembler">
             <div class="card card-body">
               <p>
-                Having gone through Assembler School of Software Engineering Full-Stack programme means I accomplished 9 months of fulltime work on both back-end and front-end technologies. This Master Degree maily involves JavaScript and PHP knowledge plus some GoLang. Below, you can see my global scoring with detail on every single technology we have worked on having achieved
+                Having gone through Assembler School of Software Engineering Full-Stack programme means I accomplished 9 months of fulltime real-life-oriented-work (1200 hours) on both back-end and front-end technologies. This Master Degree maily involves JavaScript and PHP knowledge plus some GoLang. Below, you can see my global scoring with detail on every single technology we have worked on having achieved
                 <b>9,6/10</b> average score.
               </p>
               <img
@@ -609,6 +609,7 @@
               <router-link to="/portfolio?place=4">Projects developed at DoBcn</router-link>
             </div>
           </div>
+          <h2 class="mt-5">Digital Marketing Related Work Experience</h2>
           <li>
             <button
               class="more-info-button"
@@ -636,7 +637,7 @@
               <router-link to="/portfolio?place=3">Projects developed at Nordic Projects</router-link>
             </div>
           </div>
-
+          <h2 class="mt-5">Design Management / Event Planning work experience</h2>
           <li>
             <strong>April 2017 · June 2017</strong> Crew Member at The Art Of
             Performance Tour by Jaguar and The Above & Beyond Tour by Land Rover.
