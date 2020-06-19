@@ -107,20 +107,22 @@
       a {
         @extend %buttons;
       }
-      h2 {
+      h3 {
         text-transform: uppercase;
         @include font-style(16px, black, 400, 35px, 0.5px, left);
         font-family: $sourcesans;
       }
     }
-  }
+	}
+	.work-experience, .code-tools{
+		h2 {
+			text-transform: uppercase;
+			@include font-style(16px, black, 700, 35px, 0.5px, left);
+			font-family: $sourcesans;
+		}
+	}
   .work-experience {
     padding-bottom: 40px !important;
-    h2 {
-      text-transform: uppercase;
-      @include font-style(16px, black, 700, 35px, 0.5px, left);
-      font-family: $sourcesans;
-    }
     a {
       text-decoration: underline;
     }
@@ -133,6 +135,7 @@
     }
     #collapseDobcn .card,
 		#collapseNordic .card,
+		#collapseRedPoints .card,
 		#collapseAssembler .card{
       width: unset !important;
       font-family: $sourcesans;

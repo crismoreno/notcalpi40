@@ -172,16 +172,17 @@
       </div>
 
       <div class="code-tools mt-5">
+        <h2>Tech Skills</h2>
         <div class="html code-tool">
           <div class="d-flex justify-content-between">
-            <h2>HTML</h2>
+            <h3>HTML</h3>
             <router-link to="/portfolio?codingLang=5">Go to HTML projects</router-link>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 90%"
+              style="width: 95%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -191,30 +192,14 @@
 
         <div class="css code-tool">
           <div class="d-flex justify-content-between">
-            <h2>CSS</h2>
+            <h3>CSS</h3>
             <router-link to="/portfolio?codingLang=6">Go to CSS projects</router-link>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 90%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
-        <div class="sass code-tool">
-          <div class="d-flex justify-content-between">
-            <h2>SASS</h2>
-            <router-link to="/portfolio?codingLang=16">Go to SASS projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 80%"
+              style="width: 95%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -222,44 +207,29 @@
           </div>
         </div>
 
-        <div class="bootstrap code-tool">
-          <div class="d-flex justify-content-between">
-            <h2>BOOTSTRAP</h2>
-            <router-link to="/portfolio?codingLang=4">Go to Bootstrap projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 90%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
-
-        <div class="jquery code-tool">
-          <div class="d-flex justify-content-between">
-            <h2>JQUERY</h2>
-            <router-link to="/portfolio?codingLang=3">Go to jQuery projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 80%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
+        <h2>Coding Languages</h2>
 
         <div class="JS code-tool">
           <div class="d-flex justify-content-between">
-            <h2>JS</h2>
+            <h3>JS</h3>
             <router-link to="/portfolio?codingLang=7">Go to jS projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 80%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="node code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>NODE</h3>
+            <router-link to="/portfolio?codingLang=2">Go to NodejS projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -275,42 +245,41 @@
 
         <div class="php code-tool">
           <div class="d-flex justify-content-between">
-            <h2>PHP</h2>
+            <h3>PHP</h3>
             <router-link to="/portfolio?codingLang=11">Go to PHP projects</router-link>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 70%"
+              style="width: 60%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
             ></div>
           </div>
         </div>
-
-        <div class="node code-tool">
+        <h2>Libraries</h2>
+        <div class="bootstrap code-tool">
           <div class="d-flex justify-content-between">
-            <h2>NODE</h2>
-            <router-link to="/portfolio?codingLang=2">Go to NodejS projects</router-link>
+            <h3>BOOTSTRAP</h3>
+            <router-link to="/portfolio?codingLang=4">Go to Bootstrap projects</router-link>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 70%"
+              style="width: 95%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
             ></div>
           </div>
         </div>
-
-        <div class="express code-tool">
+        <div class="jquery code-tool">
           <div class="d-flex justify-content-between">
-            <h2>EXPRESS</h2>
-            <router-link to="/portfolio?codingLang=1">Go to Express projects</router-link>
+            <h3>JQUERY</h3>
+            <router-link to="/portfolio?codingLang=3">Go to jQuery projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -324,10 +293,64 @@
           </div>
         </div>
 
-        <div class="angular code-tool">
+        <h2>Database</h2>
+        <div class="mysql code-tool">
           <div class="d-flex justify-content-between">
-            <h2>ANGULAR</h2>
-            <router-link to="/portfolio?codingLang=9">Go to Angular projects</router-link>
+            <h3>MYSQL</h3>
+            <router-link to="/portfolio?codingLang=14">Go to Mysql projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 70%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="mysql code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>MONGODB</h3>
+            <!-- <router-link to="/portfolio?codingLang=14">Go to mongodb projects</router-link> -->
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 70%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <h2>Front-End Frameworks / Libraries</h2>
+
+        <div class="express code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>VUEjS</h3>
+            <router-link to="/portfolio?codingLang=1">Go to VuejS projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 80%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <div class="express code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>React</h3>
+            <router-link to="/portfolio?codingLang=1">Go to React projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -341,16 +364,16 @@
           </div>
         </div>
 
-        <div class="magento code-tool">
+        <div class="express code-tool">
           <div class="d-flex justify-content-between">
-            <h2>MAGENTO</h2>
-            <router-link to="/portfolio?codingLang=15">Go to Magento projects</router-link>
+            <h3>Redux</h3>
+            <router-link to="/portfolio?codingLang=1">Go to Redux projects</router-link>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 10%"
+              style="width: 40%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -358,10 +381,28 @@
           </div>
         </div>
 
-        <div class="wordpress code-tool">
+        <div class="angular code-tool">
           <div class="d-flex justify-content-between">
-            <h2>WORDPRESS</h2>
-            <router-link to="/portfolio?codingLang=10">Go to Wordpress projects</router-link>
+            <h3>ANGULAR</h3>
+            <router-link to="/portfolio?codingLang=9">Go to Angular projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 40%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <h2>Back-End Frameworks</h2>
+        <div class="express code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>EXPRESS</h3>
+            <router-link to="/portfolio?codingLang=1">Go to Express projects</router-link>
           </div>
           <div class="progress">
             <div
@@ -375,26 +416,10 @@
           </div>
         </div>
 
-        <div class="mysql code-tool">
-          <div class="d-flex justify-content-between">
-            <h2>MYSQL</h2>
-            <router-link to="/portfolio?codingLang=14">Go to Mysql projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 80%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
-
+        <h2>Bundlers, loaders and preprocessors</h2>
         <div class="gulp code-tool">
           <div class="d-flex justify-content-between">
-            <h2>GULP</h2>
+            <h3>GULP</h3>
             <router-link to="/portfolio?codingLang=18">Go to Gulp projects</router-link>
           </div>
           <div class="progress">
@@ -411,7 +436,7 @@
 
         <div class="webpack code-tool">
           <div class="d-flex justify-content-between">
-            <h2>WEBPACK</h2>
+            <h3>WEBPACK</h3>
             <router-link to="/portfolio?codingLang=21">Go to Webpack projects</router-link>
           </div>
           <div class="progress">
@@ -426,9 +451,63 @@
           </div>
         </div>
 
+        <div class="sass code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>SASS</h3>
+            <router-link to="/portfolio?codingLang=16">Go to SASS projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 90%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <h2>CMS</h2>
+
+        <div class="wordpress code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>WORDPRESS</h3>
+            <router-link to="/portfolio?codingLang=10">Go to Wordpress projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 80%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+        <div class="magento code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>MAGENTO</h3>
+            <router-link to="/portfolio?codingLang=15">Go to Magento projects</router-link>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 40%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+
+        <h2>OTHER TOOLS</h2>
+
         <div class="git code-tool">
           <div class="d-flex justify-content-between">
-            <h2>GIT</h2>
+            <h3>GIT</h3>
             <a href="https://github.com/crismoreno" target="_blank">Go to GITHUB</a>
           </div>
           <div class="progress">
@@ -448,14 +527,32 @@
         <h2>Work Experience</h2>
         <ul>
           <li>
-            <span class="highlight">
-              <strong>April 2020 · Ongoing</strong>
-              Front-End intern developer at
-              <a
-                href="https://www.redpoints.com"
-              >Red Points</a>.
-            </span>
+            <button
+              class="more-info-button"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseRedPoints"
+              aria-expanded="false"
+              aria-controls="collapseRedPoints"
+            >
+              <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
+              <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
+              <span class="highlight">
+                <strong>April 2020 · Ongoing</strong>
+                Intern Front-End developer at
+                <a
+                  href="https://www.redpoints.com"
+                  target="_blank"
+                >Red Points</a>
+              </span>
+            </button>
           </li>
+          <div class="collapse-assembler collapse" id="collapseRedPoints">
+            <div class="card card-body">
+              <p>As an Intern Front-End developer at Red Points, I'm learning React-Redux by helping them improving their platform. Also having the chance to work at Red Points is being a revealing experience in terms of being introduced to Agile methodolgies. Also at Red Points I'm learning code best practices from top notch developers in a sophisticated work pipeline I never had the chance to work before. This is being challenging but also very stimulating!</p>
+            </div>
+          </div>
+          <li></li>
           <li>
             <button
               class="more-info-button"
@@ -471,7 +568,7 @@
               <a href="https://www.assemblerschool.com/" target="_blank">Assembler School</a> Full-Stack web development master degree.
             </button>
           </li>
-          <div class="collapse-dobcn collapse" id="collapseAssembler">
+          <div class="collapse-assembler collapse" id="collapseAssembler">
             <div class="card card-body">
               <p>
                 Having gone through Assembler School of Software Engineering Full-Stack programme means I accomplished 9 months of fulltime work on both back-end and front-end technologies. This Master Degree maily involves JavaScript and PHP knowledge plus some GoLang. Below, you can see my global scoring with detail on every single technology we have worked on having achieved
@@ -504,7 +601,7 @@
           <div class="collapse-dobcn collapse" id="collapseDobcn">
             <div class="card card-body">
               <p>
-                At dobcn I've mainly worked on the front end of the platforms they
+                At dobcn I've mainly worked on the front end side of the platforms they
                 have developed. This pushed me to learn PHP, CMS (Wordpress and
                 Magento) while involved me in real world projects. Go check my
                 Projects developed as part of the team at dobcn.
