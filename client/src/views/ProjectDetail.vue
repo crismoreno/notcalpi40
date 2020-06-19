@@ -107,7 +107,7 @@
           v-if="this.project[0].collaborators"
           class="small-red-font m-0 text-right"
         >Collaborators: {{this.project[0].collaborators}}</p>
-        <p>{{this.project[0].description}}</p>
+        <pre>{{this.project[0].description}}</pre>
         <img
           class="project-cover"
           v-if="this.descriptionPhotoExist"

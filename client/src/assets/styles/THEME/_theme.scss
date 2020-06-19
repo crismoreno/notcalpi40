@@ -1,5 +1,8 @@
 nav.navbar {
-  background-color: $primary-colour !important;
+	background-color: $primary-colour !important;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
   li {
     font-size: 16px;
     letter-spacing: 0.5px;

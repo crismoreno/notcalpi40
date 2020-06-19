@@ -504,6 +504,18 @@ a.checkout-link-button {
 .project-detail-container .project-tags, .project-detail-container .project-madeats, .project-detail-container .project-coding-langs {
   text-transform: capitalize; }
 
+.project-detail-container pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */ }
+
 @media (min-width: 992px) {
   .specs {
     min-width: 30%;
@@ -879,7 +891,10 @@ a.checkout-link-button {
   /* IE10+ CSS styles go here */ }
 
 nav.navbar {
-  background-color: #ff1744 !important; }
+  background-color: #ff1744 !important;
+  position: fixed;
+  z-index: 10;
+  width: 100%; }
   nav.navbar li {
     font-size: 16px;
     letter-spacing: 0.5px;

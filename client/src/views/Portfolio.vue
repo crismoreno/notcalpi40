@@ -1,8 +1,8 @@
 <template>
   <div
-    class="main-container d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row"
+    class="main-container d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row mt-5"
   >
-    <div class="accordion filtering-projects" id="filtersAccordion">
+    <div class="accordion filtering-projects mt-5" id="filtersAccordion">
       <div class="card filter-by-tag">
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
@@ -124,7 +124,7 @@
     </div>
     <DisplayProjects
       isFeatured="false"
-      class="display-projects d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
+      class="display-projects mt-5 d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
     ></DisplayProjects>
   </div>
 </template>
@@ -230,10 +230,11 @@ export default {
       }
     },
     uncheckCheckboxes: function(selector) {
-      this.tags_checked = [];
-      this.codingLangs_checked = [];
-      this.place_picked = [];
+      selector === "#collapseOne" ? (this.tags_checked = []) : null;
+      selector === "#collapseTwo" ? (this.codingLangs_checked = [] = []) : null;
+      selector === "#collapseThree" ? (this.place_picked = "") : null;
       EventBus.$emit("EMPTY_FILTERS");
+      console.log(selector, "selector");
       $(selector).collapse("toggle");
     }
   }
