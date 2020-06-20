@@ -85,8 +85,7 @@
         <p class="border-bottom">FRONT-END DEVELOPER & DESINGER</p>
         <p class="description-about-me">
           Hello dear earthling! 🖖 Welcome to my website!
-          <br />I'm a Junior Front-End developer and designer based in Barcelona
-          and looking for inspiration!
+          <br />I'm a Junior Front-End developer and designer based in Barcelona.
           <br />After finishing the degree (in
           design management) I was asked to manage several digital projects
           which made me notice that
@@ -96,19 +95,13 @@
             the relationship between designers and developers is a
             struggle
           </span>. This fact pushed me to try developing end user interfaces by
-          myself. After some research, I decided to take the plunge and go for
-          the
-          <a
-            href="https://medium.com/@cristinamorenomedran/wallapop-scholarship-for-ironhack-88aa5d9afa3c"
-            target_="blank"
-          >Wallapop scholarship at Ironhack</a>
-          and guess what...! I did it!
+          myself. After a bootcamp and a master degree in both
           <span
             class="highlight"
-          >Being that my entrance ticket to coding.</span>
+          >back-end and front-end technologies</span>, I consider myself a front-End developer.
           <span class="highlight">
-            I'm very very motivated and committed to learning as much as I can!
-            💪
+            I'm currently doing a part-time internship at RedPoints where I'm learning React and Redux.
+            I'm very very motivated and committed to learning as much as I can! 💪
           </span>
         </p>
         <a href="/about-me">FULL CV >></a>

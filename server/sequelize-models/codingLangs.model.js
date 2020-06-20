@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
     name: {
       type: Sequelize.STRING,
     },
+    orderby: {
+      type: Sequelize.INTEGER,
+    },
   });
   return CodingLangs;
 };

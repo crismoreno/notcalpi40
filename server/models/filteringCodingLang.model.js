@@ -29,7 +29,7 @@ const model = {
 	//Get a list with all available codingLangs
 	getAllAvailableCodingLangs: async (response) => {
 		try{
-			const codingLnags = await CodingLangs.findAll()
+			const codingLnags = await CodingLangs.findAll({order: [['orderby', 'ASC']]})
 			response(null, codingLnags)
 		}catch(err){
 			response(err, null)

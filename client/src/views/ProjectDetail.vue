@@ -1,5 +1,6 @@
 <template>
   <div class="project-detail-container container py-5 main-container">
+    <!-- <pre>{{this.project[0].id}}</pre> -->
     <img
       class="project-cover"
       v-if="this.headerImgExist"
