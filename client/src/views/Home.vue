@@ -80,7 +80,7 @@
       <div class="about-me-detail d-flex flex-column">
         <div class="d-flex title">
           <h2>Cristina Moreno Medran</h2>
-          <p>(June 1993)</p>
+          <p class="ml-1">{{age}} years old</p>
         </div>
         <p class="border-bottom">FRONT-END DEVELOPER & DESINGER</p>
         <p class="description-about-me">
@@ -132,6 +132,7 @@
 import FeaturedProjectsComponent from "../components/DisplayFeaturedPosts.vue";
 import BlogComponent from "../components/Blog.vue";
 import ProjectsService from "../ProjectsService";
+import moment from "moment";
 export default {
   name: "Home",
   components: {
@@ -140,11 +141,13 @@ export default {
   },
   data() {
     return {
-      availableTags: []
+      availableTags: [],
+      age: ""
     };
   },
   created() {
     this.getFilters();
+    this.age = moment().diff(moment("19930601", "YYYYMMDD"), "years");
   },
   methods: {
     getFilters: async function() {

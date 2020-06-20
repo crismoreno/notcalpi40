@@ -4,7 +4,7 @@
       <div class="jumbotron">
         <h1 class="display-4">Cristina Moreno Medran 🙋🏻</h1>
         <p class="lead">
-          I'm a 26 year-old Front-End developer and designer living in Badalona,
+          I'm a {{age}} year-old Front-End developer and designer living in Badalona,
           Barcelona
         </p>
         <hr class="my-4" />
@@ -775,10 +775,19 @@
 </template>
 <script>
 import BlogComponent from "../components/Blog.vue";
+import moment from "moment";
 export default {
   name: "AboutMe",
   components: {
     BlogComponent
+  },
+  data() {
+    return {
+      age: ""
+    };
+  },
+  created() {
+    this.age = moment().diff(moment("19930601", "YYYYMMDD"), "years");
   }
 };
 </script>
