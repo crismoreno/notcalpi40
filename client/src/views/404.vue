@@ -3,7 +3,8 @@
     <h1 class="text-center">
       <span rol="img">⚠️</span> This is
       <span class="notcalpi-red" style="border-radius: 5px;">not</span> a 404
-      page <span rol="img">⚠️</span>
+      page
+      <span rol="img">⚠️</span>
     </h1>
     <p class="text-center">
       Hey, let's make this not just a 404 page! These are facts about me so you
@@ -21,18 +22,15 @@
       <div class="cris-fact">
         <div class="overlapped-info-container">
           <p class="overlapped-info">
-            I appeared on a TV show when I was a kid [check it out]<span
-              rel="img"
-              >🔗</span
-            >
+            I appeared on a TV show when I was a kid [check it out]
+            <span rel="img">🔗</span>
           </p>
         </div>
-        <a
-          target="_blank"
-          href="https://www.youtube.com/watch?v=hVoVGMJjrCI&t=539s"
-          ><div class="fact-container">
-            <img src="../assets/img/404/cris-facts/cris-fact-2.jpg" /></div
-        ></a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=hVoVGMJjrCI&t=539s">
+          <div class="fact-container">
+            <img src="../assets/img/404/cris-facts/cris-fact-2.jpg" />
+          </div>
+        </a>
       </div>
       <div class="cris-fact">
         <div class="overlapped-info-container">
@@ -53,7 +51,8 @@
       <div class="cris-fact">
         <div class="overlapped-info-container">
           <p class="overlapped-info">
-            I LOVE HEDGEHOGS <span rol="img">❤️</span>
+            I LOVE HEDGEHOGS
+            <span rol="img">❤️</span>
           </p>
         </div>
         <div class="fact-container">
@@ -67,10 +66,11 @@
             <span rel="img">📸</span>]
           </p>
         </div>
-        <a target="_blank" href="https://www.instagram.com/calpimoreno/"
-          ><div class="fact-container">
-            <img src="../assets/img/404/cris-facts/cris-fact-6.jpg" /></div
-        ></a>
+        <a target="_blank" href="https://www.instagram.com/calpimoreno/">
+          <div class="fact-container">
+            <img src="../assets/img/404/cris-facts/cris-fact-6.jpg" />
+          </div>
+        </a>
       </div>
       <div class="cris-fact">
         <div class="overlapped-info-container">
@@ -123,23 +123,13 @@
     </div>
     <div class="get-to-know-me">
       <h2>Get to know me!</h2>
-      <div
-        class="connections-container container d-flex flex-wrap justify-content-center"
-      >
-        <a href="https://calendly.com/cristinamoreno" target="_blank"
-          >Schedule a meeting</a
-        >
+      <div class="connections-container container d-flex flex-wrap justify-content-center">
+        <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
         <!-- <a [routerLink]="['/reach-me']">Drop me a line</a> -->
-        <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
-        <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank"
-          >Instagram</a
-        >
-        <a href="https://www.linkedin.com/in/morenomedran/" target="_blank"
-          >Linkedin</a
-        >
-        <a href="https://medium.com/@cristinamorenomedran" target="_blank"
-          >Medium</a
-        >
+        <a href="mailto:moreno.medran@gmail.com" target="_blank">Email me!</a>
+        <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/morenomedran/" target="_blank">Linkedin</a>
+        <a href="https://medium.com/@cristinamorenomedran" target="_blank">Medium</a>
         <a href="https://github.com/crismoreno" target="_blank">Github</a>
       </div>
     </div>
@@ -147,6 +137,6 @@
 </template>
 <script>
 export default {
-  name: "PageNotFound",
+  name: "PageNotFound"
 };
 </script>

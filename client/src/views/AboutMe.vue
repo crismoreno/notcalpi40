@@ -760,7 +760,7 @@
         <div class="connections-container container d-flex flex-wrap justify-content-center">
           <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
           <!-- <a [routerLink]="['/reach-me']">Drop me a line</a> -->
-          <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
+          <a href="mailto:moreno.medran@gmail.com" target="_blank">Email me!</a>
           <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank">Instagram</a>
           <a href="https://www.linkedin.com/in/morenomedran/" target="_blank">Linkedin</a>
           <a href="https://medium.com/@cristinamorenomedran" target="_blank">Medium</a>

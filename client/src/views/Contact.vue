@@ -2,7 +2,7 @@
   <div class="reach-me-container container d-flex flex-wrap flex-column main-container mt-5">
     <div class="connections-container container d-flex flex-wrap justify-content-center">
       <a href="https://calendly.com/cristinamoreno" target="_blank">Schedule a meeting</a>
-      <a href="mailto:hello@notcalpi.me" target="_blank">Email me!</a>
+      <a href="mailto:moreno.medran@gmail.com" target="_blank">Email me!</a>
     </div>
 
     <form id="contact-form" class="needs-validation" v-on:submit="sendContactForm">
