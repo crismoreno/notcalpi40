@@ -48,12 +48,38 @@
     .border-bottom {
       border-bottom: 1px solid black;
     }
-    a {
+    .link-to-cv {
       text-transform: uppercase;
       @include font-style(16px, $red, 400, 35px, 0.5px, left);
       font-family: $sourcesans;
     }
-  }
+	}
+}
+#accordionExample{
+	width: 100%;
+	.card{
+		margin: 0 !important;
+		width: 100%;
+		border: none !important;
+		box-shadow: none !important;
+		background-color: transparent !important;
+		.card-header{
+			background-color: transparent !important;
+			padding: 0 !important;
+			margin-bottom: 0;
+			border-bottom: 1px solid $red;
+		}
+		// .card-header:not(:last-child){
+		// 	border-bottom: 1px solid $red;
+		// }
+		button{
+			text-decoration: none;
+			color: $red;
+		}
+	}
+	> .card {
+    overflow: unset !important;
+}
 }
 @include respond-below(lg) {
   .about-me-home {

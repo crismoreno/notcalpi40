@@ -128,12 +128,13 @@ span.highlight {
       font-weight: 600;
       font-size: 18px; }
     .header-background .description-mobile a {
-      background-color: #ff1744;
       color: white;
-      box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
-      border-radius: 90px;
-      padding: 9px 25px;
-      width: unset;
+      background-color: #a50027;
+      border-radius: 4px;
+      padding-top: 5px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+      padding-left: 10px;
       cursor: pointer;
       position: absolute; }
   .header-background svg {
@@ -227,7 +228,7 @@ span.highlight {
       font-weight: 400; }
     .about-me-home .about-me-detail .border-bottom {
       border-bottom: 1px solid black; }
-    .about-me-home .about-me-detail a {
+    .about-me-home .about-me-detail .link-to-cv {
       text-transform: uppercase;
       font-size: 16px;
       color: #ff1744;
@@ -236,6 +237,25 @@ span.highlight {
       letter-spacing: 0.5px;
       text-align: left;
       font-family: "Source Sans Pro", sans-serif; }
+
+#accordionExample {
+  width: 100%; }
+  #accordionExample .card {
+    margin: 0 !important;
+    width: 100%;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important; }
+    #accordionExample .card .card-header {
+      background-color: transparent !important;
+      padding: 0 !important;
+      margin-bottom: 0;
+      border-bottom: 1px solid #ff1744; }
+    #accordionExample .card button {
+      text-decoration: none;
+      color: #ff1744; }
+  #accordionExample > .card {
+    overflow: unset !important; }
 
 @media (max-width: 1199px) {
   .about-me-home .characteristics {

@@ -39,13 +39,21 @@
       font-size: 18px;
     }
     a {
-      background-color: $red;
+      // background-color: $red;
       color: white;
-      box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
-        0 5px 15px rgba(0, 0, 0, 0.07);
-      border-radius: 90px;
-      padding: 9px 25px;
-      width: unset;
+      // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
+      //   0 5px 15px rgba(0, 0, 0, 0.07);
+      // border-radius: 90px;
+      // padding: 9px 25px;
+      // width: unset;
+      // cursor: pointer;
+			// position: absolute;
+			background-color: #a50027;
+			border-radius: 4px;
+			padding-top: 5px;
+			padding-right: 10px;
+			padding-bottom: 5px;
+			padding-left: 10px;
       cursor: pointer;
       position: absolute;
     }
