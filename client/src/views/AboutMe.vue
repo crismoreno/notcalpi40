@@ -12,7 +12,7 @@
         <div class="d-flex flex-column flex-xl-row flex-lg-row flex-md-row flex-sm-row">
           <a
             role="button"
-            href="https://drive.google.com/file/d/1kIc9iMrVRlfq67i1AJ1XywA_vB3Mg7_m/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Q9855W5sd8hzSbaa5e_6fo6jLqO5hB_E/view?usp=sharing"
           >DOWNLOAD MY CV</a>
           <a
             role="button"
