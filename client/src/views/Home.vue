@@ -191,7 +191,7 @@
                   aria-controls="collapseThree"
                   v-on:click="toggleIcon('headingThree')"
                 >
-                  More about me?
+                  Find out more about me
                   <span
                     v-if="this.headingThree == 'closed'"
                     class="material-icons"
