@@ -161,7 +161,7 @@
                   aria-controls="collapseTwo"
                   v-on:click="toggleIcon('headingTwo')"
                 >
-                  Where am I from? Where am I based at?
+                  Where am I from? Where am I based in?
                   <span
                     v-if="this.headingTwo == 'closed'"
                     class="material-icons"

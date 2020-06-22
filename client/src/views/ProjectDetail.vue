@@ -2,7 +2,7 @@
   <div class="project-detail-container container py-5 main-container">
     <!-- <pre>{{this.project[0].id}}</pre> -->
     <img
-      class="project-cover"
+      class="project-cover mt-5"
       v-if="this.headerImgExist"
       :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
     />
