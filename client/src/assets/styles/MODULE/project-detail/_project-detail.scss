@@ -1,5 +1,5 @@
 .project-detail-container {
-  .project-cover {
+  .project-cover, .carousel-inner  {
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
@@ -10,6 +10,9 @@
 	// }
 
 //CAROUSEL ICONS
+.carousel-indicators li{
+	background-color: $red;
+}
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -26,7 +29,7 @@
 {
   font-family: "Material Icons";
 	// content: "\e5cc";
-	content: "arrow_forward";
+	content: "chevron_right";
   font-size: 55px;
   color: red;
 }
@@ -34,7 +37,7 @@
 .carousel-control-prev-icon:after {
   font-family: "Material Icons";
 	// content: "\e5cc";
-	content: "arrow_back";
+	content: "chevron_left";
   font-size: 55px;
   color: red;
 }

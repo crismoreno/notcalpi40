@@ -502,10 +502,13 @@ a.checkout-link-button {
     align-content: baseline;
     width: 100%; } }
 
-.project-detail-container .project-cover {
+.project-detail-container .project-cover, .project-detail-container .carousel-inner {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); }
+
+.project-detail-container .carousel-indicators li {
+  background-color: #ff1744; }
 
 .project-detail-container .carousel-control-prev-icon,
 .project-detail-container .carousel-control-next-icon {
@@ -517,13 +520,13 @@ a.checkout-link-button {
 
 .project-detail-container .carousel-control-next-icon:after {
   font-family: "Material Icons";
-  content: "arrow_forward";
+  content: "chevron_right";
   font-size: 55px;
   color: red; }
 
 .project-detail-container .carousel-control-prev-icon:after {
   font-family: "Material Icons";
-  content: "arrow_back";
+  content: "chevron_left";
   font-size: 55px;
   color: red; }
 
