@@ -20,7 +20,9 @@
             is a struggle, I decided to shift gears and try developing end user interfaces all by
             myself. In spite of being comfortable in both Front-End and Back-End technologies,
             I consider myself a Front-End developer.
-            I'm highly motivated and committed to learning as much as I can! 💪
+            <!-- I'm highly motivated and committed to learning as much as I can! 💪 -->
+            I’m highly motivated, willing to learn and eager to be challenged 💪.
+            <br />Note that I’m ever so slightly OCD 🤏
           </p>
           <p>- Cristina Moreno -</p>
           <div>
@@ -45,7 +47,8 @@
             is a struggle, I decided to shift gears and try developing end user interfaces by
             myself. In spite of being comfortable in both Front-End and Back-End technologies,
             I consider myself a Front-End developer.
-            I'm highly motivated and committed to learning as much as I can! 💪
+            <!-- I'm highly motivated and committed to learning as much as I can! 💪 -->
+            I’m highly motivated, willing to learn and eager to be challenged 💪. Note that I’m ever so slightly OCD 🤏
           </p>
           <p>- Cristina Moreno -</p>
           <div>
