@@ -256,6 +256,15 @@ span.highlight {
       color: #ff1744; }
   #accordionExample > .card {
     overflow: unset !important; }
+  #accordionExample .link-to-cv {
+    background-color: #a50027;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+    color: white; }
 
 @media (max-width: 1199px) {
   .about-me-home .characteristics {

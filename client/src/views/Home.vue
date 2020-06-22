@@ -17,17 +17,14 @@
             get down to business. Welcome to my online portfolio, welcome to my
             world.-->
             After noticing that the relationship between designers and developers
-            is a struggle, I decided to shift gears and try developing end user interfaces by
+            is a struggle, I decided to shift gears and try developing end user interfaces all by
             myself. In spite of being comfortable in both Front-End and Back-End technologies,
             I consider myself a Front-End developer.
             I'm highly motivated and committed to learning as much as I can! 💪
           </p>
           <p>- Cristina Moreno -</p>
           <div>
-            <a
-              role="button"
-              href="https://drive.google.com/file/d/1J1yWyi_fzuU4_WoKa5Cw6UKMQ-CxUpRN/view?usp=sharing"
-            >DOWNLOAD MY CV</a>
+            <router-link role="button" to="/about-me">CHECKOUT MY CV</router-link>
           </div>
         </div>
         <div class="picture d-flex justify-content-center">
@@ -252,6 +249,9 @@
                     <u class="mr-1 ml-1">
                       <router-link to="/reach-me">here</router-link>
                     </u>
+                  </li>
+                  <li class="mt-3">
+                    <router-link class="link-to-cv" to="about-me">Checkout my CV</router-link>
                   </li>
                 </ul>
               </div>
