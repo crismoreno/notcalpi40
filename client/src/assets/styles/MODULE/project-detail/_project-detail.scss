@@ -4,7 +4,43 @@
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
       0 5px 15px rgba(0, 0, 0, 0.07);
-  }
+	}
+	// .carousel-control-prev-icon, .carousel-control-next-icon{
+
+	// }
+
+//CAROUSEL ICONS
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  // outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  // border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  font-family: "Material Icons";
+	// content: "\e5cc";
+	content: "arrow_forward";
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  font-family: "Material Icons";
+	// content: "\e5cc";
+	content: "arrow_back";
+  font-size: 55px;
+  color: red;
+}
+
+
+//CAROUSEL ICONS
 
   .small-red-font {
     text-transform: uppercase;

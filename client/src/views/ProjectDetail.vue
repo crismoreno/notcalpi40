@@ -1,13 +1,15 @@
 <template>
   <div class="project-detail-container container py-5 main-container">
-    <!-- <pre>{{this.project[0].id}}</pre> -->
+    <!-- SINGLE IMG HERE -->
     <img
       class="project-cover mt-5"
-      v-if="this.headerImgExist"
+      v-if="this.headerImgExist === true && this.carouselQty <= 0"
       :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
     />
+    <!-- SINGLE IMG HERE -->
+    <!-- VIDEO HERE -->
     <iframe
-      v-if="!this.headerImgExist && this.project[0].video"
+      v-if="!this.headerImgExist && this.project[0].video && this.headerCarouselExist === false"
       style="width: 100%;"
       class="videoandimg"
       allowfullscreen
@@ -20,6 +22,58 @@
       :src="this.project[0].video"
       webkitAllowFullScreen
     ></iframe>
+    <!-- VIDEO HERE -->
+    <!-- CAROUSEL HERE -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide mt-5"
+      data-ride="carousel"
+      v-if="this.headerImgExist === false && this.carouselQty >= 1"
+    >
+      <ol class="carousel-indicators">
+        <li
+          v-for="index in this.carouselQty"
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          :key="index"
+          :class="{'active': index == 1}"
+        ></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          v-for="index in this.carouselQty"
+          :key="index"
+          :class="{'active': index == 1}"
+        >
+          <img
+            :src="require(`../assets/img/projects/${project[0].id}/carousel/${index}.png`)"
+            class="d-block w-100"
+            alt="`Img num 1`"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- CAROUSEL HERE -->
     <div
       class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row justify-content-between mt-5 pb-3 align-items-start align-items-sm-start align-items-md-end align-items-lg-end align-items-xl-end"
     >
@@ -140,6 +194,8 @@ export default {
     return {
       project: [],
       headerImgExist: false,
+      // headerCarouselExist: true,
+      carouselQty: 0,
       descriptionPhotoExist: false,
       projectTags: [],
       projectCodingLangs: [],
@@ -147,8 +203,9 @@ export default {
       linksToProd: []
     };
   },
-  created() {
-    this.getProject();
+  async created() {
+    await this.getProject();
+    this.countCarouselImgs();
     this.getTags();
     this.getCodingLangs();
     this.getMadeAts();
@@ -159,18 +216,49 @@ export default {
         this.project = await ProjectsService.getProjectById(
           this.$route.params.id
         );
+      } catch (err) {
+        this.error = err.message;
+      }
+      try {
         require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)
           ? (this.headerImgExist = true)
           : (this.headerImgExist = false);
+      } catch (err) {
+        console.error;
+      }
+      // try {
+      //   require(`../assets/img/projects/${this.project[0].id}/carousel/1.png`)
+      //     ? (this.headerCarouselExist = true)
+      //     : (this.headerCarouselExist = false);
+      // } catch (err) {
+      //   console.error;
+      // }
+      try {
         require(`../assets/img/projects/${this.project[0].id}/photo.png`)
           ? (this.descriptionPhotoExist = true)
           : (this.descriptionPhotoExist = false);
       } catch (err) {
-        this.error = err.message;
+        console.error;
       }
       const str = this.project[0].link_to_prod;
       const res = str.split(" ");
       this.linksToProd = res;
+    },
+    countCarouselImgs: function() {
+      let qty = 0;
+      do {
+        qty = qty + 1;
+      } while (this.checkCarouselImgs(qty));
+      this.carouselQty = qty - 1;
+    },
+    checkCarouselImgs: function(num) {
+      try {
+        require(`../assets/img/projects/${this.project[0].id}/carousel/${num}.png`);
+        return true;
+      } catch (err) {
+        console.log(err);
+      }
+      return false;
     },
     getTags: async function() {
       try {
