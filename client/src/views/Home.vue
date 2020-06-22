@@ -52,10 +52,7 @@
           </p>
           <p>- Cristina Moreno -</p>
           <div>
-            <a
-              role="button"
-              href="https://drive.google.com/file/d/1J1yWyi_fzuU4_WoKa5Cw6UKMQ-CxUpRN/view?usp=sharing"
-            >DOWNLOAD MY CV</a>
+            <router-link role="button" to="/about-me">CHECKOUT MY CV</router-link>
           </div>
         </div>
       </div>

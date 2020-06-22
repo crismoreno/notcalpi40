@@ -12,12 +12,12 @@
         <div class="d-flex flex-column flex-xl-row flex-lg-row flex-md-row flex-sm-row">
           <a
             role="button"
-            href="https://drive.google.com/file/d/1J1yWyi_fzuU4_WoKa5Cw6UKMQ-CxUpRN/view?usp=sharing"
+            href="https://drive.google.com/file/d/1kIc9iMrVRlfq67i1AJ1XywA_vB3Mg7_m/view?usp=sharing"
           >DOWNLOAD MY CV</a>
           <a
             role="button"
-            href="https://drive.google.com/drive/folders/145Jw5lp1VuNUGamjwxWtCyeujZOj1VPt?usp=sharing"
-          >DOWNLOAD MY CERTIFICATES</a>
+            href="https://drive.google.com/drive/folders/1XeHfBeqMyA6vIZsKpu-0J8tQq7xgNSu6?usp=sharing"
+          >CHECK MY CERTIFICATES</a>
         </div>
       </div>
 
