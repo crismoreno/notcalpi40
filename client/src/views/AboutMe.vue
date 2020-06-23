@@ -549,7 +549,7 @@
           </li>
           <div class="collapse-assembler collapse" id="collapseRedPoints">
             <div class="card card-body">
-              <p>As an Intern Front-End developer at Red Points, I'm learning React-Redux by helping them improving their platform. Also having the chance to work at Red Points is being a revealing experience in terms of being introduced to Agile methodolgies. Also at Red Points I'm learning code best practices from top notch developers in a sophisticated work pipeline I never had the chance to work before. This is being challenging but also very stimulating!</p>
+              <p>As an Intern Front-End developer at Red Points, I'm learning React-Redux by helping my team to improve their platform. Moreover, having the chance to work at that company has been a revealing experience when it comes to Agile methodolgies. In addition, no sooner had I entered at my workplace, top notch developers were teaching me code best practices in a sophisticated work pipeline I never had the chance to work before. This is not only being challenging but very stimulating!</p>
             </div>
           </div>
           <li></li>

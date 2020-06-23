@@ -210,7 +210,9 @@
                 <p class="d-flex align-items-center my-0">
                   <span class="material-icons mr-1">call</span> +34 · 630 · 149 · 516
                 </p>
-                <div class="d-flex align-items-center py-1">
+                <div
+                  class="d-flex align-items-start align-items-sm-start align-items-md-start py-1 flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row"
+                >
                   <span class="material-icons mr-1">accessibility_new</span>Personality type:
                   <u>
                     <a
