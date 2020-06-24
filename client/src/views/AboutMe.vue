@@ -549,7 +549,7 @@
           </li>
           <div class="collapse-assembler collapse" id="collapseRedPoints">
             <div class="card card-body">
-              <p>As an Intern Front-End developer at Red Points, I'm learning React-Redux by helping my team to improve the platform. Moreover, having the chance to work at that company has been a revealing experience in terms of Agile methodolgies. In addition, no sooner had I entered at my workplace, top notch developers were teaching me code best practices in a sophisticated work pipeline I never had the chance to work before. This is not only being challenging but very stimulating!</p>
+              <p>As an Intern Front-End developer at Red Points, I'm learning React-Redux by helping my team to improve the Red Point's digital product. Moreover, having the chance to work at that company has been a revealing experience in terms of Agile methodolgies. In addition, no sooner had I entered at my workplace, top notch developers were teaching me code best practices in a sophisticated work pipeline I never had the chance to work before. This is not only being challenging but very stimulating!</p>
             </div>
           </div>
           <li></li>
@@ -571,7 +571,7 @@
           <div class="collapse-assembler collapse" id="collapseAssembler">
             <div class="card card-body">
               <p>
-                Having gone through Assembler School of Software Engineering Full-Stack programme means I accomplished 9 months of fulltime real-life-oriented-work (1200 hours) on both back-end and front-end technologies. This Master Degree maily involves JavaScript and PHP knowledge plus some GoLang. Below, you can see my global scoring with detail on every single technology we have worked on having achieved
+                Having gone through Assembler School of Software Engineering Full-Stack program means I accomplished 9 months of fulltime real-life-oriented-projects (1200 hours) in both back-end and front-end technologies. This Master Degree maily involves JavaScript and PHP technologies plus some GoLang. Below, you can see my global scoring with detail on every single technology we have worked on having achieved
                 <b>9,6/10</b> average score.
               </p>
               <img
