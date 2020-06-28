@@ -7,6 +7,10 @@
         <router-link :to="'/project/' + project.id">
           <div class="card-content d-flex flex-column">
             <div class="img-container">
+              <!-- <img
+                class="project-image"
+                :src="`https://res.cloudinary.com/hyavxktsb/image/upload/v1593370885/projects/${project.id}/cover.png`"
+              />-->
               <img
                 class="project-image"
                 :src="require(`../assets/img/projects/${project.id}/cover.png`)"

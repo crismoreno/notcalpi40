@@ -277,7 +277,7 @@
   </div>
 </template>
 <script>
-import FeaturedProjectsComponent from "../components/DisplayFeaturedPosts.vue";
+import FeaturedProjectsComponent from "../components/DisplayFeaturedProjects.vue";
 import BlogComponent from "../components/Blog.vue";
 import ProjectsService from "../ProjectsService";
 import moment from "moment";
