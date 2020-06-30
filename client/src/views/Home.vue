@@ -62,7 +62,7 @@
         <div
           class="charcateristic-container d-flex justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-end justify-content-xl-end align-items-center"
         >
-          <p>Methodical & Meticulous</p>
+          <p>Pixel perfect obsesion</p>
           <div class="img-container d-flex justify-content-center align-items-center">
             <img src="../assets/img/homepage/fingerprints.svg" />
           </div>
@@ -70,7 +70,7 @@
         <div
           class="charcateristic-container d-flex justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-end justify-content-xl-end align-items-center"
         >
-          <p>Proactive</p>
+          <p>Proactive and communicative</p>
           <div class="img-container d-flex justify-content-center align-items-center">
             <img src="../assets/img/homepage/chat.svg" />
           </div>
@@ -78,9 +78,17 @@
         <div
           class="charcateristic-container d-flex justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-end justify-content-xl-end align-items-center"
         >
-          <p>Apt at team management</p>
+          <p>Team player</p>
           <div class="img-container d-flex justify-content-center align-items-center">
             <img src="../assets/img/homepage/team.svg" />
+          </div>
+        </div>
+        <div
+          class="charcateristic-container d-flex justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-end justify-content-xl-end align-items-center"
+        >
+          <p>Strong sense of duty</p>
+          <div class="img-container d-flex justify-content-center align-items-center">
+            <img src="../assets/img/homepage/anchor.svg" />
           </div>
         </div>
       </div>
