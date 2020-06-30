@@ -26,6 +26,7 @@
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
+    "cloudinary-vue": "^1.1.1",
     "css-loader": "^3.5.3",
     "dotenv-webpack": "^1.7.0",
     "file-loader": "^6.0.0",
