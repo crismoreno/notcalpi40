@@ -1,7 +1,5 @@
 <template>
   <div class="project-detail-container container py-5 main-container">
-    <pre>{{ this.project[0].id }}</pre>
-    <pre>carouselQty:{{ this.carouselQty }}</pre>
     <!-- SINGLE IMG HERE -->
     <!-- <img
       class="project-cover mt-5"
@@ -62,18 +60,11 @@
         >
           <img
             :src="
-              require(`../assets/img/projects/${project[0].id}/carousel/${index}.png`)
+              `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${project[0].id}/carousel/${index}.png`
             "
             class="d-block w-100"
             :alt="`Img num ${index}`"
           />
-          <!-- <img
-            :src="
-              `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/carousel/${index}.png`
-            "
-            class="d-block w-100"
-            :alt="`Img num ${index}`"
-          />-->
         </div>
       </div>
       <a
@@ -225,6 +216,7 @@
 </template>
 <script>
 import ProjectsService from "../ProjectsService";
+import axios from "axios";
 // import cloudinary from "cloudinary-core";
 export default {
   name: "ProjectDetail",
@@ -265,17 +257,15 @@ export default {
       //   console.error;
       // }
       fetch(
-        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/${this.project[0].id}.png`,
-        { method: "HEAD" }
-      )
-        .then(res => {
-          if (res.ok) {
-            this.headerImgExist = true;
-          } else {
-            this.headerImgExist = false;
-          }
-        })
-        .catch(err => console.log("Error:", err));
+        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/${this.project[0].id}.png`
+      ).then(res => {
+        if (res.ok) {
+          this.headerImgExist = true;
+        } else {
+          this.headerImgExist = false;
+        }
+      });
+      // .catch(err => console.log("Error:", err));
 
       // try {
       //   require(`../assets/img/projects/${this.project[0].id}/carousel/1.png`)
@@ -285,17 +275,15 @@ export default {
       //   console.error;
       // }
       fetch(
-        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/photo.png`,
-        { method: "HEAD" }
-      )
-        .then(res => {
-          if (res.ok) {
-            this.descriptionPhotoExist = true;
-          } else {
-            this.descriptionPhotoExist = false;
-          }
-        })
-        .catch(err => console.log("Error:", err));
+        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/photo.png`
+      ).then(res => {
+        if (res.ok) {
+          this.descriptionPhotoExist = true;
+        } else {
+          this.descriptionPhotoExist = false;
+        }
+      });
+      // .catch(err => console.log("Error:", err));
       // try {
       //   require(`../assets/img/projects/${this.project[0].id}/photo.png`)
       //     ? (this.descriptionPhotoExist = true)
@@ -307,33 +295,29 @@ export default {
       const res = str.split(" ");
       this.linksToProd = res;
     },
-    countCarouselImgs: function() {
+    countCarouselImgs: async function() {
       let qty = 0;
       do {
         qty = qty + 1;
-      } while (this.checkCarouselImg(qty));
+      } while ((await this.checkCarouselImg(qty)) === 200);
       this.carouselQty = qty - 1;
     },
-    checkCarouselImg: function(num) {
-      // fetch(
-      //   `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/carousel/${num}.png`,
-      //   { method: "HEAD" }
-      // )
-      //   .then(res => {
-      //     if (res.ok) {
-      //       return true;
-      //     } else {
-      //       return false;
-      //     }
-      //   })
-      //   .catch(err => console.log("Error:", err));
+    checkCarouselImg: async function(num) {
       try {
-        require(`../assets/img/projects/${this.project[0].id}/carousel/${num}.png`);
-        return true;
+        const proj = this.project[0].id;
+        const url = `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${proj}/carousel/${num}.png`;
+        const exists = await axios.get(url);
+        return exists.status;
       } catch (err) {
         console.log(err);
       }
-      return false;
+      // try {
+      //   require(`../assets/img/projects/${this.project[0].id}/carousel/${num}.png`);
+      //   return true;
+      // } catch (err) {
+      //   console.log(err);
+      // }
+      // return false;
     },
     getTags: async function() {
       try {
