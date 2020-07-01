@@ -192,9 +192,7 @@
         <img
           class="project-cover"
           v-if="this.descriptionPhotoExist"
-          :src="
-            require(`../assets/img/projects/${this.project[0].id}/photo.png`)
-          "
+          :src="`https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/photo.png`"
         />
         <iframe
           style="width: 100%;"

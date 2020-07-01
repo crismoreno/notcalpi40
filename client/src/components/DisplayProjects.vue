@@ -7,11 +7,11 @@
         <router-link :to="'/project/' + project.id">
           <div class="card-content d-flex flex-column">
             <div class="img-container">
-							<cld-image :publicId="`projects/${project.id}/cover.png`" ></cld-image>
+              <cld-image :publicId="`projects/${project.id}/cover.png`"></cld-image>
               <!-- <img
                 class="project-image"
                 :src="require(`../assets/img/projects/${project.id}/cover.png`)"
-              /> -->
+              />-->
             </div>
             <div class="project-details d-flex flex-column justify-content-center">
               <p class="name">{{project.title}}</p>
@@ -30,7 +30,7 @@ import Vue from "vue";
 import axios from "axios";
 import EventBus from "../event-bus";
 import ProjectsService from "../ProjectsService";
-import {CldImage} from 'cloudinary-vue';
+import { CldImage } from "cloudinary-vue";
 export default {
   name: "DisplayProjects",
   props: ["isFeatured"],
