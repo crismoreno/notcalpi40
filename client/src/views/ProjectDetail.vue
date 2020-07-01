@@ -1,15 +1,28 @@
 <template>
   <div class="project-detail-container container py-5 main-container">
+    <pre>{{ this.project[0].id }}</pre>
+    <pre>carouselQty:{{ this.carouselQty }}</pre>
     <!-- SINGLE IMG HERE -->
+    <!-- <img
+      class="project-cover mt-5"
+      v-if="this.headerImgExist === true && this.carouselQty <= 0"
+      :src="
+        require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)
+      "
+    />-->
     <img
       class="project-cover mt-5"
       v-if="this.headerImgExist === true && this.carouselQty <= 0"
-      :src="require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)"
+      :src="
+        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/${this.project[0].id}.png`
+      "
     />
     <!-- SINGLE IMG HERE -->
     <!-- VIDEO HERE -->
     <iframe
-      v-if="!this.headerImgExist && this.project[0].video && this.headerCarouselExist === false"
+      v-if="
+        !this.headerImgExist && this.project[0].video && this.carouselQty === 0
+      "
       style="width: 100%;"
       class="videoandimg"
       allowfullscreen
@@ -36,7 +49,7 @@
           data-target="#carouselExampleIndicators"
           data-slide-to="0"
           :key="index"
-          :class="{'active': index == 1}"
+          :class="{ active: index == 1 }"
         ></li>
       </ol>
 
@@ -45,13 +58,22 @@
           class="carousel-item"
           v-for="index in this.carouselQty"
           :key="index"
-          :class="{'active': index == 1}"
+          :class="{ active: index == 1 }"
         >
           <img
-            :src="require(`../assets/img/projects/${project[0].id}/carousel/${index}.png`)"
+            :src="
+              require(`../assets/img/projects/${project[0].id}/carousel/${index}.png`)
+            "
             class="d-block w-100"
-            alt="`Img num 1`"
+            :alt="`Img num ${index}`"
           />
+          <!-- <img
+            :src="
+              `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/carousel/${index}.png`
+            "
+            class="d-block w-100"
+            :alt="`Img num ${index}`"
+          />-->
         </div>
       </div>
       <a
@@ -78,21 +100,30 @@
       class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row justify-content-between mt-5 pb-3 align-items-start align-items-sm-start align-items-md-end align-items-lg-end align-items-xl-end"
     >
       <div class="d-flex flex-column">
-        <h1>{{this.project[0].title}}</h1>
+        <h1>{{ this.project[0].title }}</h1>
         <p
           class="small-red-font m-0"
-          v-if="this.project[0].customer !== 'Full Stack Bootcamp' && this.project[0].customer !== 'Degree Project' && this.project[0].customer !=='Full Stack Master\'s Degree' && this.project[0].customer !=='Personal Project' && this.project[0].customer !=='WeDrink'"
-        >Customer: {{this.project[0].customer}}</p>
+          v-if="
+            this.project[0].customer !== 'Full Stack Bootcamp' &&
+              this.project[0].customer !== 'Degree Project' &&
+              this.project[0].customer !== 'Full Stack Master\'s Degree' &&
+              this.project[0].customer !== 'Personal Project' &&
+              this.project[0].customer !== 'WeDrink'
+          "
+        >Customer: {{ this.project[0].customer }}</p>
         <p
           class="small-red-font m-0"
-          v-if="this.projectMadeAts.length > 0 && this.projectMadeAts[0].madeat.full_name !== 'Freelance'"
-        >{{this.projectMadeAts[0].madeat.full_name}}</p>
+          v-if="
+            this.projectMadeAts.length > 0 &&
+              this.projectMadeAts[0].madeat.full_name !== 'Freelance'
+          "
+        >{{ this.projectMadeAts[0].madeat.full_name }}</p>
       </div>
       <div>
         <p
           v-if="this.project[0].completion_date"
           class="small-red-font m-0"
-        >Completion date: {{this.project[0].completion_date}}</p>
+        >Completion date: {{ this.project[0].completion_date }}</p>
       </div>
     </div>
 
@@ -117,7 +148,11 @@
         </ul>
         <p class="small-red-font m-0" v-if="this.projectTags.length">This project is related to:</p>
         <ul v-if="this.projectTags">
-          <li v-for="(tag, index) in projectTags" :key="index" class="project-tags">{{tag.tag.name}}</li>
+          <li
+            v-for="(tag, index) in projectTags"
+            :key="index"
+            class="project-tags"
+          >{{ tag.tag.name }}</li>
         </ul>
         <p
           class="small-red-font m-0"
@@ -128,7 +163,7 @@
             v-for="(codingLang, index) in projectCodingLangs"
             class="project-coding-langs"
             :key="index"
-          >{{codingLang.codinglang.name}}</li>
+          >{{ codingLang.codinglang.name }}</li>
         </ul>
 
         <!-- <ul v-if="this.projectMadeAts">
@@ -161,12 +196,14 @@
         <p
           v-if="this.project[0].collaborators"
           class="small-red-font m-0 text-right"
-        >Collaborators: {{this.project[0].collaborators}}</p>
-        <pre>{{this.project[0].description}}</pre>
+        >Collaborators: {{ this.project[0].collaborators }}</p>
+        <pre>{{ this.project[0].description }}</pre>
         <img
           class="project-cover"
           v-if="this.descriptionPhotoExist"
-          :src="require(`../assets/img/projects/${this.project[0].id}/photo.png`)"
+          :src="
+            require(`../assets/img/projects/${this.project[0].id}/photo.png`)
+          "
         />
         <iframe
           style="width: 100%;"
@@ -188,6 +225,7 @@
 </template>
 <script>
 import ProjectsService from "../ProjectsService";
+// import cloudinary from "cloudinary-core";
 export default {
   name: "ProjectDetail",
   data() {
@@ -219,13 +257,26 @@ export default {
       } catch (err) {
         this.error = err.message;
       }
-      try {
-        require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)
-          ? (this.headerImgExist = true)
-          : (this.headerImgExist = false);
-      } catch (err) {
-        console.error;
-      }
+      // try {
+      //   require(`../assets/img/projects/${this.project[0].id}/${this.project[0].id}.png`)
+      //     ? (this.headerImgExist = true)
+      //     : (this.headerImgExist = false);
+      // } catch (err) {
+      //   console.error;
+      // }
+      fetch(
+        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/${this.project[0].id}.png`,
+        { method: "HEAD" }
+      )
+        .then(res => {
+          if (res.ok) {
+            this.headerImgExist = true;
+          } else {
+            this.headerImgExist = false;
+          }
+        })
+        .catch(err => console.log("Error:", err));
+
       // try {
       //   require(`../assets/img/projects/${this.project[0].id}/carousel/1.png`)
       //     ? (this.headerCarouselExist = true)
@@ -233,13 +284,25 @@ export default {
       // } catch (err) {
       //   console.error;
       // }
-      try {
-        require(`../assets/img/projects/${this.project[0].id}/photo.png`)
-          ? (this.descriptionPhotoExist = true)
-          : (this.descriptionPhotoExist = false);
-      } catch (err) {
-        console.error;
-      }
+      fetch(
+        `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/photo.png`,
+        { method: "HEAD" }
+      )
+        .then(res => {
+          if (res.ok) {
+            this.descriptionPhotoExist = true;
+          } else {
+            this.descriptionPhotoExist = false;
+          }
+        })
+        .catch(err => console.log("Error:", err));
+      // try {
+      //   require(`../assets/img/projects/${this.project[0].id}/photo.png`)
+      //     ? (this.descriptionPhotoExist = true)
+      //     : (this.descriptionPhotoExist = false);
+      // } catch (err) {
+      //   console.error;
+      // }
       const str = this.project[0].link_to_prod;
       const res = str.split(" ");
       this.linksToProd = res;
@@ -248,10 +311,22 @@ export default {
       let qty = 0;
       do {
         qty = qty + 1;
-      } while (this.checkCarouselImgs(qty));
+      } while (this.checkCarouselImg(qty));
       this.carouselQty = qty - 1;
     },
-    checkCarouselImgs: function(num) {
+    checkCarouselImg: function(num) {
+      // fetch(
+      //   `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/carousel/${num}.png`,
+      //   { method: "HEAD" }
+      // )
+      //   .then(res => {
+      //     if (res.ok) {
+      //       return true;
+      //     } else {
+      //       return false;
+      //     }
+      //   })
+      //   .catch(err => console.log("Error:", err));
       try {
         require(`../assets/img/projects/${this.project[0].id}/carousel/${num}.png`);
         return true;
