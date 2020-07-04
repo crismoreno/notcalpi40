@@ -603,8 +603,9 @@
               <p>
                 At dobcn I've mainly worked on the front end side of the platforms they
                 have developed. This pushed me to learn PHP, CMS (Wordpress and
-                Magento) while involved me in real world projects. Go check my
-                Projects developed as part of the team at dobcn.
+                Magento) while involved me in real world projects. I introduced GIT and switched
+                plain CSS stylesheets too SASS in all of the projects I had the chance to work in.
+                Go check my Projects developed as part of the team at dobcn.
               </p>
               <router-link to="/portfolio?place=4">Projects developed at DoBcn</router-link>
             </div>
@@ -649,6 +650,7 @@
               target="_blank"
               href="https://www.naturalkids.cat/"
             >naturalKIDS</a>.
+            <router-link class="projects-link ml-1" to="/project/7">Check it out</router-link>
           </li>
           <li>
             <strong>September 2015 · March 2016</strong> Designer at
@@ -664,6 +666,7 @@
               target="_blank"
               href="https://comacsl.com/"
             >COMAC Esports i Lleure S.L</a>.
+            <router-link class="projects-link ml-1" to="/project/13">Check it out</router-link>
           </li>
           <li>
             <strong>2013 · 2014</strong> Head of the design department and
@@ -672,6 +675,7 @@
               target="_blank"
               href="http://medran.cat/"
             >Cansaladeries Medrán.</a>
+            <router-link class="projects-link ml-1" to="/project/6">Check it out</router-link>
           </li>
           <li>
             <strong>2015</strong> Relationship Management at Open Espanya de Golf.
@@ -691,10 +695,12 @@
               href="http://www.nataciosabadell.com/"
             >Club de Natació de Sabadell</a>
             (Freelance project).
+            <router-link class="projects-link" to="/project/15">Check it out</router-link>
           </li>
           <li>
             <strong>2014</strong> Corporate identity design for Villena & Rühl
             (Freelance project).
+            <router-link class="projects-link" to="/project/10">Check it out</router-link>
           </li>
           <li>
             <strong>2014</strong> Internship at
