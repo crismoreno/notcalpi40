@@ -13,6 +13,7 @@ const model = {
 				`SELECT p.id, p.title, p.customer, GROUP_CONCAT(pt.tagId) as tags
 				FROM projects p
 				LEFT JOIN project_tags as pt ON p.id = pt.projectId LEFT JOIN tags t ON t.id=pt.tagId AND t.id IN (${tagIds})
+				WHERE p.show = TRUE
 				GROUP BY p.id,p.title
 				HAVING COUNT(pt.tagId) >= COUNT(t.id) AND COUNT(t.id) = ${tagIds.length}`,
 				{

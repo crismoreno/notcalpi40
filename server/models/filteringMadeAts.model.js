@@ -11,6 +11,7 @@ getProjectsByMadeAtId: async (madeAtsIds, response) => {
 				`SELECT p.id, p.title, p.customer, GROUP_CONCAT(pma.madeatId) as madeats
 				FROM projects p
 				LEFT JOIN project_madeats as pma ON p.id = pma.projectId LEFT JOIN madeats ma ON ma.id=pma.madeatId AND ma.id IN (${madeAtsIds})
+				WHERE p.show = TRUE
 				GROUP BY p.id,p.title
 				HAVING COUNT(pma.madeatId) >= COUNT(ma.id) AND COUNT(ma.id) = ${madeAtsIds.length}`,
 				{
