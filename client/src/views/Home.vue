@@ -153,7 +153,7 @@
             >
               <div class="card-body">
                 I was born in June 1993, I'm
-                <span class="mx-1">{{age}}</span> years old.
+                <span class="mx-1">{{age}}</span>years old.
               </div>
             </div>
           </div>
@@ -184,7 +184,9 @@
               aria-labelledby="headingTwo"
               data-parent="#accordionExample"
             >
-              <div class="card-body">I was born in Sabadell but I'm currently based in Badalona.</div>
+              <div
+                class="card-body"
+              >I was born in Sabadell but I'm currently based in Badalona, Barcelona.</div>
             </div>
           </div>
           <div class="card">
@@ -293,7 +295,7 @@ export default {
   name: "Home",
   components: {
     // BlogComponent,
-    FeaturedProjectsComponent
+    FeaturedProjectsComponent,
   },
   data() {
     return {
@@ -302,7 +304,7 @@ export default {
       bootcampAgo: "",
       headingOne: "closed",
       headingTwo: "closed",
-      headingThree: "closed"
+      headingThree: "closed",
     };
   },
   created() {
@@ -311,14 +313,14 @@ export default {
     this.bootcampAgo = moment().diff(moment("20171001", "YYYYMMDD"), "years");
   },
   methods: {
-    getFilters: async function() {
+    getFilters: async function () {
       try {
         this.availableTags = await ProjectsService.getAvailableTags();
       } catch (err) {
         this.error = err.message;
       }
     },
-    toggleIcon: function(heading) {
+    toggleIcon: function (heading) {
       switch (heading) {
         case "headingOne":
           this.headingOne == "closed"
@@ -342,7 +344,7 @@ export default {
           this.headingOne = "closed";
           break;
       }
-    }
-  }
+    },
+  },
 };
 </script>
