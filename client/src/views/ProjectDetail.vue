@@ -22,7 +22,7 @@
         !this.headerImgExist && this.project[0].video && this.carouselQty === 0
       "
       style="width: 100%;"
-      class="videoandimg"
+      class="videoandimg mt-5"
       allowfullscreen
       frameborder="0"
       width="1200"
@@ -228,7 +228,7 @@ export default {
       projectTags: [],
       projectCodingLangs: [],
       projectMadeAts: [],
-      linksToProd: []
+      linksToProd: [],
     };
   },
   async created() {
@@ -239,7 +239,7 @@ export default {
     this.getMadeAts();
   },
   methods: {
-    getProject: async function() {
+    getProject: async function () {
       try {
         this.project = await ProjectsService.getProjectById(
           this.$route.params.id
@@ -256,7 +256,7 @@ export default {
       // }
       fetch(
         `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/${this.project[0].id}.png`
-      ).then(res => {
+      ).then((res) => {
         if (res.ok) {
           this.headerImgExist = true;
         } else {
@@ -274,7 +274,7 @@ export default {
       // }
       fetch(
         `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${this.project[0].id}/photo.png`
-      ).then(res => {
+      ).then((res) => {
         if (res.ok) {
           this.descriptionPhotoExist = true;
         } else {
@@ -293,14 +293,14 @@ export default {
       const res = str.split(" ");
       this.linksToProd = res;
     },
-    countCarouselImgs: async function() {
+    countCarouselImgs: async function () {
       let qty = 0;
       do {
         qty = qty + 1;
       } while ((await this.checkCarouselImg(qty)) === 200);
       this.carouselQty = qty - 1;
     },
-    checkCarouselImg: async function(num) {
+    checkCarouselImg: async function (num) {
       try {
         const proj = this.project[0].id;
         const url = `https://res.cloudinary.com/hyavxktsb/image/upload/projects/${proj}/carousel/${num}.png`;
@@ -317,7 +317,7 @@ export default {
       // }
       // return false;
     },
-    getTags: async function() {
+    getTags: async function () {
       try {
         this.projectTags = await ProjectsService.getTagsById(
           this.$route.params.id
@@ -326,7 +326,7 @@ export default {
         this.error = err.message;
       }
     },
-    getCodingLangs: async function() {
+    getCodingLangs: async function () {
       try {
         this.projectCodingLangs = await ProjectsService.getCodingLangsById(
           this.$route.params.id
@@ -335,7 +335,7 @@ export default {
         this.error = err.message;
       }
     },
-    getMadeAts: async function() {
+    getMadeAts: async function () {
       try {
         this.projectMadeAts = await ProjectsService.getMadeAtsById(
           this.$route.params.id
@@ -343,7 +343,7 @@ export default {
       } catch (err) {
         this.error = err.message;
       }
-    }
-  }
+    },
+  },
 };
 </script>
