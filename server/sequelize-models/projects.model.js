@@ -33,6 +33,9 @@ module.exports = (sequelize, Sequelize) => {
     },
     link_to_repo: {
       type: Sequelize.STRING,
+		},
+		link_to_post: {
+      type: Sequelize.STRING,
     },
     link_to_download: {
       type: Sequelize.STRING,

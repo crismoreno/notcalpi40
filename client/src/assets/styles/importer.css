@@ -553,6 +553,8 @@ a.checkout-link-button {
 
 .project-detail-container .links-to-buttons {
   margin-top: 10px; }
+  .project-detail-container .links-to-buttons div {
+    margin-bottom: 15px; }
   .project-detail-container .links-to-buttons a {
     margin-top: 10px;
     margin-right: 10px; }

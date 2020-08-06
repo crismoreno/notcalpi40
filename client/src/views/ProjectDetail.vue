@@ -181,6 +181,9 @@
           <div v-if="this.project[0].link_to_download">
             <a class="link-to-button" :href="this.project[0].link_to_download">Download 📦</a>
           </div>
+          <div v-if="this.project[0].link_to_post">
+            <a class="link-to-button" :href="this.project[0].link_to_post">Related Post 📎</a>
+          </div>
         </div>
       </div>
       <div class="description ml-lg-3 ml-xl-3">
