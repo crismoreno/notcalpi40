@@ -148,7 +148,7 @@
         <p
           class="small-red-font m-0"
           v-if="this.projectCodingLangs.length"
-        >This project developed in:</p>
+        >This project is developed in:</p>
         <ul v-if="this.projectCodingLangs">
           <li
             v-for="(codingLang, index) in projectCodingLangs"
