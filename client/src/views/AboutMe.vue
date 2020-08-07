@@ -226,23 +226,6 @@
           </div>
         </div>
 
-        <div class="node code-tool">
-          <div class="d-flex justify-content-between">
-            <h3>NODE</h3>
-            <router-link to="/portfolio?codingLang=2">Go to NodejS projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 70%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
-
         <div class="php code-tool">
           <div class="d-flex justify-content-between">
             <h3>PHP</h3>
@@ -356,24 +339,7 @@
             <div
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
-              style="width: 60%"
-              aria-valuenow="100"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
-          </div>
-        </div>
-
-        <div class="express code-tool">
-          <div class="d-flex justify-content-between">
-            <h3>Redux</h3>
-            <router-link to="/portfolio?codingLang=1">Go to Redux projects</router-link>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bar-striped bg-danger"
-              role="progressbar"
-              style="width: 40%"
+              style="width: 80%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -409,6 +375,21 @@
               class="progress-bar progress-bar-striped bg-danger"
               role="progressbar"
               style="width: 80%"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+        </div>
+        <div class="express code-tool">
+          <div class="d-flex justify-content-between">
+            <h3>HAPI</h3>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-danger"
+              role="progressbar"
+              style="width: 65%"
               aria-valuenow="100"
               aria-valuemin="0"
               aria-valuemax="100"
@@ -785,15 +766,15 @@ import moment from "moment";
 export default {
   name: "AboutMe",
   components: {
-    BlogComponent
+    BlogComponent,
   },
   data() {
     return {
-      age: ""
+      age: "",
     };
   },
   created() {
     this.age = moment().diff(moment("19930601", "YYYYMMDD"), "years");
-  }
+  },
 };
 </script>
