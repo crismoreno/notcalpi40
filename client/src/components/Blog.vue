@@ -7,8 +7,10 @@
       >Check out my Blog!</h2>
       <DisplayPosts
         :limit="{limit}"
+        v-if="fragment && fragment === 'true'"
         class="display-posts w-100 d-flex flex-row flex-wrap justify-content-center"
       ></DisplayPosts>
+      <DisplayPosts :limit="{limit}" v-else class="display-posts w-100 d-flex flex-row flex-wrap"></DisplayPosts>
     </div>
     <a
       v-if="this.extras === 'true' || !this.extras"
@@ -21,7 +23,7 @@
 import DisplayPosts from "./DisplayPosts.vue";
 export default {
   name: "BlogComponent",
-  props: ["limit", "extras"],
+  props: ["limit", "extras", "fragment"],
   components: {
     DisplayPosts,
   },

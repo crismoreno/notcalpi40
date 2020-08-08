@@ -285,7 +285,7 @@
       <FeaturedProjectsComponent limit="4" extras="false"></FeaturedProjectsComponent>
     </div>
     <div class="my-posts">
-      <BlogComponent limit="4" extras="false"></BlogComponent>
+      <BlogComponent limit="4" extras="false" fragment="true"></BlogComponent>
     </div>
   </div>
 </template>
