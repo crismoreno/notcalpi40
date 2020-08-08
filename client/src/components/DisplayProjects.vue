@@ -33,7 +33,7 @@ import ProjectsService from "../ProjectsService";
 import { CldImage } from "cloudinary-vue";
 export default {
   name: "DisplayProjects",
-  props: ["isFeatured"],
+  props: ["isFeatured", "limit"],
   data() {
     return {
       projects: [],
@@ -63,7 +63,12 @@ export default {
     },
     getFeaturedProjects: async function () {
       try {
-        this.projects = await ProjectsService.getFeaturedProjects();
+        if (this.limit) {
+          const fetchedProjects = await ProjectsService.getFeaturedProjects();
+          this.projects = fetchedProjects.slice(0, this.limit.limit);
+        } else {
+          this.projects = await ProjectsService.getFeaturedProjects();
+        }
       } catch (err) {
         this.error = err.message;
       }

@@ -756,7 +756,10 @@
       </div>
     </div>
     <div class="medium-fetched">
-      <BlogComponent class="display-projects d-flex flex-row flex-wrap justify-content-center"></BlogComponent>
+      <BlogComponent
+        limit="4"
+        class="display-projects d-flex flex-row flex-wrap justify-content-center"
+      ></BlogComponent>
     </div>
   </div>
 </template>

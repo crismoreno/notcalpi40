@@ -282,10 +282,10 @@
       </router-link>
     </div>
     <div class="my-dev-projects">
-      <FeaturedProjectsComponent></FeaturedProjectsComponent>
+      <FeaturedProjectsComponent limit="4" extras="false"></FeaturedProjectsComponent>
     </div>
     <div class="my-posts">
-      <BlogComponent limit="4"></BlogComponent>
+      <BlogComponent limit="4" extras="false"></BlogComponent>
     </div>
   </div>
 </template>
