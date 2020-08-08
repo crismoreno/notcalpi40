@@ -272,7 +272,7 @@
         </div>
       </div>
     </div>
-    <div class="filters container d-flex justify-content-center flex-wrap">
+    <!-- <div class="filters container d-flex justify-content-center flex-wrap">
       <router-link
         :to="`portfolio?tag=${tag.id}`"
         v-for="(tag, index) in availableTags"
@@ -280,7 +280,7 @@
       >
         <button class="filter cursor-pointer-neg">{{tag.name}}</button>
       </router-link>
-    </div>
+    </div>-->
     <div class="my-dev-projects">
       <FeaturedProjectsComponent limit="4" extras="false"></FeaturedProjectsComponent>
     </div>
