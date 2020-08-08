@@ -7,8 +7,11 @@
             <img class="project-image" :src="post.thumbnail" />
           </div>
           <div class="project-details d-flex flex-column justify-content-center">
-            <p class="name">{{ post.title.substr(0, 30) + "\u2026" }}</p>
-            <!-- <p class="customer">{{ post.pubDate }}</p> -->
+            <p class="name" v-if="post.title.length > 30 ">{{ post.title.substr(0, 30) + "\u2026" }}</p>
+            <p class="name" v-else>{{ post.title.substr(0, 30)}}</p>
+            <p
+              class="customer"
+            >{{ getMomentedDate(post.pubDate.substr(0, 10)) }} - {{ getMomentedRelativeTime(post.pubDate.substr(0, 10)) }}</p>
           </div>
         </div>
       </a>
@@ -17,11 +20,12 @@
 </template>
 <script>
 import axios from "axios";
+import moment from "moment";
 export default {
   name: "DisplayProjects",
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   methods: {
@@ -31,9 +35,9 @@ export default {
           "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@cristinamorenomedran"
         )
         // .then((res) => res.json())
-        .then(data => {
+        .then((data) => {
           const res = data.data.items;
-          const mediumData = res.filter(item => item.categories.length > 0);
+          const mediumData = res.filter((item) => item.categories.length > 0);
           this.posts = mediumData;
         });
     },
@@ -41,10 +45,16 @@ export default {
       return text.length > maxLength
         ? text.slice(startingPoint, maxLength)
         : text;
-    }
+    },
+    getMomentedDate(date) {
+      return moment(date, "YYYY-MM-DD").format("DD/MM/YYYY");
+    },
+    getMomentedRelativeTime(date) {
+      return moment(date, "YYYYMMDD").fromNow();
+    },
   },
   beforeMount() {
     this.getBlogPosts();
-  }
+  },
 };
 </script>
