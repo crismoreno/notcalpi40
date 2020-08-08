@@ -23,6 +23,7 @@ import axios from "axios";
 import moment from "moment";
 export default {
   name: "DisplayProjects",
+  props: ["limit"],
   data() {
     return {
       posts: [],
@@ -38,7 +39,11 @@ export default {
         .then((data) => {
           const res = data.data.items;
           const mediumData = res.filter((item) => item.categories.length > 0);
-          this.posts = mediumData;
+          if (this.limit) {
+            this.posts = mediumData.slice(0, this.limit.limit);
+          } else {
+            this.posts = mediumData;
+          }
         });
     },
     shortenText(text, startingPoint, maxLength) {

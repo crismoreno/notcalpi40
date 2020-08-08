@@ -284,6 +284,9 @@
     <div class="my-dev-projects">
       <FeaturedProjectsComponent></FeaturedProjectsComponent>
     </div>
+    <div class="my-posts">
+      <BlogComponent limit="4"></BlogComponent>
+    </div>
   </div>
 </template>
 <script>
@@ -294,7 +297,7 @@ import moment from "moment";
 export default {
   name: "Home",
   components: {
-    // BlogComponent,
+    BlogComponent,
     FeaturedProjectsComponent,
   },
   data() {

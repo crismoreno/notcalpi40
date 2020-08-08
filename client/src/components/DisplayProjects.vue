@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       projects: [],
-      error: ""
+      error: "",
     };
   },
   mounted() {
@@ -46,7 +46,7 @@ export default {
     } else {
       this.getFeaturedProjects();
     }
-    EventBus.$on("SEARCH", filters => {
+    EventBus.$on("SEARCH", (filters) => {
       this.getProjectsFiltered(filters);
     });
     EventBus.$on("EMPTY_FILTERS", () => {
@@ -54,21 +54,21 @@ export default {
     });
   },
   methods: {
-    getAllProjects: async function() {
+    getAllProjects: async function () {
       try {
         this.projects = await ProjectsService.getProjects();
       } catch (err) {
         this.error = err.message;
       }
     },
-    getFeaturedProjects: async function() {
+    getFeaturedProjects: async function () {
       try {
         this.projects = await ProjectsService.getFeaturedProjects();
       } catch (err) {
         this.error = err.message;
       }
     },
-    getProjectsFiltered: async function(getFilters) {
+    getProjectsFiltered: async function (getFilters) {
       const { tags, codingLangs, place } = getFilters;
       if (tags) {
         try {
@@ -91,7 +91,7 @@ export default {
       } else {
         this.getAllProjects();
       }
-    }
-  }
+    },
+  },
 };
 </script>
