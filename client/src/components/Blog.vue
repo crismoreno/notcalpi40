@@ -1,7 +1,7 @@
 <template>
   <div class="container mb-5 main-container mt-5">
     <div class="medium-fetched mt-5 mb-5">
-      <h2 class="medium-fetched-title text-center">Check out my Blog!</h2>
+      <h2 class="medium-fetched-title text-center">Check out my Blog</h2>
       <DisplayPosts
         :limit="{limit}"
         v-if="fragment && fragment === 'true'"

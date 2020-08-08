@@ -1,7 +1,7 @@
 <template>
   <div class="container mb-5 main-container">
     <div class="medium-fetched mt-5 mb-5">
-      <h2 class="medium-fetched-title text-center">Check out my Latest Work!</h2>
+      <h2 class="medium-fetched-title text-center">Check out my projects</h2>
       <DisplayProjects
         :limit="{limit}"
         isFeatured="true"
