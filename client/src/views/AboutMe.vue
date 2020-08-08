@@ -759,6 +759,7 @@
       <BlogComponent
         limit="4"
         class="display-projects d-flex flex-row flex-wrap justify-content-center"
+        fragment="true"
       ></BlogComponent>
     </div>
   </div>
