@@ -23,10 +23,10 @@ const model = {
 			const sent_from = process.env.SENTFROM;
 
 			var transport = {
-				// service: "Gmail",
-				host: "smtp.gmail.com",
-				port: 587,
-				secure: false,
+				service: "gmail",
+				// host: "smtp.gmail.com",
+				// port: 587,
+				// secure: false,
 				auth: {
 					user: to_mail,
 					pass: to_pwd,
