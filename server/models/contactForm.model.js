@@ -43,7 +43,7 @@ const model = {
 				}
 			});
 
-			var mail_template = {
+			var mailToMe = {
 				from: name,
 				to: to_mail,
 				subject: `You Received a new message at notcalpi.me! from ${sent_from}`,
@@ -55,11 +55,24 @@ const model = {
 					message: ${message},`,
 			};
 
-			transporter.sendMail(mail_template, (err, data) => {
+			var mailtoHost = {
+				from: 'Cristina Moreno Medran',
+				to: email,
+				subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
+				text: `Hello dear earthling, I've received your message and I'll give you an answer as soon as I see it! Thanks for visiting my website!`
+			};
+
+			transporter.sendMail(mailToMe, (err, data) => {
 				if (err) {
 					response(err, null)
 				} else {
-					response(null, data)
+					transporter.sendMail(mailtoHost, (err, data) => {
+						if (err) {
+							response(err, null);
+						} else {
+							response(null, res);
+						}
+					})
 				}
 			});
 
