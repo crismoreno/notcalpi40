@@ -28,9 +28,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/about-me">About Me</router-link>
           </li>
-          <li class="nav-item highlight-menu-item">
+          <!-- <li class="nav-item highlight-menu-item">
             <router-link class="nav-link" to="/reach-me">Reach Me @</router-link>
-          </li>
+          </li>-->
         </ul>
       </div>
     </nav>
@@ -54,10 +54,10 @@
               <a href="https://medium.com/@cristinamorenomedran" target="_blank">Medium</a>
             </li>
             <li>·</li>
-            <li>
+            <!-- <li>
               <router-link to="/reach-me">Reach me@</router-link>
             </li>
-            <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">·</li>
+            <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">·</li>-->
             <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
               <img height="30" src="../src/assets/img/mini-logo.svg" />
             </li>
