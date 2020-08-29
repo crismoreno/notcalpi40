@@ -79,11 +79,11 @@ import CookieWarning from "./components/CookieWarning.vue";
 export default {
   name: "App",
   components: {
-    CookieWarning
+    CookieWarning,
   },
   data() {
     return {
-      cookieThere: false
+      cookieThere: false,
     };
   },
   created() {
@@ -95,7 +95,7 @@ export default {
     });
   },
   methods: {
-    checkCookie: function() {
+    checkCookie: function () {
       const cookiesAvailable = document.cookie;
       if (
         cookiesAvailable.indexOf("cookieconsent=true") != -1 ||
@@ -103,7 +103,7 @@ export default {
       ) {
         this.cookieThere = true;
       }
-    }
-  }
+    },
+  },
 };
 </script>
