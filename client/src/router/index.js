@@ -27,11 +27,11 @@ const routes = [
     name: "Blog",
     component: Blog,
   },
-  // {
-  //   path: "/reach-me",
-  //   name: "ContactForm",
-  //   component: ContactForm,
-  // },
+  {
+    path: "/reach-me",
+    name: "ContactForm",
+    component: ContactForm,
+  },
   {
     path: "/portfolio",
     name: "Portfolio",
