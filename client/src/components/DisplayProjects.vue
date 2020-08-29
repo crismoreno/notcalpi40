@@ -22,7 +22,7 @@
         </router-link>
       </li>
     </ul>
-    <p v-if="this.projects.length < 1">This search didin't match any project 😭</p>
+    <p v-if="this.projects.length < 1">No projects available 😭</p>
   </div>
 </template>
 <script>
