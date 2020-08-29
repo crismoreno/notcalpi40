@@ -6,10 +6,9 @@ var nodemailer = require("nodemailer");
 
 
 const model = {
-	// Post Contact Form to DB and Send Email
-	postContactForm: async (name, email, tel, message, company, state, response) => {
-		// const state = 0;
-		// console.log(name, email, tel, message, company, state, 'hardcoded string')
+	// Post COntact Form to DB and Send Email
+	postContactForm: async (name, email, tel, message, company, response) => {
+		console.log(name, email, tel, message, company, 'hardcoded string')
 		try{
 			await ContactForms.create({
 				name,
@@ -17,7 +16,6 @@ const model = {
 				tel,
 				company,
 				message,
-				state,
 			})
 			const to_mail = process.env.MAIL;
 			const to_pwd = process.env.MAILPWD;
@@ -43,7 +41,7 @@ const model = {
 				}
 			});
 
-			var mailToMe = {
+			var mail_template = {
 				from: name,
 				to: to_mail,
 				subject: `You Received a new message at notcalpi.me! from ${sent_from}`,
@@ -62,7 +60,7 @@ const model = {
 			// 	text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
 			// };
 
-			transporter.sendMail(mailToMe, (err, data) => {
+			transporter.sendMail(mail_template, (err, data) => {
 				if (err) {
 					response(err, null)
 				} else {
