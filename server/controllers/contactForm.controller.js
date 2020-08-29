@@ -7,8 +7,7 @@ const controller = {
 		const tel = req.body.telephone;
 		const message = req.body.message;
 		const company = req.body.company;
-		const state = 0
-		contactFormModel.postContactForm(name, email, tel, message, company, state, (err, response) =>{
+		contactFormModel.postContactForm(name, email, tel, message, company, (err, response) =>{
 			if(err){
 				res.send(err)
 			}else{
