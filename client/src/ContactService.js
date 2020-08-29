@@ -14,7 +14,7 @@ class ContactsService {
         email: formBody.email,
         company: formBody.company,
         message: formBody.message,
-        state: false,
+        state: 0,
       }),
       headers: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
