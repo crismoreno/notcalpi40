@@ -13,8 +13,7 @@ class ContactsService {
         telephone: formBody.telephone,
         email: formBody.email,
         company: formBody.company,
-        message: formBody.message,
-        state: "0",
+				message: formBody.message,
       }),
       headers: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
