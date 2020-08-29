@@ -57,7 +57,7 @@
             <!-- <li>
               <router-link to="/reach-me">Reach me@</router-link>
             </li>-->
-            <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">·</li>
+            <!-- <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">·</li> -->
             <li class="d-none d-sm-block d-md-block d-lg-block d-xl-block">
               <img height="30" src="../src/assets/img/mini-logo.svg" />
             </li>
