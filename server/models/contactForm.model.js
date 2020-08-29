@@ -55,7 +55,7 @@ const model = {
 					message: ${message},`,
 			};
 
-			var mailtoHost = {
+			var mailtoUser = {
 				from: 'Cristina Moreno Medran',
 				to: email,
 				subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
@@ -66,7 +66,7 @@ const model = {
 				if (err) {
 					response(err, null)
 				} else {
-					transporter.sendMail(mailtoHost, (err, data) => {
+					transporter.sendMail(mailtoUser, (err, data) => {
 						if (err) {
 							response(err, null);
 						} else {
