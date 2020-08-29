@@ -27,7 +27,7 @@ Also note that this new version of the website brings in many new features such 
 - Real time chat
 
 ## Built in
-* [jQuery](https://expressjs.com)
+* [Express](https://expressjs.com)
 * [Bootstrap](https://getbootstrap.com/)
 * [SASS](https://sass-lang.com/)
 * [SEQUELIZE](https://sequelize.org/)
