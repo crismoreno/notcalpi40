@@ -55,12 +55,12 @@ const model = {
 					message: ${message},`,
 			};
 
-			var mailtoUser = {
-				from: 'Cristina Moreno Medran',
-				to: email,
-				subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
-				text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
-			};
+			// var mailtoUser = {
+			// 	from: 'Cristina Moreno Medran',
+			// 	to: email,
+			// 	subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
+			// 	text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
+			// };
 
 			transporter.sendMail(mailToMe, (err, data) => {
 				if (err) {
