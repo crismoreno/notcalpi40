@@ -66,13 +66,14 @@ const model = {
 				if (err) {
 					response(err, null)
 				} else {
-					transporter.sendMail(mailtoUser, (err, data) => {
-						if (err) {
-							response(err, null);
-						} else {
-							response(null, res);
-						}
-					})
+					response(null, data)
+					// transporter.sendMail(mailtoUser, (err, data) => {
+					// 	if (err) {
+					// 		response(err, null);
+					// 	} else {
+					// 		response(null, data);
+					// 	}
+					// })
 				}
 			});
 
