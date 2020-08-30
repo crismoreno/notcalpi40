@@ -1,6 +1,6 @@
 <template>
   <div class="layout-container">
-    <nav v-if="this.$route.path !== '/maintenance'" class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
       <router-link class="navbar-brand" to="/">
         <img height="30" src="../src/assets/img/white-logo.svg" />
       </router-link>
@@ -35,7 +35,7 @@
       </div>
     </nav>
     <router-view />
-    <footer v-if="this.$route.path !== '/maintenance'">
+    <footer>
       <div
         class="d-flex justify-content-center justify-content-md-between justify-content-lg-between justify-content-xl-between px-3 flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row"
       >
