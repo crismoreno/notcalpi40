@@ -7,15 +7,17 @@ var nodemailer = require("nodemailer");
 
 const model = {
 	// Post COntact Form to DB and Send Email
-	postContactForm: async (name, email, tel, message, company, response) => {
-		// console.log(name, email, tel, message, company, state, 'hardcoded string')
+	postContactForm: async (data, resolve) => {
+		const {name, email, telephone, message, company} = data;
+		const state = 0;
 		try{
 			await ContactForms.create({
 				name,
 				email,
-				tel,
+				tel: telephone,
 				company,
 				message,
+				state
 			})
 			// const to_mail = process.env.MAIL;
 			// const to_pwd = process.env.MAILPWD;
@@ -74,7 +76,7 @@ const model = {
 			// 		// })
 			// 	}
 			// });
-
+			response(null, data)
 		}catch(err){
 			response(err, null)
 		}
