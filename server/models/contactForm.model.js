@@ -44,10 +44,10 @@ const model = {
 			});
 			
 			const mailOptions = {
-				from: to_mail,
+				from: name,
 				to: to_mail,
 				subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
-				text: `name: ${name},company: ${company},email: ${email},telephone: ${tel},message: ${message},`,
+				text: `name: ${name},company: ${company},email: ${email},telephone: ${telephone},message: ${message},`,
 			};
 			
 			transporter.sendMail(mailOptions, (error, info) => {
