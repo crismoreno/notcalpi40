@@ -545,7 +545,7 @@
             >
               <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
               <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
-              <strong>Octubre 2019 · June 2020</strong>
+              <strong>October 2019 · June 2020</strong>
               <a href="https://www.assemblerschool.com/" target="_blank">Assembler School</a> Full-Stack web development master degree.
             </button>
           </li>
@@ -574,7 +574,7 @@
             >
               <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
               <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
-              <strong>February 2018 · Octubre 2019</strong> Front-End developer at
+              <strong>February 2018 · October 2019</strong> Front-End developer at
               <a href="https://www.dobcn.com/" target="_blank">DoBcn</a>.
             </button>
           </li>
@@ -603,7 +603,7 @@
             >
               <img src="../assets/img/icons/expand_more.svg" class="more-info-button-down" />
               <img src="../assets/img/icons/expand_less.svg" class="more-info-button-up d-none" />
-              <strong>Junio 2016 · Septiembre 2017</strong> SEM & SMM at
+              <strong>June 2016 · September 2017</strong> SEM & SMM at
               <a target="_blank" href="https://nordicwebsites.com">Nordic Websites</a>.
             </button>
           </li>
@@ -626,7 +626,7 @@
           </li>
 
           <li>
-            <strong>2013 · 2017</strong> Design and comunication at
+            <strong>2013 · 2017</strong> Design and communication at
             <a
               target="_blank"
               href="https://www.naturalkids.cat/"
@@ -638,11 +638,11 @@
             <a target="_blank" href="https://www.sieteysiete.com/">SieteySiete Media</a>.
           </li>
           <li>
-            <strong>2013 · 2015</strong> Comunication, management and design at
+            <strong>2013 · 2015</strong> Communication, management and design at
             Club esportiu Are you Ready?.
           </li>
           <li>
-            <strong>2016 · 2017</strong> Design & comunication at
+            <strong>2016 · 2017</strong> Design & communication at
             <a
               target="_blank"
               href="https://comacsl.com/"
@@ -651,7 +651,7 @@
           </li>
           <li>
             <strong>2013 · 2014</strong> Head of the design department and
-            comunication at
+            communication at
             <a
               target="_blank"
               href="http://medran.cat/"
@@ -694,7 +694,7 @@
           <li>
             <strong>2013 · 2014</strong> Project
             <a target="_blank" href="http://www.esdi.es/content/pdf/gala279.pdf">GALA 279</a>: Intercity cargo bike. As a collaborator in charge of design
-            management, comunication, partner search and translation.
+            management, communication, partner search and translation.
           </li>
         </ul>
         <h2 class="mt-5">Other work experience non related to code nor design</h2>

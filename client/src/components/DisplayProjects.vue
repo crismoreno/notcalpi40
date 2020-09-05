@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul
-      class="d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-start justify-content-xl-start"
+      class="d-flex flex-row flex-wrap justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center"
     >
       <li class="card" v-for="(project, index) in projects" :key="index">
         <router-link :to="'/project/' + project.id">

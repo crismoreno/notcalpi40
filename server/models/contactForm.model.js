@@ -2,11 +2,11 @@ const db = require("../sequelize-models");
 const { QueryTypes } = require("sequelize");
 const Sequelize = db.sequelize;
 const ContactForms = db.contactForms;
-var nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
 
 
 const model = {
-	// Post COntact Form to DB and Send Email
+	// Post Contact Form to DB and Send Email
 	postContactForm: async (data, resolve) => {
 		const {name, email, telephone, message, company} = data;
 		const state = 0;
@@ -19,9 +19,33 @@ const model = {
 				message,
 				state
 			})
-			// const to_mail = process.env.MAIL;
-			// const to_pwd = process.env.MAILPWD;
-			// const sent_from = process.env.SENTFROM;
+			const to_mail = process.env.MAIL;
+			const to_pwd = process.env.MAILPWD;
+			const sent_from = process.env.SENTFROM;
+
+
+			const transporter = nodemailer.createTransport({
+				service: 'gmail',
+				auth: {
+					user: to_mail,
+					pass: to_pwd,
+				}
+			});
+			
+			const mailOptions = {
+				from: to_mail,
+				to: to_mail,
+				subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
+				text: `name: ${name},company: ${company},email: ${email},telephone: ${tel},message: ${message},`,
+			};
+			
+			transporter.sendMail(mailOptions, function(error, info){
+				if (error) {
+					response(err, null)
+				} else {
+					response(null, info.response)
+				}
+			});
 
 			// const transport = {
 			// 	service: "Gmail",
@@ -46,7 +70,7 @@ const model = {
 			// var mail_template = {
 			// 	from: name,
 			// 	to: to_mail,
-			// 	subject: `You Received a new message at notcalpi.me! from ${sent_from}`,
+			// 	subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
 			// 	text: `
 			// 		name: ${name},
 			// 		company: ${company},
@@ -76,7 +100,6 @@ const model = {
 			// 		// })
 			// 	}
 			// });
-			response(null, data)
 		}catch(err){
 			response(err, null)
 		}
