@@ -25,10 +25,10 @@ const model = {
 
 
 			const transporter = nodemailer.createTransport({
-				// service: 'gmail',
-				host: 'smtp.gmail.com',
-				port: 587,
-				secure: false,
+				service: 'gmail',
+				// host: 'smtp.gmail.com',
+				// port: 587,
+				// secure: false,
 				auth: {
 					user: to_mail,
 					pass: to_pwd,
