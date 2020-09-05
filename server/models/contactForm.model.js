@@ -41,9 +41,9 @@ const model = {
 			
 			transporter.sendMail(mailOptions, function(error, info){
 				if (error) {
-					response(err, null)
+					resolve(error, null)
 				} else {
-					response(null, info.response)
+					resolve(null, info.response)
 				}
 			});
 
