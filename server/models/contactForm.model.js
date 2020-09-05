@@ -26,9 +26,6 @@ const model = {
 
 			const transporter = nodemailer.createTransport({
 				service: 'gmail',
-				// host: 'smtp.gmail.com',
-				// port: 587,
-				// secure: false,
 				auth: {
 					user: to_mail,
 					pass: to_pwd,
@@ -43,18 +40,32 @@ const model = {
 				}
 			});
 			
-			const mailOptions = {
+			const admin_mail = {
 				from: name,
 				to: to_mail,
 				subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
 				text: `name: ${name},company: ${company},email: ${email},telephone: ${telephone},message: ${message},`,
 			};
+
+			const user_mail = {
+				from: 'www.cristinamooreno.dev',
+					to: email,
+					subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
+					text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
+			}
 			
-			transporter.sendMail(mailOptions, (error, info) => {
+			transporter.sendMail(admin_mail, (error, info) => {
 				if (error) {
 					resolve(error, null)
 				} else {
-					resolve(null, info)
+					// resolve(null, info)
+					transporter.sendMail(user_mail, (err, data) => {
+						if (err) {
+							resolve(err, null);
+						} else {
+							resolve(null, data);
+						}
+					})
 				}
 			});
 
