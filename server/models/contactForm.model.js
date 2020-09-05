@@ -3,6 +3,7 @@ const { QueryTypes } = require("sequelize");
 const Sequelize = db.sequelize;
 const ContactForms = db.contactForms;
 const nodemailer = require("nodemailer");
+const moment = require("moment");
 
 
 const model = {
@@ -50,8 +51,8 @@ const model = {
 			const user_mail = {
 				from: 'www.cristinamooreno.dev',
 					to: email,
-					subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
-					text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
+					subject: `Hey this is Cris, yes! I received your message`,
+					text: `Hello ${name}, I've received your message and I'll reach out to you as soon as I can! Thank you for visiting my website, I hope you have a lovely ${moment().format('dddd')}! 😀`
 			}
 			
 			transporter.sendMail(admin_mail, (error, info) => {
@@ -68,60 +69,6 @@ const model = {
 					})
 				}
 			});
-
-			// const transport = {
-			// 	service: "Gmail",
-			// 	// host: "smtp.gmail.com",
-			// 	// port: 587,
-			// 	// secure: false,
-			// 	auth: {
-			// 		user: to_mail,
-			// 		pass: to_pwd,
-			// 	},
-			// };
-
-			// const transporter = nodemailer.createTransport(transport);
-			// transporter.verify((error, success) => {
-			// 	if (error) {
-			// 		console.log(error);
-			// 	} else {
-			// 		console.log("Server is ready to take messages");
-			// 	}
-			// });
-
-			// var mail_template = {
-			// 	from: name,
-			// 	to: to_mail,
-			// 	subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
-			// 	text: `
-			// 		name: ${name},
-			// 		company: ${company},
-			// 		email: ${email},
-			// 		telephone: ${tel},
-			// 		message: ${message},`,
-			// };
-
-			// // var mailtoUser = {
-			// // 	from: 'Cristina Moreno Medran',
-			// // 	to: email,
-			// // 	subject: `Yes! I received your contact form and I'll get back to you as soon as I see your message`,
-			// // 	text: `Hello dear earthling, I've received your message and I'll reach out to you as soon as I can! Thanks for visiting my website!`
-			// // };
-
-			// transporter.sendMail(mail_template, (err, data) => {
-			// 	if (err) {
-			// 		response(err, null)
-			// 	} else {
-			// 		response(null, data)
-			// 		// transporter.sendMail(mailtoUser, (err, data) => {
-			// 		// 	if (err) {
-			// 		// 		response(err, null);
-			// 		// 	} else {
-			// 		// 		response(null, data);
-			// 		// 	}
-			// 		// })
-			// 	}
-			// });
 		}catch(err){
 			resolve(err, null)
 		}

@@ -97,7 +97,7 @@
           <h2>Cristina Moreno Medran</h2>
           <!-- <p class="ml-1">{{age}} years old</p> -->
         </div>
-        <p class="border-bottom">FRONT-END DEVELOPER & DESINGER</p>
+        <p class="border-bottom">FRONT-END DEVELOPER & DESIGNER</p>
         <p class="description-about-me">
           Hello dear earthling! 🖖 Welcome to my website!
           <br />
