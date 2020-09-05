@@ -112,7 +112,7 @@ const model = {
 			// 	}
 			// });
 		}catch(err){
-			response(err, null)
+			resolve(err, null)
 		}
 	}
 }
