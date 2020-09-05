@@ -25,10 +25,21 @@ const model = {
 
 
 			const transporter = nodemailer.createTransport({
-				service: 'gmail',
+				// service: 'gmail',
+				host: 'smtp.gmail.com',
+				port: 587,
+				secure: false,
 				auth: {
 					user: to_mail,
 					pass: to_pwd,
+				}
+			});
+
+			transporter.verify((error, success) => {
+				if (error) {
+					console.log(error);
+				} else {
+					console.log('Server is ready to take messages');
 				}
 			});
 			
@@ -39,11 +50,11 @@ const model = {
 				text: `name: ${name},company: ${company},email: ${email},telephone: ${tel},message: ${message},`,
 			};
 			
-			transporter.sendMail(mailOptions, function(error, info){
+			transporter.sendMail(mailOptions, (error, info) => {
 				if (error) {
 					resolve(error, null)
 				} else {
-					resolve(null, info.response)
+					resolve(null, info)
 				}
 			});
 
