@@ -18,7 +18,8 @@ class ContactsService {
       headers: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
       },
-    })
+		})
+		console.log('After axios');
       .then(function(response) {
         console.log(formBody, response);
       })
