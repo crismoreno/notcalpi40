@@ -156,12 +156,11 @@ export default {
       try {
         console.log("Entered try catch");
         ContactService.postForm(contactFormBody);
-        self.$router.push('/?success="true"');
+        this.$router.push({ path: "/reach-me", query: { success: "true" } });
       } catch (err) {
-        console.log(error);
+        console.log(err);
         this.$router.push({ path: "/reach-me", query: { error: "true" } });
       }
-      this.$router.push({ path: "/reach-me", query: { success: "true" } });
     },
   },
 };
