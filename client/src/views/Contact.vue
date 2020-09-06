@@ -5,7 +5,7 @@
       <a href="mailto:moreno.medran@gmail.com" target="_blank">Email me!</a>
     </div>
 
-    <form id="contact-form" class="needs-validation" v-on:submit="sendContactForm">
+    <form id="contact-form" class="needs-validation" v-on:submit.prevent="sendContactForm">
       <div
         class="alert alert-success"
         role="alert"
@@ -153,12 +153,21 @@ export default {
         message: message.value,
       };
       try {
-        ContactService.postForm(contactFormBody);
-        // self.$router.push('/?success="true"');
-        this.$router.push({ path: "/reach-me", query: { success: "true" } });
+        ContactService.postForm(contactFormBody, (err, data) => {
+          if (data) {
+            this.$router.push({
+              path: "/reach-me",
+              query: { success: "true" },
+            });
+          } else {
+            this.$router.replace({
+              path: "/reach-me",
+              query: { error: "true" },
+            });
+          }
+        });
       } catch (err) {
         console.log(err);
-        this.$router.push({ path: "/reach-me", query: { error: "true" } });
       }
     },
   },
