@@ -20,9 +20,9 @@ class ContactsService {
 			},
 	}
 
-	let res = await axios(config)
+	const res = await axios(config)
 
-	console.log(res.status);
+	console.log(formBody, res.status);
     // axios({
     //   method: 'POST',
     //   url: `${url}postForm`,
