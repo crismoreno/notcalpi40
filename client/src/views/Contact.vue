@@ -155,6 +155,11 @@ export default {
       try {
         ContactService.postForm(contactFormBody, (err, data) => {
           if (data) {
+            this.entered_name = "";
+            this.telephone = "";
+            this.email = "";
+            this.company = "";
+            this.message = "";
             this.$router.push({
               path: "/reach-me",
               query: { success: "true" },

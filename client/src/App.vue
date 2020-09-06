@@ -21,34 +21,26 @@
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
             <router-link
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
               class="nav-link"
               to="/portfolio"
+              v-on:click.native="collapseBurger()"
             >Portfolio</router-link>
           </li>
           <li class="nav-item">
-            <router-link
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-              class="nav-link"
-              to="/blog"
-            >Blog</router-link>
+            <router-link class="nav-link" to="/blog" v-on:click.native="collapseBurger()">Blog</router-link>
           </li>
           <li class="nav-item">
             <router-link
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
               class="nav-link"
               to="/about-me"
+              v-on:click.native="collapseBurger()"
             >About Me</router-link>
           </li>
           <li class="nav-item highlight-menu-item">
             <router-link
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
               class="nav-link"
               to="/reach-me"
+              v-on:click.native="collapseBurger()"
             >Reach Me @</router-link>
           </li>
         </ul>
@@ -96,6 +88,7 @@
 <script>
 import EventBus from "./event-bus";
 import CookieWarning from "./components/CookieWarning.vue";
+import * as $ from "jquery";
 export default {
   name: "App",
   components: {
@@ -123,6 +116,10 @@ export default {
       ) {
         this.cookieThere = true;
       }
+    },
+    collapseBurger: function () {
+      console.log("Attempt at collapsing");
+      $(".navbar-collapse").collapse("hide");
     },
   },
 };

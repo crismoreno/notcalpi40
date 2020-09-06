@@ -138,7 +138,7 @@ import * as $ from "jquery";
 export default {
   name: "Portfolio",
   components: {
-    DisplayProjects
+    DisplayProjects,
   },
   data() {
     return {
@@ -148,7 +148,7 @@ export default {
       error: "",
       tags_checked: [],
       codingLangs_checked: [],
-      place_picked: ""
+      place_picked: "",
     };
   },
   created() {
@@ -158,35 +158,35 @@ export default {
   watch: {
     tags_checked(tagId) {
       this.$router.push({
-        query: { tag: tagId }
+        query: { tag: tagId },
       });
       this.emitSearch();
     },
     codingLangs_checked(codingLangId) {
       this.$router.push({
-        query: { codingLang: codingLangId }
+        query: { codingLang: codingLangId },
       });
       this.emitSearch();
     },
     place_picked(placeId) {
       this.$router.push({
-        query: { place: placeId }
+        query: { place: placeId },
       });
       this.emitSearch();
-    }
+    },
   },
   methods: {
-    emitSearch: function() {
+    emitSearch: function () {
       let filterParams = {
         ...(this.tags_checked.length && { tags: this.tags_checked }),
         ...(this.codingLangs_checked.length && {
-          codingLangs: this.codingLangs_checked
+          codingLangs: this.codingLangs_checked,
         }),
-        ...(this.place_picked != "" && { place: this.place_picked })
+        ...(this.place_picked != "" && { place: this.place_picked }),
       };
       EventBus.$emit("SEARCH", filterParams);
     },
-    updateStateWithQueryParams: function() {
+    updateStateWithQueryParams: function () {
       let queryParams = this.$route.query;
       if (Object.entries(queryParams).length) {
         queryParams = Object.entries(queryParams);
@@ -194,7 +194,7 @@ export default {
         let filterValues = queryParams[0][1];
 
         if (Array.isArray(filterValues)) {
-          filterValues.forEach(element => {
+          filterValues.forEach((element) => {
             switch (filterType) {
               case "tag":
                 this.tags_checked.push(element);
@@ -220,7 +220,7 @@ export default {
       }
       this.emitSearch();
     },
-    getFilters: async function() {
+    getFilters: async function () {
       try {
         this.availableTags = await ProjectsService.getAvailableTags();
         this.availableCodingLangs = await ProjectsService.getAvailableCodingLangs();
@@ -229,14 +229,13 @@ export default {
         this.error = err.message;
       }
     },
-    uncheckCheckboxes: function(selector) {
+    uncheckCheckboxes: function (selector) {
       selector === "#collapseOne" ? (this.tags_checked = []) : null;
       selector === "#collapseTwo" ? (this.codingLangs_checked = [] = []) : null;
       selector === "#collapseThree" ? (this.place_picked = "") : null;
       EventBus.$emit("EMPTY_FILTERS");
-      console.log(selector, "selector");
       $(selector).collapse("toggle");
-    }
-  }
+    },
+  },
 };
 </script>
