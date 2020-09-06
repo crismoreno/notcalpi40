@@ -20,16 +20,36 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
-            <router-link class="nav-link" to="/portfolio">Portfolio</router-link>
+            <router-link
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              class="nav-link"
+              to="/portfolio"
+            >Portfolio</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/blog">Blog</router-link>
+            <router-link
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              class="nav-link"
+              to="/blog"
+            >Blog</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/about-me">About Me</router-link>
+            <router-link
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              class="nav-link"
+              to="/about-me"
+            >About Me</router-link>
           </li>
           <li class="nav-item highlight-menu-item">
-            <router-link class="nav-link" to="/reach-me">Reach Me @</router-link>
+            <router-link
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              class="nav-link"
+              to="/reach-me"
+            >Reach Me @</router-link>
           </li>
         </ul>
       </div>
