@@ -4,7 +4,7 @@ import qs from "qs";
 const url = "api/";
 
 class ContactsService {
-  static postForm(formBody) {
+  static async postForm(formBody) {
 		const config = {
 			method: 'post',
 			url: `${url}postForm`,
