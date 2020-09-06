@@ -85,7 +85,7 @@
         </div>
       </div>
     </footer>
-    <CookieWarning v-if="this.cookieThere == false"></CookieWarning>
+    <CookieWarning v-if="this.cookieThere == false && this.$route.path !== '/maintenance'"></CookieWarning>
   </div>
 </template>
 
