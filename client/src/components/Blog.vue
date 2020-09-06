@@ -7,7 +7,11 @@
         v-if="fragment && fragment === 'true'"
         class="display-posts w-100 d-flex flex-row flex-wrap justify-content-center"
       ></DisplayPosts>
-      <DisplayPosts :limit="{limit}" v-else class="display-posts w-100 d-flex flex-row flex-wrap"></DisplayPosts>
+      <DisplayPosts
+        :limit="{limit}"
+        v-else
+        class="display-posts w-100 d-flex flex-row flex-wrap justify-content-center"
+      ></DisplayPosts>
     </div>
     <a
       v-if="this.extras === 'true' || !this.extras"
