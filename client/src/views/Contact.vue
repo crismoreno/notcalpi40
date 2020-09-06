@@ -145,6 +145,7 @@ export default {
   },
   methods: {
     sendContactForm: function () {
+      console.log("Entered submit function");
       const contactFormBody = {
         name: entered_name.value,
         telephone: telephone.value,
@@ -153,8 +154,9 @@ export default {
         message: message.value,
       };
       try {
+        console.log("Entered try catch");
         ContactService.postForm(contactFormBody);
-        // self.$router.push('/?success="true"');
+        self.$router.push('/?success="true"');
       } catch (err) {
         console.log(error);
         this.$router.push({ path: "/reach-me", query: { error: "true" } });

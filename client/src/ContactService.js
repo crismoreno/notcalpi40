@@ -5,6 +5,7 @@ const url = "api/";
 
 class ContactsService {
   static postForm(formBody) {
+		console.log('Entered Service')
     axios({
       method: "post",
       url: `${url}postForm`,
