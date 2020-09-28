@@ -138,13 +138,12 @@
                   aria-controls="collapseOne"
                   v-on:click="toggleIcon('headingOne')"
                 >
-                  How old am I?
+                  What am I currently working on?
                   <span v-if="this.headingOne == 'closed'" class="material-icons">add</span>
                   <span v-if="this.headingOne == 'opened'" class="material-icons">close</span>
                 </button>
               </h2>
             </div>
-
             <div
               id="collapseOne"
               class="collapse"
@@ -152,8 +151,10 @@
               data-parent="#accordionExample"
             >
               <div class="card-body">
-                I was born in June 1993, I'm
-                <span class="mx-1">{{age}}</span>years old.
+								- I'm currently doing an internship at <a href="https://www.redpoints.com" style="text-decoration: underline;">Red Points</a>.<br>
+								- Currently working on a backoffice area for this personal portfolio site. Get further info about it <router-link to="/project/71" style="text-decoration: underline;">here</router-link>.<br>
+								- Feeding my personal <a href="https://medium.com/@cristinamorenomedran" style="text-decoration: underline;">blog</a><br>
+								- Will pick up next idea from <i style="line-height: unset">ideas checklist</i> after the backoffice feels like "done".
               </div>
             </div>
           </div>
@@ -169,7 +170,7 @@
                   aria-controls="collapseTwo"
                   v-on:click="toggleIcon('headingTwo')"
                 >
-                  Where am I from? Where am I based in?
+									How old am I?
                   <span
                     v-if="this.headingTwo == 'closed'"
                     class="material-icons"
@@ -186,7 +187,9 @@
             >
               <div
                 class="card-body"
-              >I was born in Sabadell but I'm currently based in Badalona, Barcelona.</div>
+              > I was born in June 1993, I'm
+                <span class="mx-1">{{age}}</span>years old.
+							</div>
             </div>
           </div>
           <div class="card">
@@ -201,7 +204,7 @@
                   aria-controls="collapseThree"
                   v-on:click="toggleIcon('headingThree')"
                 >
-                  Find out more about me
+								Where am I from? Where am I based in?
                   <span
                     v-if="this.headingThree == 'closed'"
                     class="material-icons"
@@ -217,7 +220,41 @@
               data-parent="#accordionExample"
             >
               <div class="card-body">
-                <p class="d-flex align-items-center my-0">
+							I was born in Sabadell but I'm currently based in Badalona, Barcelona.
+              </div>
+            </div>
+          </div>
+										<div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left collapsed d-flex justify-content-between"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                  v-on:click="toggleIcon('headingFour')"
+                >
+                  Find out more about me
+                  <span
+                    v-if="this.headingFour == 'closed'"
+                    class="material-icons"
+                  >add</span>
+                  <span v-if="this.headingFour == 'opened'" class="material-icons">close</span>
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseFour"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#accordionExample"
+            >
+              <div
+                class="card-body"
+              >
+								<p class="d-flex align-items-center my-0">
                   <span class="material-icons mr-1">call</span> +34 · 630 · 149 · 516
                 </p>
                 <div
@@ -266,7 +303,7 @@
                     <router-link class="link-to-cv" to="about-me">Checkout my CV</router-link>
                   </li>
                 </ul>
-              </div>
+							</div>
             </div>
           </div>
         </div>
@@ -308,6 +345,7 @@ export default {
       headingOne: "closed",
       headingTwo: "closed",
       headingThree: "closed",
+      headingFour: "closed",
     };
   },
   created() {
@@ -330,21 +368,32 @@ export default {
             ? (this.headingOne = "opened")
             : (this.headingOne = "closed");
           this.headingTwo = "closed";
-          this.headingThree = "closed";
+					this.headingThree = "closed";
+					this.headingFour = "closed";
           break;
         case "headingTwo":
           this.headingTwo == "closed"
             ? (this.headingTwo = "opened")
             : (this.headingTwo = "closed");
           this.headingOne = "closed";
-          this.headingThree = "closed";
+					this.headingThree = "closed";
+					this.headingFour = "closed";
           break;
         case "headingThree":
           this.headingThree == "closed"
             ? (this.headingThree = "opened")
             : (this.headingThree = "closed");
           this.headingTwo = "closed";
+					this.headingOne = "closed";
+					this.headingFour = "closed";
+          break;
+        case "headingFour":
+          this.headingFour == "closed"
+            ? (this.headingFour = "opened")
+            : (this.headingFour = "closed");
+          this.headingTwo = "closed";
           this.headingOne = "closed";
+          this.headingThree = "closed";
           break;
       }
     },
