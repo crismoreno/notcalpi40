@@ -135,8 +135,10 @@
     }
     #collapseDobcn .card,
 		#collapseNordic .card,
+		#collapseRedPointsIntern .card,
 		#collapseRedPoints .card,
-		#collapseAssembler .card{
+		#collapseAssembler .card,
+		.collapse .card{
       width: unset !important;
       font-family: $sourcesans;
       a {

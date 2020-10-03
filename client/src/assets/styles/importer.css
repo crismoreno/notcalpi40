@@ -51,8 +51,10 @@ span.highlight {
 
 .filtering-projects .remove-filters-button, .project-detail-container .link-to-button, .about-me-container .studies .projects-link, .about-me-container .code-tools .code-tool a, .about-me-container .work-experience #collapseDobcn .card a,
 .about-me-container .work-experience #collapseNordic .card a,
+.about-me-container .work-experience #collapseRedPointsIntern .card a,
 .about-me-container .work-experience #collapseRedPoints .card a,
-.about-me-container .work-experience #collapseAssembler .card a {
+.about-me-container .work-experience #collapseAssembler .card a,
+.about-me-container .work-experience .collapse .card a {
   background-color: #ff1744;
   color: white;
   text-transform: uppercase;
@@ -68,20 +70,26 @@ span.highlight {
 
 .filtering-projects .remove-filters-button:hover, .project-detail-container .link-to-button:hover, .about-me-container .studies .projects-link:hover, .about-me-container .code-tools .code-tool a:hover, .about-me-container .work-experience #collapseDobcn .card a:hover,
 .about-me-container .work-experience #collapseNordic .card a:hover,
+.about-me-container .work-experience #collapseRedPointsIntern .card a:hover,
 .about-me-container .work-experience #collapseRedPoints .card a:hover,
-.about-me-container .work-experience #collapseAssembler .card a:hover {
+.about-me-container .work-experience #collapseAssembler .card a:hover,
+.about-me-container .work-experience .collapse .card a:hover {
   background-color: #a50026; }
 
 .filtering-projects .remove-filters-button:disabled, .project-detail-container .link-to-button:disabled, .about-me-container .studies .projects-link:disabled, .about-me-container .code-tools .code-tool a:disabled, .about-me-container .work-experience #collapseDobcn .card a:disabled,
 .about-me-container .work-experience #collapseNordic .card a:disabled,
+.about-me-container .work-experience #collapseRedPointsIntern .card a:disabled,
 .about-me-container .work-experience #collapseRedPoints .card a:disabled,
-.about-me-container .work-experience #collapseAssembler .card a:disabled {
+.about-me-container .work-experience #collapseAssembler .card a:disabled,
+.about-me-container .work-experience .collapse .card a:disabled {
   opacity: 50%; }
 
 .filtering-projects .remove-filters-button:disabled:hover, .project-detail-container .link-to-button:disabled:hover, .about-me-container .studies .projects-link:disabled:hover, .about-me-container .code-tools .code-tool a:disabled:hover, .about-me-container .work-experience #collapseDobcn .card a:disabled:hover,
 .about-me-container .work-experience #collapseNordic .card a:disabled:hover,
+.about-me-container .work-experience #collapseRedPointsIntern .card a:disabled:hover,
 .about-me-container .work-experience #collapseRedPoints .card a:disabled:hover,
-.about-me-container .work-experience #collapseAssembler .card a:disabled:hover {
+.about-me-container .work-experience #collapseAssembler .card a:disabled:hover,
+.about-me-container .work-experience .collapse .card a:disabled:hover {
   background-color: #ff1744; }
 
 .header-background {
@@ -807,19 +815,25 @@ a.checkout-link-button {
       text-align: left; }
     .about-me-container .work-experience #collapseDobcn .card,
     .about-me-container .work-experience #collapseNordic .card,
+    .about-me-container .work-experience #collapseRedPointsIntern .card,
     .about-me-container .work-experience #collapseRedPoints .card,
-    .about-me-container .work-experience #collapseAssembler .card {
+    .about-me-container .work-experience #collapseAssembler .card,
+    .about-me-container .work-experience .collapse .card {
       width: unset !important;
       font-family: "Source Sans Pro", sans-serif; }
       .about-me-container .work-experience #collapseDobcn .card a,
       .about-me-container .work-experience #collapseNordic .card a,
+      .about-me-container .work-experience #collapseRedPointsIntern .card a,
       .about-me-container .work-experience #collapseRedPoints .card a,
-      .about-me-container .work-experience #collapseAssembler .card a {
+      .about-me-container .work-experience #collapseAssembler .card a,
+      .about-me-container .work-experience .collapse .card a {
         margin-top: 15px; }
       .about-me-container .work-experience #collapseDobcn .card p,
       .about-me-container .work-experience #collapseNordic .card p,
+      .about-me-container .work-experience #collapseRedPointsIntern .card p,
       .about-me-container .work-experience #collapseRedPoints .card p,
-      .about-me-container .work-experience #collapseAssembler .card p {
+      .about-me-container .work-experience #collapseAssembler .card p,
+      .about-me-container .work-experience .collapse .card p {
         line-height: 1.5 !important; }
   .about-me-container .get-to-know-me {
     margin: 0 auto 30px auto !important; }
