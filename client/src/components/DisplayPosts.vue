@@ -6,12 +6,17 @@
           <div class="img-container">
             <img class="project-image" :src="post.thumbnail" />
           </div>
-          <div class="project-details d-flex flex-column justify-content-center">
-            <p class="name" v-if="post.title.length > 30 ">{{ post.title.substr(0, 30) + "\u2026" }}</p>
-            <p class="name" v-else>{{ post.title.substr(0, 30)}}</p>
-            <p
-              class="customer"
-            >{{ getMomentedDate(post.pubDate.substr(0, 10)) }} - {{ getMomentedRelativeTime(post.pubDate.substr(0, 10)) }}</p>
+          <div
+            class="project-details d-flex flex-column justify-content-center"
+          >
+            <p class="name" v-if="post.title.length > 30">
+              {{ post.title.substr(0, 30) + "\u2026" }}
+            </p>
+            <p class="name" v-else>{{ post.title.substr(0, 30) }}</p>
+            <p class="customer">
+              {{ getMomentedDate(post.pubDate.substr(0, 10)) }} -
+              {{ getMomentedRelativeTime(post.pubDate.substr(0, 10)) }}
+            </p>
           </div>
         </div>
       </a>
@@ -46,11 +51,11 @@ export default {
           }
         });
     },
-    shortenText(text, startingPoint, maxLength) {
-      return text.length > maxLength
-        ? text.slice(startingPoint, maxLength)
-        : text;
-    },
+    // shortenText(text, startingPoint, maxLength) {
+    //   return text.length > maxLength
+    //     ? text.slice(startingPoint, maxLength)
+    //     : text;
+    // },
     getMomentedDate(date) {
       return moment(date, "YYYY-MM-DD").format("DD/MM/YYYY");
     },
