@@ -11,7 +11,7 @@
 
 //CAROUSEL ICONS
 .carousel-indicators li{
-	background-color: $red;
+	background-color: $primary-colour;
 }
 
 .carousel-control-prev-icon,
@@ -31,7 +31,7 @@
 	// content: "\e5cc";
 	content: "chevron_right";
   font-size: 55px;
-  color: red;
+  color: $primary-colour;
 }
 
 .carousel-control-prev-icon:after {
@@ -39,7 +39,7 @@
 	// content: "\e5cc";
 	content: "chevron_left";
   font-size: 55px;
-  color: red;
+  color: $primary-colour;
 }
 
 
@@ -79,7 +79,7 @@
 		}
 	}
 	.project-tags, .project-madeats, .project-coding-langs{
-		text-transform: capitalize;;
+		text-transform: capitalize;
 	}
 	pre{
 		white-space: pre-wrap;       /* css-3 */

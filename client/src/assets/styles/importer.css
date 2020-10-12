@@ -530,13 +530,13 @@ a.checkout-link-button {
   font-family: "Material Icons";
   content: "chevron_right";
   font-size: 55px;
-  color: red; }
+  color: black; }
 
 .project-detail-container .carousel-control-prev-icon:after {
   font-family: "Material Icons";
   content: "chevron_left";
   font-size: 55px;
-  color: red; }
+  color: black; }
 
 .project-detail-container .small-red-font {
   text-transform: uppercase;
