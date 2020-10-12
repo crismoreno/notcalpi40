@@ -2,7 +2,7 @@
   <div class="mt-5">
     <div class="about-me-container container main-container">
       <div class="jumbotron">
-        <h1 class="display-4">Cristina Moreno Medran 🙋🏻</h1>
+        <h1 class="display-4">Cristina Moreno Medran 🙋🏻‍♀️</h1>
         <p class="lead">
           I'm a {{ age }} year-old Front-End developer and designer living in
           Badalona, Barcelona
@@ -934,10 +934,10 @@
         <div
           class="connections-container container d-flex flex-wrap justify-content-center"
         >
-          <a href="https://calendly.com/cristinamoreno" target="_blank"
+          <!-- <a href="https://calendly.com/cristinamoreno" target="_blank"
             >Schedule a meeting</a
-          >
-          <!-- <a [routerLink]="['/reach-me']">Drop me a line</a> -->
+          > -->
+					<router-link to="/reach-me">Drop me a line</router-link>
           <a href="mailto:moreno.medran@gmail.com" target="_blank">Email me!</a>
           <a href="https://www.instagram.com/calpimoreno/?hl=de" target="_blank"
             >Instagram</a
@@ -952,6 +952,10 @@
         </div>
       </div>
     </div>
+		<div class="calendly-wrapper">
+		<h2 class="text-center m-0">Schedule some time with me!</h2>
+		<vue-calendly url="https://calendly.com/cristinamoreno" :height="646" style="margin-top: -40px; margin-bottom: -90px;"></vue-calendly>
+		</div>
     <div class="medium-fetched">
       <BlogComponent
         limit="4"
@@ -964,6 +968,10 @@
 <script>
 import BlogComponent from "../components/Blog.vue";
 import moment from "moment";
+import VueCalendly from 'vue-calendly';
+import Vue from 'vue';
+
+Vue.use(VueCalendly, 'vue-calendly');
 export default {
   name: "AboutMe",
   components: {

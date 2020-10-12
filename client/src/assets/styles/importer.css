@@ -1,4 +1,4 @@
-.cookie-container h2, .get-to-know-me h2 {
+.cookie-container h2, .calendly-wrapper h2, .get-to-know-me h2 {
   text-transform: uppercase;
   font-size: 16px;
   color: black;
@@ -35,7 +35,7 @@ li {
   margin: 0; }
 
 span.notcalpi-red {
-  background-color: #ff1744;
+  background-color: black;
   color: white; }
 
 span.highlight {
@@ -55,7 +55,7 @@ span.highlight {
 .about-me-container .work-experience #collapseRedPoints .card a,
 .about-me-container .work-experience #collapseAssembler .card a,
 .about-me-container .work-experience .collapse .card a {
-  background-color: #ff1744;
+  background-color: black;
   color: white;
   text-transform: uppercase;
   padding-top: 5px;
@@ -74,7 +74,7 @@ span.highlight {
 .about-me-container .work-experience #collapseRedPoints .card a:hover,
 .about-me-container .work-experience #collapseAssembler .card a:hover,
 .about-me-container .work-experience .collapse .card a:hover {
-  background-color: #a50026; }
+  background-color: #263238; }
 
 .filtering-projects .remove-filters-button:disabled, .project-detail-container .link-to-button:disabled, .about-me-container .studies .projects-link:disabled, .about-me-container .code-tools .code-tool a:disabled, .about-me-container .work-experience #collapseDobcn .card a:disabled,
 .about-me-container .work-experience #collapseNordic .card a:disabled,
@@ -90,7 +90,7 @@ span.highlight {
 .about-me-container .work-experience #collapseRedPoints .card a:disabled:hover,
 .about-me-container .work-experience #collapseAssembler .card a:disabled:hover,
 .about-me-container .work-experience .collapse .card a:disabled:hover {
-  background-color: #ff1744; }
+  background-color: black; }
 
 .header-background {
   padding-top: 30px;
@@ -99,7 +99,7 @@ span.highlight {
   padding-left: 0;
   position: relative;
   height: 530px;
-  background-color: #ff1744; }
+  background-color: black; }
   .header-background .picture {
     width: 50%; }
     .header-background .picture img {
@@ -112,11 +112,11 @@ span.highlight {
     padding-left: 0;
     color: white; }
     .header-background .description-desktop p:last-child {
-      color: #a50026;
+      color: #263238;
       font-weight: 600;
       font-size: 18px; }
     .header-background .description-desktop a {
-      background-color: #a50027;
+      background-color: #263238;
       border-radius: 4px;
       padding-top: 5px;
       padding-right: 10px;
@@ -130,14 +130,14 @@ span.highlight {
     margin-bottom: 0;
     margin-left: 0;
     width: 100%;
-    color: #ff1744; }
+    color: black; }
     .header-background .description-mobile p:last-child {
-      color: #a50026;
+      color: #263238;
       font-weight: 600;
       font-size: 18px; }
     .header-background .description-mobile a {
       color: white;
-      background-color: #a50027;
+      background-color: #263238;
       border-radius: 4px;
       padding-top: 5px;
       padding-right: 10px;
@@ -194,7 +194,7 @@ span.highlight {
       padding-right: 30px;
       padding-bottom: 0;
       padding-left: 0;
-      color: #ff1744;
+      color: black;
       font-weight: 600;
       font-size: 18px;
       text-align: right; }
@@ -239,7 +239,7 @@ span.highlight {
     .about-me-home .about-me-detail .link-to-cv {
       text-transform: uppercase;
       font-size: 16px;
-      color: #ff1744;
+      color: black;
       font-weight: 400;
       line-height: 35px;
       letter-spacing: 0.5px;
@@ -258,14 +258,14 @@ span.highlight {
       background-color: transparent !important;
       padding: 0 !important;
       margin-bottom: 0;
-      border-bottom: 1px solid #ff1744; }
+      border-bottom: 1px solid black; }
     #accordionExample .card button {
       text-decoration: none;
-      color: #ff1744; }
+      color: black; }
   #accordionExample > .card {
     overflow: unset !important; }
   #accordionExample .link-to-cv {
-    background-color: #a50027;
+    background-color: #263238;
     border-radius: 4px;
     padding-top: 5px;
     padding-right: 10px;
@@ -329,7 +329,7 @@ span.highlight {
   margin-bottom: 30px;
   margin-left: auto; }
   .filters button {
-    background-color: #ff1744;
+    background-color: black;
     padding-top: 7px;
     padding-right: 10px;
     padding-bottom: 7px;
@@ -343,7 +343,7 @@ span.highlight {
     margin-left: 5px;
     min-width: 120px; }
   .filters button:hover {
-    background-color: #a50026; }
+    background-color: #263238; }
   .filters .filter {
     text-transform: capitalize; }
 
@@ -381,7 +381,7 @@ a.checkout-link-button {
   width: 92%;
   text-transform: uppercase;
   font-size: 16px;
-  color: #ff1744;
+  color: black;
   font-weight: 400;
   line-height: 35px;
   letter-spacing: 0.5px;
@@ -438,7 +438,7 @@ a.checkout-link-button {
       font-weight: 400; }
     .card .project-details .name {
       font-size: 13px;
-      color: #ff1744;
+      color: black;
       text-transform: uppercase; }
     .card .project-details .type {
       font-size: 10px;
@@ -472,7 +472,7 @@ a.checkout-link-button {
   line-height: 35px;
   text-align: left;
   text-transform: uppercase;
-  color: #ff1744; }
+  color: black; }
 
 .filtering-projects .card {
   width: 100%; }
@@ -516,7 +516,7 @@ a.checkout-link-button {
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07); }
 
 .project-detail-container .carousel-indicators li {
-  background-color: #ff1744; }
+  background-color: black; }
 
 .project-detail-container .carousel-control-prev-icon,
 .project-detail-container .carousel-control-next-icon {
@@ -540,7 +540,7 @@ a.checkout-link-button {
 
 .project-detail-container .small-red-font {
   text-transform: uppercase;
-  color: #ff1744;
+  color: black;
   font-size: 12px; }
 
 .project-detail-container .extra-info {
@@ -605,7 +605,7 @@ a.checkout-link-button {
 
 .reach-me-container .connections-container {
   width: 400px;
-  background-color: #ff1744;
+  background-color: black;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   margin: 30px auto 0 auto !important;
@@ -615,7 +615,7 @@ a.checkout-link-button {
   padding-left: 15px; }
   .reach-me-container .connections-container a {
     background-color: white;
-    color: #ff1744;
+    color: black;
     padding-top: 7px;
     padding-right: 10px;
     padding-bottom: 7px;
@@ -645,7 +645,7 @@ a.checkout-link-button {
   .reach-me-container #contact-form h2 {
     text-transform: uppercase;
     font-size: 16px;
-    color: #ff1744;
+    color: black;
     font-weight: 400;
     line-height: 35px;
     letter-spacing: 0.5px;
@@ -655,7 +655,7 @@ a.checkout-link-button {
     margin: 0 auto 15px auto; }
   .reach-me-container #contact-form #submit-button {
     width: 100%;
-    background-color: #ff1744;
+    background-color: black;
     border-radius: 4px;
     padding-top: 0;
     padding-right: 10px;
@@ -669,7 +669,7 @@ a.checkout-link-button {
     pointer-events: none;
     opacity: 0.5; }
   .reach-me-container #contact-form #submit-button:hover {
-    background-color: #a50026; }
+    background-color: #263238; }
   .reach-me-container #contact-form .feedback-message {
     margin-top: 15px;
     margin-right: auto;
@@ -694,8 +694,10 @@ a.checkout-link-button {
 .about-me-container {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px; }
+  .about-me-container .bg-danger {
+    background-color: black !important; }
   .about-me-container .jumbotron a {
-    background-color: #ff1744;
+    background-color: black;
     color: white;
     text-transform: uppercase;
     padding-top: 10px;
@@ -709,7 +711,7 @@ a.checkout-link-button {
     border-radius: 4px;
     text-align: center; }
   .about-me-container .jumbotron a:hover {
-    background-color: #a50026; }
+    background-color: #263238; }
   .about-me-container .others p {
     background-color: #e8ecef;
     padding-top: 5px;
@@ -838,8 +840,11 @@ a.checkout-link-button {
   .about-me-container .get-to-know-me {
     margin: 0 auto 30px auto !important; }
 
+.calendly-wrapper h2 {
+  color: black; }
+
 .get-to-know-me {
-  background-color: #ff1744;
+  background-color: black;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding-top: 15px;
@@ -850,7 +855,7 @@ a.checkout-link-button {
     color: white; }
   .get-to-know-me a {
     background-color: white;
-    color: #ff1744;
+    color: black;
     padding-top: 7px;
     padding-right: 10px;
     padding-bottom: 7px;
@@ -941,7 +946,7 @@ a.checkout-link-button {
     .not-found .foto-grid .cris-fact .overlapped-info-container .overlapped-info {
       font-family: "Roboto Mono", monospace;
       color: white;
-      background-color: #ff1744;
+      background-color: black;
       font-size: 14px;
       border-radius: 10px;
       padding: 10px;
@@ -966,7 +971,7 @@ a.checkout-link-button {
   /* IE10+ CSS styles go here */ }
 
 nav.navbar {
-  background-color: #ff1744 !important;
+  background-color: black !important;
   position: fixed;
   z-index: 10;
   width: 100%; }
@@ -983,7 +988,7 @@ nav.navbar {
   nav.navbar .nav-link {
     padding: 0 !important; }
   nav.navbar .highlight-menu-item {
-    background-color: #a50027;
+    background-color: #263238;
     border-radius: 4px;
     padding-top: 0;
     padding-right: 10px;
@@ -993,7 +998,7 @@ nav.navbar {
 footer {
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-  background: #ff1744;
+  background: black;
   display: table !important;
   bottom: 0;
   width: 100%; }
@@ -1019,7 +1024,7 @@ footer {
   display: flex;
   position: fixed;
   bottom: 30px;
-  background-color: #ff1744;
+  background-color: black;
   left: 0;
   right: 0;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1033,7 +1038,7 @@ footer {
     margin: 0;
     color: white; }
   #cookie_consent button {
-    background-color: #a50026;
+    background-color: #263238;
     color: white;
     border: none;
     border-radius: 4px;

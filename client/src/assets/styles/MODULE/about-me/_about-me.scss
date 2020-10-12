@@ -14,6 +14,9 @@
 // }
 
 .about-me-container {
+	.bg-danger {
+    background-color: black !important;
+}
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
   // @include margin (30px, auto, 0, auto);
@@ -152,6 +155,12 @@
   }
   .get-to-know-me {
     margin: 0 auto 30px auto !important;
+  }
+}
+.calendly-wrapper{
+	h2 {
+    @extend %h2-title;
+    color: $primary-colour;
   }
 }
 .get-to-know-me {

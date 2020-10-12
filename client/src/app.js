@@ -4,15 +4,17 @@ import Cloudinary from 'cloudinary-vue';
 import router from './router'
 import 'bootstrap'
 import '../src/assets/styles/importer.css'
+import VueCalendly from 'vue-calendly';
+
 
 new Vue({
-  router,
+	router,
   el: '#app',
   render: h => h(App)
 })
 
 Vue.use(Cloudinary, {
-  configuration: {
-    cloudName: "hyavxktsb"
+	configuration: {
+		cloudName: "hyavxktsb"
   }
 });
