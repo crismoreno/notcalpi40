@@ -27,7 +27,7 @@ nav.navbar {
 footer {
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
-  background: $red;
+  background: $primary-colour;
   display: table !important;
   bottom: 0;
   width: 100%;
@@ -46,7 +46,7 @@ footer {
   display: flex;
   position: fixed;
   bottom: 30px;
-  background-color: $red;
+  background-color: $primary-colour;
   left: 0;
   right: 0;
   box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -58,7 +58,7 @@ footer {
     color: white;
   }
   button {
-    background-color: $dark-red;
+    background-color: $secondary-colour;
     color: white;
     border: none;
     border-radius: 4px;

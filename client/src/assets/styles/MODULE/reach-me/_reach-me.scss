@@ -1,14 +1,14 @@
 .reach-me-container {
   .connections-container {
     width: 400px;
-    background-color: $red;
+    background-color: $primary-colour;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     margin: 30px auto 0 auto !important;
     @include padding(15px, 15px, 15px, 15px);
     a {
       background-color: white;
-      color: $red;
+      color: $primary-colour;
       @include padding(7px, 10px, 7px, 10px);
       border-radius: 4px;
       @include margin(5px, 5px, 5px, 5px);
@@ -27,7 +27,7 @@
     width: 400px;
     h2 {
       text-transform: uppercase;
-      @include font-style(16px, $red, 400, 35px, 0.5px, left);
+      @include font-style(16px, $primary-colour, 400, 35px, 0.5px, left);
       font-family: $sourcesans;
     }
     .grecaptcha-badge {
@@ -35,7 +35,7 @@
     }
     #submit-button {
       width: 100%;
-      background-color: $red;
+      background-color: $primary-colour;
       border-radius: 4px;
       @include padding(0, 10px, 0, 10px);
       border: none;
@@ -48,7 +48,7 @@
       opacity: 0.5;
     }
     #submit-button:hover {
-      background-color: $dark-red;
+      background-color: $secondary-colour;
     }
     .feedback-message {
       @include margin(15px, auto, 0, auto);

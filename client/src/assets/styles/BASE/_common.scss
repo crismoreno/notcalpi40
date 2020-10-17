@@ -49,7 +49,7 @@ label {
 }
 
 span.notcalpi-red {
-  background-color: $red;
+  background-color: $primary-colour;
   color: white;
 }
 
@@ -69,7 +69,7 @@ span.highlight {
 }
 
 %buttons {
-  background-color: $red;
+  background-color: $primary-colour;
   color: white;
   text-transform: uppercase;
   @include padding(5px, 5px, 5px, 5px);
@@ -80,11 +80,11 @@ span.highlight {
   text-decoration: none;
 }
 %buttons:hover {
-  background-color: $dark-red;
+  background-color: $secondary-colour;
 }
 %buttons:disabled {
   opacity: 50%;
 }
 %buttons:disabled:hover {
-  background-color: $red;
+  background-color: $primary-colour;
 }

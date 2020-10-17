@@ -1,7 +1,7 @@
 .filters {
   @include margin(0, auto, 30px, auto);
   button {
-    background-color: $red;
+    background-color: $primary-colour;
     @include padding(7px, 10px, 7px, 10px);
     border-radius: 4px;
     color: white;
@@ -10,7 +10,7 @@
     min-width: 120px;
   }
   button:hover {
-    background-color: $dark-red;
+    background-color: $secondary-colour;
   }
   .filter {
     text-transform: capitalize;
@@ -25,7 +25,7 @@
   }
   // a {
   //   text-transform: uppercase;
-  //   @include font-style(16px, $red, 400, 35px, 0.5px, left);
+  //   @include font-style(16px, $primary-colour, 400, 35px, 0.5px, left);
   //   font-family: $sourcesans;
   // }
 }
@@ -53,7 +53,7 @@ a.checkout-link-button {
   margin: 0 auto;
   width: 92%;
   text-transform: uppercase;
-  @include font-style(16px, $red, 400, 35px, 0.5px, left);
+  @include font-style(16px, $primary-colour, 400, 35px, 0.5px, left);
   font-family: $sourcesans;
   // position: absolute;
   // text-align: center;

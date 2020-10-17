@@ -1,5 +1,5 @@
 // %buttons {
-//   background-color: $red;
+//   background-color: $primary-colour;
 //   color: white;
 //   text-transform: uppercase;
 //   @include padding(5px, 5px, 5px, 5px);
@@ -10,7 +10,7 @@
 //   text-decoration: none;
 // }
 // %buttons:hover {
-//   background-color: $dark-red;
+//   background-color: $secondary-colour;
 // }
 
 .about-me-container {
@@ -23,7 +23,7 @@
   // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
   .jumbotron {
     a {
-      background-color: $red;
+      background-color: $primary-colour;
       color: white;
       text-transform: uppercase;
       @include padding(10px, 10px, 10px, 10px);
@@ -32,7 +32,7 @@
       text-align: center;
     }
     a:hover {
-      background-color: $dark-red;
+      background-color: $secondary-colour;
     }
   }
   .others {
@@ -164,7 +164,7 @@
   }
 }
 .get-to-know-me {
-  background-color: $red;
+  background-color: $primary-colour;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   @include padding(15px, 15px, 15px, 15px);
@@ -174,7 +174,7 @@
   }
   a {
     background-color: white;
-    color: $red;
+    color: $primary-colour;
     @include padding(7px, 10px, 7px, 10px);
     border-radius: 4px;
     @include margin(5px, 5px, 5px, 5px);

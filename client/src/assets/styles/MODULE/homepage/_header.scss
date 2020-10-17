@@ -2,7 +2,7 @@
   @include padding(30px, 0, 0, 0);
   position: relative;
   height: 530px;
-  background-color: $red;
+  background-color: $primary-colour;
   .picture {
     width: 50%;
     img {
@@ -14,7 +14,7 @@
     @include padding(0, 50px, 0, 0);
     color: white;
     p:last-child {
-      color: $dark-red;
+      color: $secondary-colour;
       font-weight: $bold;
       font-size: 18px;
     }
@@ -32,14 +32,14 @@
   .description-mobile {
     @include margin(30px, 0, 0, 0);
     width: 100%;
-    color: $red;
+    color: $primary-colour;
     p:last-child {
-      color: $dark-red;
+      color: $secondary-colour;
       font-weight: $bold;
       font-size: 18px;
     }
     a {
-      // background-color: $red;
+      // background-color: $primary-colour;
       color: white;
       // box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
       //   0 5px 15px rgba(0, 0, 0, 0.07);

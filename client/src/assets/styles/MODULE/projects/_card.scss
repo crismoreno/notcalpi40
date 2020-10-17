@@ -47,7 +47,7 @@
       font-weight: 400;
     }
     .name {
-      @include font-style(13px, $red, false, false, false, false);
+      @include font-style(13px, $primary-colour, false, false, false, false);
       text-transform: uppercase;
     }
     .type {
