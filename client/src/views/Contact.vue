@@ -83,7 +83,7 @@
       </div>
       <div class="d-flex justify-content-center mb-3">
         <vue-recaptcha
-          sitekey="6LdoQfkUAAAAAPbWi4bSJSXbhgNsoHfhAHN6W9KT"
+          sitekey="6LeVvN4ZAAAAAB8SBvNEC16ZwSbcd8j3zkbKpbxK"
           :loadRecaptchaScript="true"
           theme="light"
         ></vue-recaptcha>

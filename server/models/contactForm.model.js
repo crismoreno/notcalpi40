@@ -44,12 +44,12 @@ const model = {
 			const admin_mail = {
 				from: name,
 				to: to_mail,
-				subject: `You Received a new message at cristinamoreno.dev! from ${sent_from}`,
-				text: `name: ${name},company: ${company},email: ${email},telephone: ${telephone},message: ${message},`,
+				subject: `You Received a new message at https://notcalpi40-deprecated.herokuapp.com! from ${sent_from}`,
+				text: `MESSAGE SENT FROM DEPRECATED VERSION OF WEBSITE --> name: ${name},company: ${company},email: ${email},telephone: ${telephone},message: ${message},`,
 			};
 
 			const user_mail = {
-				from: 'www.cristinamooreno.dev',
+				from: 'www.cristinamoreno.dev',
 					to: email,
 					subject: `Hey this is Cris, yes! I received your message`,
 					text: `Hello ${name}, I've received your message and I'll reach out to you as soon as I can! Thank you for visiting my website, I hope you have a lovely ${moment().format('dddd')}! 😀`
