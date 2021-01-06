@@ -22,7 +22,7 @@
   "dependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
